@@ -119,7 +119,7 @@
 
  <!-- Bouton Largage détresse-->
   	<model>
-		<path>Aircraft/Mirage_F1/Models/Instrument/Bouton Indicateurs/urgence.xml</path>
+		<path>Aircraft/Mirage_F1/Models/Instrument/Bouton_Indicateurs/urgence.xml</path>
 		<offsets>
 			<x-m>-4.997</x-m>
 			<y-m>-0.155</y-m>
@@ -130,7 +130,7 @@
 
 	 <!-- Panneau Alarme-->
   	<model>
-		<path>Aircraft/Mirage_F1/Models/Instrument/Panneau Alarme/Panneau Alarme.xml</path>
+		<path>Aircraft/Mirage_F1/Models/Instrument/Panneau_Alarme/Panneau_Alarme.xml</path>
 		<offsets>
 			<x-m>-4.995</x-m>
 			<y-m>0.33</y-m>
@@ -141,7 +141,7 @@
  
  <!-- Indicateur ALT CAP...-->
   	<model>
-		<path>Aircraft/Mirage_F1/Models/Instrument/Bouton Indicateurs/Indicateur.xml</path>
+		<path>Aircraft/Mirage_F1/Models/Instrument/Bouton_Indicateurs/Indicateur.xml</path>
 		<offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.159</y-m>
@@ -187,7 +187,7 @@
 
 <!-- Manette gaz-->
   	<model>
-		<path>Aircraft/Mirage_F1/Models/cockpit/manette gaz/manette gaz.xml</path>
+		<path>Aircraft/Mirage_F1/Models/cockpit/manette_gaz/manette_gaz.xml</path>
 		<offsets>
 			<x-m>-4.8</x-m>
 			<y-m>-0.268</y-m>
@@ -209,7 +209,7 @@
 
 <!-- Manette frein parc-->
   	<model>
-		<path>Aircraft/Mirage_F1/Models/cockpit/frein parc.xml</path>
+		<path>Aircraft/Mirage_F1/Models/cockpit/frein_parc.xml</path>
 		<offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.213</y-m>
@@ -220,7 +220,7 @@
 
 <!-- Un certain nombre d'élément du cockpit ne sont pas utilisables, je laisse des modélisation pour combler les places manquantes et pour que le vol reste agréable-->
   	<model>
-		<path>Aircraft/Mirage_F1/Models/cockpit/Divers/GondoleGauche.xml</path>
+		<path>Aircraft/Mirage_F1/Models/cockpit/divers/GondoleGauche.xml</path>
 		<offsets>
 			<x-m>-5.168</x-m>
 			<y-m>-0.228</y-m>
@@ -229,7 +229,7 @@
 	</model>
 
   	<model>
-		<path>Aircraft/Mirage_F1/Models/cockpit/Divers/GondoleDroite.xml</path>
+		<path>Aircraft/Mirage_F1/Models/cockpit/divers/GondoleDroite.xml</path>
 		<offsets>
 			<x-m>-5.13</x-m>
 			<y-m>0.32</y-m>
@@ -240,7 +240,7 @@
 <!--Pylone centrale-->
 
   	<model>
-		<path>Aircraft/Mirage_F1/Models/cockpit/Divers/Pylone.xml</path>
+		<path>Aircraft/Mirage_F1/Models/cockpit/divers/Pylone.xml</path>
 		<offsets>
 			<x-m>-5.04</x-m>
 			<y-m>0.05</y-m>

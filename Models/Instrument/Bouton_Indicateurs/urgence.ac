@@ -7,7 +7,7 @@ OBJECT poly
 name "Cube.004"
 data 8
 Cube.006
-texture "détresse.png"
+texture "detresse.png"
 texrep 1 1
 crease 30.000000
 numvert 181

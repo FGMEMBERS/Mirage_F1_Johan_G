@@ -7,7 +7,7 @@ OBJECT poly
 name "Cube.003"
 data 8
 Cube.005
-texture "Indicateur ALT CAP.png"
+texture "Indicateur_ALT_CAP.png"
 texrep 1 1
 crease 30.000000
 numvert 8
