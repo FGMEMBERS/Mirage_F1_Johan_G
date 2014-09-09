@@ -2,6 +2,19 @@ List of changes (incomplete)
 ============================
 
 
+Up to 31 May 2014
+-----------------
+Additions
+  - Trim gauge
+
+Bug fixes
+  - Fixed problems with accented characters (i.e. removing the accents)
+
+Known issues
+  - I have not been able to hide the HUD it in external views
+  - Air-to-air refueling does not work
+
+
 Up to February 2014
 -------------------
 
@@ -66,4 +79,3 @@ Fri 26 Aug 2011
 ---------------
 
 First download of the original package
-

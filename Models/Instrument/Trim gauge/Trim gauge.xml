@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>Trim gauge.ac</path>
+
+  <object-name>Casing</object-name>
+  <object-name>Rudder trim needle</object-name>
+  <object-name>Aileron trim needle</object-name>
+  <object-name>Elevator trim needle</object-name>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Rudder trim needle</object-name>
+    <property>controls/flight/rudder-trim</property>
+    <factor>0.005</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <object-name>Aileron trim needle</object-name>
+    <type>rotate</type>
+    <property>controls/flight/aileron-trim</property>
+    <factor>30</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Elevator trim needle</object-name>
+    <property>controls/flight/elevator-trim</property>
+    <factor>0.005</factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+  <!-- UV lighting -->
+  <animation>
+    <object-name>Rudder trim needle</object-name>
+    <object-name>Aileron trim needle</object-name>
+    <object-name>Elevator trim needle</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-uv-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.7</green>
+      <blue>0.8</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>Rudder trim needle</object-name>
+    <object-name>Aileron trim needle</object-name>
+    <object-name>Elevator trim needle</object-name>
+    <type>material</type>
+    <transparency>
+      <alpha-prop>/controls/lighting/panel-external-norm</alpha-prop>
+      <factor>-1</factor>
+    </transparency>
+  </animation>
+
+  <!-- External panel lighting (red flood lights) -->
+  <animation>
+    <object-name>Casing</object-name>
+    <object-name>Rudder trim needle</object-name>
+    <object-name>Aileron trim needle</object-name>
+    <object-name>Elevator trim needle</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-external-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+  <!-- Range animation hiding instrument if further away than 5 meters -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+</PropertyList>

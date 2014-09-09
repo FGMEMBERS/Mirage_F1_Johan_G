@@ -5,7 +5,7 @@
  
  <!-- tableau de bord -->
 
-<!--Anémometre--> <!-- Moved slightly, JG 16 Jun 2013 -->
+<!--Anemometre--> <!-- Moved slightly, JG 16 Jun 2013 -->
  	<model>
 		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/asi/asi.xml</path>
 		<offsets>
@@ -62,7 +62,7 @@
 	</model>
 
 
-<!--Variomètre-->
+<!--Variometre-->
   	<model>
 		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/IVSI/IVSI.xml</path>
 		<offsets>
@@ -117,7 +117,7 @@
   </offsets>
  </model>
 
- <!-- Bouton Largage détresse-->
+ <!-- Bouton Largage detresse-->
   	<model>
 		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Bouton Indicateurs/urgence.xml</path>
 		<offsets>
@@ -162,8 +162,7 @@
 		</offsets>
 	</model>
 
-	<!--magnetic compass-->
-    <!--Added 29 Aug 2011 by Johan G-->
+	<!--magnetic compass, Added 29 Aug 2011 by Johan G
   	<model>
 		<path>Aircraft/DavePack/Instruments/MagCompass/comp.xml</path>
 		<offsets>
@@ -172,7 +171,7 @@
 			<z-m>1.130</z-m>
 			<pitch-deg>0</pitch-deg>
 		</offsets>
-	</model>
+	</model> -->
 
 	<!-- Fuel remaining indicator -->
     <!-- Added 8 Apr 2013 by Johan G -->
@@ -257,6 +256,15 @@
         </offsets>
 	</model>
 
+    <!-- Trim guage.  Added Sat 31 May 2014 by Johan G -->
+  	<model>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Trim gauge/Trim gauge.xml</path>
+        <offsets>
+			<x-m>-5.00</x-m>
+			<y-m>0.05</y-m>
+			<z-m>0.640</z-m>
+        </offsets>
+	</model>
 
 
 
@@ -310,7 +318,7 @@
 	</model>
 
 
-<!-- Un certain nombre d'élément du cockpit ne sont pas utilisables, je laisse des modélisation pour combler les places manquantes et pour que le vol reste agréable-->
+<!-- Un certain nombre d'element du cockpit ne sont pas utilisables, je laisse des modelisation pour combler les places manquantes et pour que le vol reste agreable-->
   	<model>
 		<path>Aircraft/Mirage_F1_Johan_G/Models/cockpit/Divers/GondoleGauche.xml</path>
 		<offsets>
@@ -763,7 +771,7 @@
 	</axis>
 </animation>
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
-<!--Train arrière D-->
+<!--Train arriere D-->
 <!--rotation totale-->
 <animation>
 	<type>rotate</type>
@@ -789,7 +797,7 @@
 
 
 
-<!--rotation roue D et train inférieur D-->
+<!--rotation roue D et train inferieur D-->
 <animation>
 	<type>rotate</type>
 	<object-name>Train3Bas</object-name>
@@ -831,7 +839,7 @@
 	</axis>
 </animation>
 
-<!--Porte principale du train arrière Droite-->
+<!--Porte principale du train arriere Droite-->
 <animation>
 	<type>rotate</type>
 	<object-name>Porte1TrainAD</object-name>
@@ -853,7 +861,7 @@
 	
 </animation>
 
-<!--Porte Haut, train arrière droite-->
+<!--Porte Haut, train arriere droite-->
 <animation>
 	<type>rotate</type>
 	<object-name>Porte2TrainAD</object-name>
@@ -875,7 +883,7 @@
 	
 </animation>
 
-<!--Porte Bas train, arrière droite-->
+<!--Porte Bas train, arriere droite-->
 <animation>
 	<type>rotate</type>
 	<object-name>Porte3TrainAD</object-name>
@@ -901,7 +909,7 @@
 
 
 
-<!--Train arrière Gauche-->
+<!--Train arriere Gauche-->
 <!--rotation totale-->
 <animation>
 	<type>rotate</type>
@@ -925,7 +933,7 @@
 	</axis>
 </animation>
 
-<!--Rotation roue G et train inférieur G-->
+<!--Rotation roue G et train inferieur G-->
 <animation>
 	<type>rotate</type>
 	<object-name>Train2Bas</object-name>
@@ -967,7 +975,7 @@
 	</axis>
 </animation>
 
-<!--Porte principale du train arrière Gauche-->
+<!--Porte principale du train arriere Gauche-->
 <animation>
 	<type>rotate</type>
 	<object-name>Porte1TrainAG</object-name>
@@ -989,7 +997,7 @@
 	
 </animation>
 
-<!--Porte Haut, train arrière gauche-->
+<!--Porte Haut, train arriere gauche-->
 <animation>
 	<type>rotate</type>
 	<object-name>Porte2TrainAG</object-name>
@@ -1011,7 +1019,7 @@
 	
 </animation>
 
-<!--Porte Bas train, arrière gauche-->
+<!--Porte Bas train, arriere gauche-->
 <animation>
 	<type>rotate</type>
 	<object-name>Porte3TrainAG</object-name>
