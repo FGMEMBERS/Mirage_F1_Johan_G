@@ -11,7 +11,6 @@
   <flight-model>yasim</flight-model>
   <aero>Mirage_F1_Johan_G-yasim</aero>
 
-
   <sound>
    <path>Aircraft/Mirage_F1_Johan_G/Sounds/Mirage_F1-sounds.xml</path>
   </sound>
@@ -136,6 +135,7 @@
     <running>true</running>
   </engine>
  </engines>
+
  <!-- Non-functioning radar hidde by Johan G Thu 11 Apr 2013
  <instrumentation> 
   <radar>
@@ -182,5 +182,25 @@
    <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
   </radardist> -->
  </nasal>
+
+ <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
+ <!-- Optimum Altitude and CAS/M for AAR is supposed to be FL250 and 305 kt/M 0.80 according to source mentioned below -->
+ <instrumentation>
+  <radar>
+   <range type="int" archive="y">20</range>
+   <minimized type="bool" archive="y">false</minimized>
+  </radar>
+ </instrumentation>
+ <systems>
+  <refuel>
+   <type>probe</type>
+   <serviceable type="bool">true</serviceable>
+   <contact-radius-m>5</contact-radius-m>
+   <max-fuel-transfer-lbs-min>1300</max-fuel-transfer-lbs-min>  <!-- Reasonable guess based on ATP-56(B) - Part 5 (Nov 2012), Figure E3-1 and E4-1 -->
+   <offset-x-m>-6.990</offset-x-m>
+   <offset-y-m>0.472</offset-y-m>
+   <offset-z-m>1.015</offset-z-m>
+  </refuel>
+ </systems>
 
 </PropertyList>

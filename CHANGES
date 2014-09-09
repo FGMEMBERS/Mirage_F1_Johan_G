@@ -2,6 +2,21 @@ List of changes (incomplete)
 ============================
 
 
+Up to 16 August 2014
+--------------------
+Additions
+  - Air-to-air refueling (AAR) capability with fuel transfer rate based
+    on NATO Doc ATP-56(B) dated November 2012, figures E3-1 and E4-1
+    Optimum altitude and CAS/Mach is stated to be FL250 and 305 kt/M 0.80
+
+Acknowledgment
+  Many thanks to Jan Rippl for helping me out with getting the AAR to
+  work in FlightGear! :-)
+
+Known issues
+  - HUD visible in external views
+
+
 Up to 31 May 2014
 -----------------
 Additions
@@ -11,7 +26,7 @@ Bug fixes
   - Fixed problems with accented characters (i.e. removing the accents)
 
 Known issues
-  - I have not been able to hide the HUD it in external views
+  - HUD visible in external views
   - Air-to-air refueling does not work
 
 
@@ -37,7 +52,7 @@ Changes
   - Flap and slat settings to match reality
 
 Known issues
-  - I have not been able to hide the HUD it in external views
+  - HUD visible in external views
   - Air-to-air refueling does not work
 
 
@@ -52,7 +67,7 @@ Changes
   - Slightly different approach parameters
 
 Known issues
-  - I have not been able to hide the HUD it in external views
+  - HUD visible in external views
   - Air-to-air refueling does not work
 
 
@@ -71,7 +86,7 @@ Changes
   - Changed view point
 
 Known issues
-  - I have not been able to hide the HUD it in external views
+  - HUD visible in external views
   - Air-to-air refueling does not work
 
 
