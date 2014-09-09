@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>autopilot-control-panel.ac</path>
+  <object-name>Panel</object-name>
+  <object-name>Frame</object-name>
+  <object-name>AP-btn</object-name>
+  <object-name>Alt-mode-btn</object-name>
+  <object-name>CAP-mode-btn</object-name>
+  <object-name>R-mode-btn</object-name>
+  <object-name>G-mode-btn</object-name>
+  <object-name>Dim-knb</object-name>
+
+
+  <!-- Pick animations -->
+
+  <!-- Autopilot basic mode pick animation
+       Pitch and heading hold
+       
+       Have to get the heading and pitch and set the autopilot before engaging
+       
+  <animation>
+    <object-name>AP-pik</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+    </action>
+  </animation> -->
+
+  <!-- Autopilot altitude hold pick animation
+       
+       Have to get the altitude and set the autopilot before engaging
+       
+  <animation>
+    <object-name>Alt-mode-pik</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+    </action>
+  </animation> -->
+
+  <!-- Autopilot radio nav mode pick animation
+       
+  <animation>
+    <object-name>R-mode-pik</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+    </action>
+  </animation> -->
+
+  <!-- Autopilot glide slope mode pick animation
+       
+  <animation>
+    <object-name>G-mode-pik</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+    </action>
+  </animation> -->
+
+  <!-- Dimmer increase pick animation -->
+  <animation>
+    <object-name>Dim-up-pik</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/autopilot-indicator-norm</property>
+          <step type="double">0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Dimmer decrease pick animation -->
+  <animation>
+    <object-name>Dim-down-pik</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/autopilot-indicator-norm</property>
+          <step type="double">-0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+
+  <!-- Illumination animations -->
+
+  <!-- Autopilot engaged light -->
+  <animation>
+    <object-name>AP-eng-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- Autopilot connected light -->
+  <animation>
+    <object-name>AP-con-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- Altitude hold mode light -->
+  <animation>
+    <object-name>Alt-mode-hold-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- Altitude hold mode error light -->
+  <animation>
+    <object-name>Alt-mode-err-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- CAP mode light -->
+  <animation>
+    <object-name>CAP-mode-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- R mode standby light -->
+  <animation>
+    <object-name>R-mode-stby-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- R mode engaged light -->
+  <animation>
+    <object-name>R-mode-hold-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- R mode left light -->
+  <animation>
+    <object-name>R-mode-left-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- R mode right light -->
+  <animation>
+    <object-name>R-mode-right-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- G mode standby light -->
+  <animation>
+    <object-name>G-mode-stby-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- G mode hold light -->
+  <animation>
+    <object-name>G-mode-hold-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- G mode high light -->
+  <animation>
+    <object-name>G-mode-high-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- R mode low light -->
+  <animation>
+    <object-name>G-mode-low-lit</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+
+  <!-- UV flourescent markers -->
+
+  <animation>
+    <object-name>Dots-uv-lit</object-name>
+    <object-name>Dim-uv-lit</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-uv-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.7</green>
+      <blue>0.8</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>Dots-uv-lit</object-name>
+    <object-name>Dim-uv-lit</object-name>
+    <type>material</type>
+    <transparency>
+      <alpha-prop>/controls/lighting/panel-uv-norm</alpha-prop>
+      <factor>-1</factor>
+    </transparency>
+  </animation>
+
+  <!-- External panel lighting (red flood lights) -->
+  <animation>
+    <object-name>Dots-uv-lit</object-name>
+    <object-name>Dim-uv-lit</object-name>
+    <object-name>Panel</object-name>
+    <object-name>Frame</object-name>
+    <object-name>AP-btn</object-name>
+    <object-name>Alt-mode-btn</object-name>
+    <object-name>CAP-mode-btn</object-name>
+    <object-name>R-mode-btn</object-name>
+    <object-name>G-mode-btn</object-name>
+    <object-name>Dim-knb</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-external-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+
+  <!-- Range animation hiding instrument if further away than 5 meters -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+</PropertyList>

@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>configuration-indicator.ac</path>
+  <object-name>Panel</object-name>
+  <object-name>Bip-button</object-name>
+  <object-name>Test-button</object-name>
+
+  <!-- Full slats light -->
+  <animation>
+    <object-name>Slats-full</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <greater-than>
+          <property>/surface-positions/slat-pos-norm</property>
+          <value>0.9</value>
+        </greater-than>
+        <equals>
+          <property>/surface-positions/slat-pos-norm</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Half slats light -->
+  <animation>
+    <object-name>Slats-half</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <and>
+          <greater-than>
+            <property>/surface-positions/slat-pos-norm</property>
+            <value>0.4</value>
+          </greater-than>
+          <less-than>
+            <property>/surface-positions/slat-pos-norm</property>
+            <value>0.6</value>
+          </less-than>
+        </and>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Slats moving light -->
+  <animation>
+    <object-name>Slats-moving</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <and>
+          <greater-than>
+            <property>/surface-positions/slat-pos-norm</property>
+            <value>0</value>
+          </greater-than>
+          <less-than>
+            <property>/surface-positions/slat-pos-norm</property>
+            <value>0.4</value>
+          </less-than>
+        </and>
+        <and>
+          <greater-than>
+            <property>/surface-positions/slat-pos-norm</property>
+            <value>0.6</value>
+          </greater-than>
+          <less-than>
+            <property>/surface-positions/slat-pos-norm</property>
+            <value>0.9</value>
+          </less-than>
+        </and>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Flaps moving light -->
+  <animation>
+    <object-name>Flaps-moving</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <and>
+          <greater-than>
+            <property>/surface-positions/flap-pos-norm</property>
+            <value>0</value>
+          </greater-than>
+          <less-than>
+            <property>/surface-positions/flap-pos-norm</property>
+            <value>0.5</value>
+          </less-than>
+        </and>
+        <and>
+          <greater-than>
+            <property>/surface-positions/flap-pos-norm</property>
+            <value>0.7</value>
+          </greater-than>
+          <less-than>
+            <property>/surface-positions/flap-pos-norm</property>
+            <value>0.9</value>
+          </less-than>
+        </and>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Half flaps light -->
+  <animation>
+    <object-name>Flaps-half</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <and>
+          <greater-than>
+            <property>/surface-positions/flap-pos-norm</property>
+            <value>0.5</value>
+          </greater-than>
+          <less-than>
+            <property>/surface-positions/flap-pos-norm</property>
+            <value>0.7</value>
+          </less-than>
+        </and>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Full flaps light -->
+  <animation>
+    <object-name>Flaps-full</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <greater-than>
+          <property>/surface-positions/flap-pos-norm</property>
+          <value>0.9</value>
+        </greater-than>
+        <equal>
+          <property>/surface-positions/flap-pos-norm</property>
+          <value>1</value>
+        </equal>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Landing gear doors moving light -->
+  <animation>
+    <object-name>Gear-doors-open</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <and>
+          <greater-than>
+            <property>/gear/gear[2]/position-norm</property>
+            <value>0.2</value>
+          </greater-than>
+          <less-than>
+            <property>/gear/gear[2]/position-norm</property>
+            <value>0.7</value>
+          </less-than>
+        </and>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Left landing gear light -->
+  <animation>
+    <object-name>Left-gear-down</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <greater-than>
+          <property>/gear/gear[2]/position-norm</property>
+          <value>0.6</value>
+        </greater-than>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Nose landing gear light -->
+  <animation>
+    <object-name>Nose-gear-down</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <greater-than>
+          <property>/gear/gear/position-norm</property>
+          <value>0.6</value>
+        </greater-than>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Right landing gear light -->
+  <animation>
+    <object-name>Right-gear-down</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <greater-than>
+          <property>/gear/gear[1]/position-norm</property>
+          <value>0.6</value>
+        </greater-than>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Wheel brake light -->
+  <animation>
+    <object-name>Wheelbrake-on</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <and>
+          <or>
+            <greater-than>
+              <property>/controls/gear/brake-left</property>
+              <value>0.1</value>
+            </greater-than>
+            <greater-than>
+              <property>/controls/gear/brake-right</property>
+              <value>0.1</value>
+            </greater-than>
+          </or>
+          <or>
+            <greater-than>
+              <property>/gear/gear[2]/compression-norm</property>  <!-- Left landing gear strut compression microswitch -->
+              <value>0</value>
+            </greater-than>
+            <and>
+              <equals>
+                <property>/gear/gear/position-norm</property>
+                <value>0</value>
+              </equals>
+              <equals>
+                <property>/gear/gear[1]/position-norm</property>
+                <value>0</value>
+              </equals>
+              <equals>
+                <property>/gear/gear[2]/position-norm</property>
+                <value>0</value>
+              </equals>
+            </and>
+          </or>
+        </and>
+        <equals>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>true</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Test button pick animation -->
+  <!-- Lits all the lights of the configuration indicator -->
+  <animation>
+    <object-name>Test-pick</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/switches/configuration-indicator-test</property>
+        <value>true</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/configuration-indicator-test</property>
+          <value>false</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <!-- Bip button pick animation -->
+  <!-- Tests if the landing gear are down and locked  -->
+  <animation>
+    <type>pick</type>
+    <object-name>Bip-pick</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/switches/gear-bip-test</property>
+        <value>true</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/gear-bip-test</property>
+          <value>false</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <!-- Bip button sound effect, beeps if the landing gear are down and locked and the bip test button is depressed
+  <fx>
+    <bip>
+      <name>Bip test</name>
+      <path>Aircraft/Mirage_F1/Models/Instrument/configuration indicator/Bip test.wav</path>
+      <mode>looped</mode>
+      <type>avionics</type>
+      <condition>
+        <property>/controls/switches/gear-bip-test</property>
+      </condition>
+    </bip>
+  </fx>  -->
+
+
+  <!-- Illumination animations -->
+  <animation>
+    <object-name>Panel</object-name>
+    <object-name>Bip-button</object-name>
+    <object-name>Test-button</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-uv-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.7</green>
+      <blue>0.8</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>Panel</object-name>
+    <object-name>Bip-button</object-name>
+    <object-name>Test-button</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-external-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+
+  <!-- Range animation hiding instrument if further away than 5 meters -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+</PropertyList>

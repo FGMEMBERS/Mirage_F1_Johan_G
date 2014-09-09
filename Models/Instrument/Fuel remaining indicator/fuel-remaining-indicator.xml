@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>fuel-remaining-indicator.ac</path>
+
+    <!-- Animation of the first digit wheel -->
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-wheel-1</object-name>
+        <property>consumables/fuel/total-fuel-gal_us</property>
+        <factor>-0.1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Animation of the second digit wheel -->
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-wheel-2</object-name>
+        <property>consumables/fuel/total-fuel-gal_us</property>
+        <factor>-0.01</factor>
+        <step>10</step>
+        <scroll>0.25</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Animation of the third digit wheel -->
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-wheel-3</object-name>
+        <property>consumables/fuel/total-fuel-gal_us</property>
+        <factor>-0.001</factor>
+        <step>100</step>
+        <scroll>2.5</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Animation of the fourth digit wheel -->
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-wheel-4</object-name>
+        <property>consumables/fuel/total-fuel-gal_us</property>
+        <factor>-0.0001</factor>
+        <step>1000</step>
+        <scroll>25</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+  <!-- Illumination animation -->
+  <animation>
+    <object-name>digit-wheel-1</object-name>
+    <object-name>digit-wheel-2</object-name>
+    <object-name>digit-wheel-3</object-name>
+    <object-name>digit-wheel-4</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-uv-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.7</green>
+      <blue>0.8</blue>
+    </emission>
+  </animation>
+
+  <!-- Illumination animation -->
+  <animation>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-external-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+
+    <!-- LoD -->
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>5</max-m>
+    </animation>
+</PropertyList>

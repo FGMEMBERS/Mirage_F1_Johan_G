@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>frein parc.ac</path>
+
+
+
+<!--Frein de parc-->
+<animation>
+	<type>translate</type>
+	<object-name>levier</object-name>
+	<property>/controls/gear/brake-parking</property>
+ 
+	<interpolation>
+      <entry><ind>   0</ind><dep>   0</dep></entry>
+	  <entry><ind>   0.3</ind><dep>   0.01</dep></entry>
+	  <entry><ind>   1</ind><dep>   0.05</dep></entry>
+	</interpolation> 
+	<axis>
+	    <x>1</x>
+	    <y>0</y>
+	    <z>0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>levier</object-name>
+	<property>/controls/gear/brake-parking</property>
+	<axis>
+		<x1-m>0.003</x1-m>
+		<y1-m>0.003</y1-m>
+		<z1-m>-0.013</z1-m>
+		
+		<x2-m>0.013</x2-m>
+		<y2-m>0.003</y2-m>
+		<z2-m>-0.013</z2-m>
+	</axis>
+	
+	<interpolation>
+      <entry><ind>   0</ind><dep>   0</dep></entry>
+	  <entry><ind>   0.3</ind><dep>   20</dep></entry>
+	  <entry><ind>   1</ind><dep>   70</dep></entry>
+	</interpolation>
+</animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>levier</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/gear/brake-parking</property>
+      </binding>
+    </action>
+  </animation>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<!-- Levier Train-->
+
+<animation>
+	<type>rotate</type>
+	<object-name>levier train</object-name>
+	<property>gear/gear/position-norm</property>
+	<interpolation>
+		<entry><ind>    1</ind><dep>      0</dep></entry>
+		<entry><ind>    0.9</ind><dep>    100</dep></entry>
+		<entry><ind>    0</ind><dep>     100</dep></entry>
+	</interpolation>
+
+	<axis>
+		<x1-m>0.003</x1-m>
+		<y1-m>-0.019</y1-m>
+		<z1-m>-0.051</z1-m>
+		<x2-m>0.003</x2-m>
+		<y2-m>-0.035</y2-m>
+		<z2-m>-0.051</z2-m>
+	</axis>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>levier train</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-cycle</command>
+        <property>gear/gear/position-norm</property>
+      </binding>
+    </action>
+	
+</animation>
+
+</PropertyList>

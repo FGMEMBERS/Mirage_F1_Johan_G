@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>ac-zc-cockpit-lighting-control-box.ac</path>
+  <object-name>Panel</object-name>
+
+
+
+  <!-- Consoles external lighting knob -->
+  <animation>
+    <object-name>Con-ext-knob</object-name>
+    <type>rotate</type>
+    <property>controls/lighting/consoles-external-norm</property>
+      <factor>-300</factor>
+      <offset-deg>0</offset-deg>
+      <center>
+        <x-m>0</x-m>
+        <y-m>-0.0336</y-m>
+        <z-m> 0.0133</z-m>
+      </center>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+  <!-- Consoles internal lighting knob -->
+  <animation>
+    <object-name>Con-int-knob</object-name>
+    <type>rotate</type>
+    <property>controls/lighting/consoles-internal-norm</property>
+      <factor>-300</factor>
+      <offset-deg>0</offset-deg>
+      <center>
+        <x-m>0</x-m>
+        <y-m>-0.0336</y-m>
+        <z-m> 0.0133</z-m>
+      </center>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+
+  <!-- Panel external lighting knob -->
+  <animation>
+    <object-name>Pan-ext-knob</object-name>
+    <type>rotate</type>
+    <property>controls/lighting/panel-external-norm</property>
+      <factor>-300</factor>
+      <offset-deg>0</offset-deg>
+      <center>
+        <x-m>0</x-m>
+        <y-m>-0.0031</y-m>
+        <z-m>-0.0147</z-m>
+      </center>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+  <!-- Panel internal lighting knob -->
+  <animation>
+    <object-name>Pan-int-knob</object-name>
+    <type>rotate</type>
+    <property>controls/lighting/panel-internal-norm</property>
+      <factor>-300</factor>
+      <offset-deg>0</offset-deg>
+      <center>
+        <x-m>0</x-m>
+        <y-m>-0.0031</y-m>
+        <z-m>-0.0147</z-m>
+      </center>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+
+  <!-- Panel UV lighting knob -->
+  <animation>
+    <object-name>Pan-uv-knob</object-name>
+    <type>rotate</type>
+    <property>controls/lighting/panel-uv-norm</property>
+      <factor>-300</factor>
+      <offset-deg>0</offset-deg>
+      <center>
+        <x-m>0</x-m>
+        <y-m>0.0275</y-m>
+        <z-m>0.0138</z-m>
+      </center>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+
+  <!-- Lighting dimmer knob -->
+  <animation>
+    <object-name>Dim-knob</object-name>
+    <type>rotate</type>
+    <property>controls/lighting/dimmer-norm</property>
+      <factor>-300</factor>
+      <offset-deg>0</offset-deg>
+      <center>
+        <x-m>0</x-m>
+        <y-m> 0.0285</y-m>
+        <z-m>-0.0162</z-m>
+      </center>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+
+  <!-- Day/night switch -->
+  <animation>
+    <object-name>Night-switch</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>controls/lighting/night-lighting-norm</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <object-name>Day-switch</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>controls/lighting/night-lighting-norm</property>
+        <value>false</value>
+      </equals>
+    </condition>
+  </animation>
+
+
+
+  <!-- Consoles external lighting increase pick animation -->
+  <animation>
+    <object-name>Con-ext-up</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/consoles-external-norm</property>
+          <step type="double">0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Consoles external lighting decrease pick animation -->
+  <animation>
+    <object-name>Con-ext-dn</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/consoles-external-norm</property>
+          <step type="double">-0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Consoles internal lighting increase pick animation -->
+  <animation>
+    <object-name>Con-int-up</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/consoles-internal-norm</property>
+          <step type="double">0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Consoles internal lighting decrease pick animation -->
+  <animation>
+    <object-name>Con-int-dn</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/consoles-internal-norm</property>
+          <step type="double">-0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+
+  <!-- Instrument panel external lighting increase pick animation -->
+  <animation>
+    <object-name>Pan-ext-up</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/panel-external-norm</property>
+          <step type="double">0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Instrument panel external lighting decrease pick animation -->
+  <animation>
+    <object-name>Pan-ext-dn</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/panel-external-norm</property>
+          <step type="double">-0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Instrument panel internal lighting increase pick animation -->
+  <animation>
+    <object-name>Pan-int-up</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/panel-internal-norm</property>
+          <step type="double">0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Instrument panel internal lighting decrease pick animation -->
+  <animation>
+    <object-name>Pan-int-dn</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/panel-internal-norm</property>
+          <step type="double">-0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+
+  <!-- Instrument panel UV lighting increase pick animation -->
+  <animation>
+    <object-name>Pan-uv-up</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/panel-uv-norm</property>
+          <step type="double">0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Instrument panel UV lighting decrease pick animation -->
+  <animation>
+    <object-name>Pan-uv-dn</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/panel-uv-norm</property>
+          <step type="double">-0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+
+  <!-- Lighting dimmer increase pick animation -->
+  <animation>
+    <object-name>Dim-up</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/dimmer-norm</property>
+          <step type="double">0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+  <!-- Lighting dimmer decrease pick animation -->
+  <animation>
+    <object-name>Dim-dn</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/dimmer-norm</property>
+          <step type="double">-0.1</step>
+          <min>0</min>
+          <max>1</max>
+        </binding>
+    </action>
+  </animation>
+
+
+  <!-- Day/night lighting switch pick animation -->
+  <animation>
+    <object-name>Day</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/lighting/night-lighting-norm</property>
+          <value type="bool">false</value>
+        </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <object-name>Night</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/lighting/night-lighting-norm</property>
+          <value type="bool">true</value>
+        </binding>
+    </action>
+  </animation>
+
+
+
+  <!-- Illumination animation -->
+  <animation>
+    <type>material</type>
+    <emission>
+      <factor-prop>controls/lighting/consoles-internal-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.7</green>
+      <blue>0.7</blue>
+    </emission>
+  </animation>
+
+  <!-- Illumination animation -->
+  <animation>
+    <type>material</type>
+    <emission>
+      <factor-prop>controls/lighting/consoles-external-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+
+  <!-- Range animation hiding instrument if further away than 5 meters -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+</PropertyList>

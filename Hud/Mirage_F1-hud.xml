@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  
+  <enable3d>true</enable3d>
+  
+   <visibility n="1">true</visibility>   
+    
+    <!-- Labels -->
+    <label>
+      <name>Knots calibrated air speed (CAS)</name>
+      <x>-60</x>
+      <y>49</y>
+      <width>16</width>
+      <height>3</height>
+      
+      <input>
+        <property>/velocities/airspeed-kt</property>
+      </input>
+      
+      <format>%3d</format>
+      <halign>centre</halign>
+    </label>
+    
+    <label>
+      <name>Barometric altitule [ft]</name>
+      <x>46</x>
+      <y>49</y>
+      <width>24</width>
+      <height>3</height>
+      
+      <input>
+        <property>/instrumentation/altimeter/pressure-alt-ft</property>
+      </input>
+      
+      <format>Z %5d</format>
+      <halign>right</halign>
+    </label>
+    
+    <label>
+      <name>Radar altitude [ft]</name>
+      <x>48</x>
+      <y>42</y>
+      <width>24</width>
+      <height>3</height>
+      
+      <input>
+        <property>/position/gear-agl-ft</property>
+      </input>
+      
+      <format>H %5d</format>
+      <halign>right</halign>
+    </label>
+    
+    <label>
+      <name>Mach number</name>
+      <x>32</x>
+      <y>35</y>
+      <width>24</width>
+      <height>3</height>
+      
+      <input>
+        <property>/velocities/mach</property>
+      </input>
+      
+      <format>%2.1f</format>
+      <halign>right</halign>
+    </label>
+    
+    <label>
+      <name>G load</name>
+      <x>50</x>
+      <y>35</y>
+      <width>24</width>
+      <height>3</height>
+      
+      <input>
+        <property>/accelerations/pilot/z-accel-fps_sec</property>
+        <factor>-0.03108095</factor>
+      </input>
+      
+      <format>N %1d</format>
+      <halign>right</halign>
+    </label>
+    
+    <tape>
+      <name>Compass magnetic heading</name>
+      <x>-40</x>
+      <y>42</y>
+      <width>80</width>
+      <height>15</height>
+      
+      <input>
+        <property>orientation/heading-magnetic-deg</property>
+        <factor>0.1</factor>
+        <max>85</max>
+        <min>0</min>
+      </input>
+      
+      <display-span>3</display-span>
+      <option>top</option>
+      <major-divisions>1</major-divisions>
+      <minor-divisions>0.5</minor-divisions>
+      <tick-bottom>false</tick-bottom>
+      <tick-top>false</tick-top>
+      <tick-right>false</tick-right>
+      <tick-left>false</tick-left>
+      <cap-bottom>false</cap-bottom>
+      <cap-top>false</cap-top>
+      <cap-right>true</cap-right>
+      <cap-left>true</cap-left>
+      <marker-offset>0</marker-offset>
+      <enable-pointer>true</enable-pointer>
+      <pointer-type>fixed</pointer-type>
+      <tick-type>line</tick-type>
+      <tick-length>fixed</tick-length>
+    </tape>
+    
+    <ladder>
+      <name>Pitch Ladder</name>
+      <type>pitch</type>
+      <x>-25</x>
+      <y>-25</y>
+      <width>50</width>
+      <height>50</height>
+      
+      <roll-input>
+        <property>/orientation/roll-deg</property>
+      </roll-input>
+      <pitch-input>
+        <property>/orientation/pitch-deg</property>
+      </pitch-input>
+      
+      <compression-factor>7.8</compression-factor>
+      <display-span>15.0</display-span>
+      
+      <divisions>5.0</divisions>
+      <screen-hole>25</screen-hole>
+      <zero-bar-overlength>10</zero-bar-overlength>
+      
+      <enable-dive-bar-angle>false</enable-dive-bar-angle>
+      <enable-dynamic-origin>false</enable-dynamic-origin>
+      <enable-fuselage-ref-line>true</enable-fuselage-ref-line>
+      <enable-target-spot>false</enable-target-spot>
+      <enable-target-markers>false</enable-target-markers>
+      <enable-velocity-vector>true</enable-velocity-vector>
+      <enable-drift-marker>false</enable-drift-marker>
+      <enable-alpha-bracket>false</enable-alpha-bracket>
+      <enable-energy-marker>true</enable-energy-marker>
+      <enable-climb-dive-marker>false</enable-climb-dive-marker>
+      <enable-glide-slope-marker>false</enable-glide-slope-marker>
+      <glide-slope>0.0</glide-slope>
+      <enable-energy-worm>false</enable-energy-worm>
+      <enable-waypoint-marker>false</enable-waypoint-marker>
+    </ladder>
+
+</PropertyList>

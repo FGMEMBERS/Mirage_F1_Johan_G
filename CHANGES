@@ -1,0 +1,69 @@
+List of changes (incomplete) 
+============================
+
+
+Up to February 2014
+-------------------
+
+I migrated to from FlightGear 2.4.0 to 3.0.0 some time during February 2014.
+
+Additions
+  - A lot of instruments
+      - Semi-functional lighting control panel
+      - Configuration indicator
+        (Shows position of gear, flaps, slats and use of wheel brakes)
+      - Non-functional Autopilot control panel
+      - Airbrake indicator light
+      - Fuel remaining indicator (still in US gallons instead of liters)
+
+Changes
+  - Renamed the aircraft directory (if not earlier)
+  - Added extra fuel tank to fix erroneous property
+    /consumables/fuel/total-fuel-gal_us in order to make the fuel remaining
+    indicator to work
+  - Flap and slat settings to match reality
+
+Known issues
+  - I have not been able to hide the HUD it in external views
+  - Air-to-air refueling does not work
+
+
+Up to the end of 2012
+---------------------
+
+Additions
+  - Slats section in the FDM
+
+Changes
+  - Slightly different stall parameters
+  - Slightly different approach parameters
+
+Known issues
+  - I have not been able to hide the HUD it in external views
+  - Air-to-air refueling does not work
+
+
+Up to the end of 2011
+---------------------
+
+Additions
+  - A HUD loosely based on a mix of unknown F1CR HUD modes
+  - G tolerance
+      - The pilot will handle +6/-2 G
+      - Full Blackout/redout at +8/-4 G
+  - Borrowed compass from the c172
+  - Default field of view is now 90 degrees
+  
+Changes
+  - Changed view point
+
+Known issues
+  - I have not been able to hide the HUD it in external views
+  - Air-to-air refueling does not work
+
+
+Fri 26 Aug 2011
+---------------
+
+First download of the original package
+

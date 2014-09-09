@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>autopilot-panel-test-button.ac</path>
+  <object-name>B-Test</object-name>
+
+  <!-- Test button pick animation -->
+  <!-- Lits all the lights of the autopilot control panel -->
+  <animation>
+    <object-name>Test-pik</object-name>
+    <object-name>Test-btn</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/switches/autopilot-panel-test</property>
+        <value>true</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/autopilot-panel-test</property>
+          <value>false</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+
+  <!-- Illumination animation -->
+  <animation>
+    <object-name>Test-btn</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-external-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+
+  <!-- Range animation hiding instrument if further away than 5 meters -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+</PropertyList>

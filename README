@@ -1,0 +1,77 @@
+
+Dassault Mirage F1 for the FlightGear flight simulator
+======================================================
+
+Legal notices
+-------------
+Copyright (C) 2010 Charles Ingels (FDM) and Alexis Laille (3D)
+              2011-2014 Johan Gustafsson
+
+This aircraft package is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This aircraft package is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+
+Original authors and licence
+----------------------------
+
+This aircraft is a modification of the Mirage F1 aircraft by Charles Ingels
+(FDM) and Alexis Laille (3D) [1] downloaded Fri 26 Aug 2011 from the FlightGear
+official aircraft download page for FlightGear 2.4.0 [2]
+
+While neither copyright or any license is stated in the downloaded package it
+is assumed that the original authors hold the copyright and that it is
+released under GNU General Public License, version 2 (GNU GPL v2) [3] as the
+epository containing all the official aircraft [4] is published under
+that license.
+
+
+Contact information
+-------------------
+
+For those of you who are around on the FlightGear forum[5] I can be found
+there as "Johan G" for the rest of you e-mail is probably a good way to get
+in contact.  Be aware that I sometimes do not check my e-mail for some time.
+Please mention "FlightGear" and "Mirage F1" in the subject line.
+view.o.matic, a yummy cinnamon bun (mmm... cinnamon buns), gmail period com.
+
+I might at times be on the FlightGear IRC channels as Johan_G or in
+multiplayer usually as SE-JG.  As for time zones I live in UTC+1 in winter
+and UTC+2 in summer.
+
+
+As for feature requests, do not expect anything to happen, but feel
+free to ask.  ;-)
+
+
+Links
+-----
+
+[1] Original package this aircraft was modified from
+    ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/
+    Aircraft-2.4/Mirage_F1_20101217.zip
+
+[2] FlightGear 2.4.0 official aircraft download page
+    http://www.flightgear.org/download/aircraft-v2-4/
+
+[3] GNU General Public License, version 2 (GNU GPL v2) (See also 
+    Mirage_F1_Johan_G/COPYING)
+    http://www.gnu.org/licenses/gpl-2.0.html
+
+[4] The Release/2.4.0 branch of the fgdata repository containing all the
+    official aircraft
+    https://gitorious.org/fg/fgdata/
+    source/51100ea085dc47e915d818e59c11264d37e01a89:
+
+[5] FlightGear's official forum
+    http://forum.flightgear.org

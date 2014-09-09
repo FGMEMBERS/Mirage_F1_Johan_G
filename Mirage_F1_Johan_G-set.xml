@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <sim>
+
+  <description>Mirage F1 Johan G</description>
+  <author>Charles INGELS(FDM), Alexis LAILLE (3D)</author>
+  <status>early production</status>
+
+  <flight-model>yasim</flight-model>
+  <aero>Mirage_F1_Johan_G-yasim</aero>
+
+
+  <sound>
+   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Mirage_F1-sounds.xml</path>
+  </sound>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
+
+  <panel>
+   <visibility archive="y">false</visibility>
+  </panel>
+  
+  <hud> <!-- Tinkered with by Johan G Sun 18 Dec 2011 -->
+   <path n="1">Aircraft/Mirage_F1_Johan_G/Hud/Mirage_F1-hud.xml</path>
+   <visibility n="1">true</visibility>
+     <condition>
+       <equals>
+         <property>/sim/view/enabled</property>
+         <value>true</value>
+       </equals>
+     </condition>
+   <palette>
+    <color n="0">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">0.38</red>
+     <green type="float">1.0</green>
+     <blue type="float">0.22</blue>
+    </color>
+    <color n="1">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">1.0</red>
+     <green type="float">0.2</green>
+     <blue type="float">0.0</blue>
+    </color>
+   </palette>
+  </hud>
+
+  <view n="0"> <!-- Tinkered with by Johan G Mon 29 Aug 2011 -->
+   <internal archive="y">true</internal>
+   <config>
+    <field-of-view archive="y">50</field-of-view>
+    <pitch-offset-deg>0.99</pitch-offset-deg>
+    <x-offset-m archive="y">0.02</x-offset-m>
+    <y-offset-m archive="y">1.07</y-offset-m>
+    <z-offset-m archive="y">-4.25</z-offset-m>
+   </config>
+  </view>
+
+  <model>
+   <path>Aircraft/Mirage_F1_Johan_G/Models/Mirage_F1-model.xml</path>
+  </model>
+
+  <chase-distance-m>-21</chase-distance-m>
+
+  <flaps>
+   <setting>0.000</setting>
+   <setting>0.600</setting> <!-- Was 0.500 /JG, 25 Jun 2013 -->
+   <setting>1.000</setting>
+  </flaps>
+
+  <slats> <!-- Added /JG, 25 Jun 2013 -->
+   <setting>0.000</setting>
+   <setting>0.500</setting>
+   <setting>1.000</setting>
+  </slats>
+
+  <!-- turns off GA tower communications -->
+  <ATC>
+   <enabled type="bool">false</enabled>
+  </ATC>
+
+  <!-- turns off GA traffic -->
+  <ai-traffic>
+   <enabled type="bool">false</enabled>
+  </ai-traffic>
+
+  <rendering> <!-- Added by Johan G Sat 3 Sep 2011 -->
+   <redout>
+    <enabled type="bool" userarchive="y">true</enabled>
+    <parameters>
+     <blackout-onset-g>6</blackout-onset-g>
+     <blackout-complete-g>8</blackout-complete-g>
+     <redout-onset-g>-2</redout-onset-g>
+     <redout-complete-g>-4</redout-complete-g>
+    </parameters>
+   </redout>
+  </rendering>
+
+ </sim>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <level-gal_us archive="y">290</level-gal_us>
+   </tank>
+   <tank n="1">
+    <level-gal_us archive="y">290</level-gal_us>
+   </tank>
+   <tank n="2">
+    <level-gal_us archive="y">1650</level-gal_us> <!-- Added by Johan G Tue 10 Jun 2013, hopefully fixes fuel guage -->
+   </tank>
+  </fuel>
+ </consumables>
+
+
+ <controls>
+  <flight>
+   <flaps>0.5</flaps>
+  </flight>
+ </controls>
+
+ <engines>
+  <engine n="0">
+    <running>true</running>
+  </engine>
+  <engine n="1">
+    <running>true</running>
+  </engine>
+ </engines>
+ <!-- Non-functioning radar hidde by Johan G Thu 11 Apr 2013
+ <instrumentation> 
+  <radar>
+   <enabled type="bool">true</enabled>
+   <az-field type="double">120</az-field>
+   <range type="double">150</range>
+   <range-selected type="double">50</range-selected>
+   <display-rdr type="bool">true</display-rdr>
+   <radar-standby type="int">0</radar-standby>
+   <mode>
+    <rws type="bool">true</rws>
+    <tws-auto type="bool">false</tws-auto>
+   </mode>
+  </radar>
+  <radar2>
+   <sweep-width-m type="double">0.0844</sweep-width-m>
+   <range-width-m type="double">0.0846</range-width-m>
+   <radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+   <hud-eye-dist-m type="double">0.6705</hud-eye-dist-m>
+   <hud-radius-m type="double">0.071</hud-radius-m>
+  </radar2>
+  <rwr>
+   <display-lighting-intens type="double">0.4</display-lighting-intens>
+   <symbology-lighting-intens type="double">1</symbology-lighting-intens>
+  </rwr>
+  <ecm>
+   <on-off type="bool">true</on-off>
+  </ecm>
+ </instrumentation> -->
+ 
+ <nasal>
+  <aar>
+   <file>Aircraft/Generic/aar.nas</file>
+  </aar>
+  <!-- Hidden by Johan G Thu 11 Apr 2013
+  <f16>
+   <file>Aircraft/f16/Nasal/liveries.nas</file>
+   <file>Aircraft/f16/Nasal/f16.nas</file>
+  </f16>
+  <radar>
+   <file>Aircraft/Instruments-3d/radar2/radar2.nas</file>
+  </radar>
+  <radardist>
+   <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+  </radardist> -->
+ </nasal>
+
+</PropertyList>
