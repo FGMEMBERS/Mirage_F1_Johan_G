@@ -162,17 +162,6 @@
 		</offsets>
 	</model>
 
-	<!--magnetic compass, Added 29 Aug 2011 by Johan G
-  	<model>
-		<path>Aircraft/DavePack/Instruments/MagCompass/comp.xml</path>
-		<offsets>
-			<x-m>-4.833</x-m>
-			<y-m>0.120</y-m>
-			<z-m>1.130</z-m>
-			<pitch-deg>0</pitch-deg>
-		</offsets>
-	</model> -->
-
 	<!-- Fuel remaining indicator -->
     <!-- Added 8 Apr 2013 by Johan G -->
   	<model>
@@ -267,6 +256,16 @@
 	</model>
 
 
+    <!-- Accelerometer.  Added Wed 24 Sep 2014 by Johan G -->
+  	<model>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Accelerometer/Accelerometer.xml</path>
+        <offsets>
+			<x-m>-4.975</x-m>
+			<y-m>-0.003</y-m>
+			<z-m>0.543</z-m>
+			<pitch-deg>-15</pitch-deg>
+        </offsets>
+	</model>
 
 
 

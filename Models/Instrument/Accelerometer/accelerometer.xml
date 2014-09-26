@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>accelerometer.ac</path>
+  <object-name>Panel</object-name>
+
+
+  <!-- G needles -->
+  <!-- Current G needle -->
+  <animation>
+    <type>translate</type>
+    <object-name>Needle-G</object-name>
+    <property>accelerations/pilot-g</property>
+    <factor>0.00375</factor>
+    <offset-m>0</offset-m>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+ 
+  <!-- Max G needle -->
+  <animation>
+    <type>translate</type>
+    <object-name>Needle-G-max</object-name>
+    <property>sim/model/Mirage_F1/instrumentation/accelerometer/g-max</property>
+    <factor>0.00375</factor>
+    <offset-m>0</offset-m>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+ 
+  <!-- Min G needle -->
+  <animation>
+    <type>translate</type>
+    <object-name>Needle-G-min</object-name>
+    <property>sim/model/Mirage_F1/instrumentation/accelerometer/g-max</property>
+    <factor>0.00375</factor>
+    <offset-m>0</offset-m>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+
+  <!-- Min/max G reset -->
+  <animation>
+    <object-name>Reset-button</object-name>
+    <object-name>Reset-pik</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+        <binding>
+          <command>property-assign</command>
+          <property>sim/model/Mirage_F1/instrumentation/accelerometer/g-max</property>
+          <value type="double">1</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>sim/model/Mirage_F1/instrumentation/accelerometer/g-min</property>
+          <value type="double">1</value>
+        </binding>
+    </action>
+  </animation>
+
+
+  <!-- Illumination animations -->
+  <!-- Illumination animation, only if mounted above glare shield -->
+  <animation>
+    <type>material</type>
+    <emission>
+      <factor-prop>controls/lighting/misc-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.7</green>
+      <blue>0.8</blue>
+    </emission>
+  </animation>
+
+
+  <!-- Illumination animation -->
+  <animation>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-uv-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.7</green>
+      <blue>0.8</blue>
+    </emission>
+  </animation>
+
+  <!-- Illumination animation -->
+  <animation>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-external-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+
+  <!-- Range animation hiding instrument if further away than 5 meters -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+</PropertyList>
