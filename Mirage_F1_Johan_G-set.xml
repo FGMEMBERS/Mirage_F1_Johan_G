@@ -8,6 +8,16 @@
   <author>Charles INGELS(FDM), Alexis LAILLE (3D)</author>
   <status>early production</status>
 
+  <!-- Aircraft rating added by Johan G Sun 28 Sep 2014 -->
+  <!-- Maybe a bit low, but better too low than too high. -->
+  <status>alpha</status>
+  <rating>
+   <FDM type="int">1</FDM>
+   <systems type="int">0</systems>
+   <cockpit type="int">3</cockpit>
+   <model type="int">3</model>
+  </rating>
+
   <flight-model>yasim</flight-model>
   <aero>Mirage_F1_Johan_G-yasim</aero>
 
