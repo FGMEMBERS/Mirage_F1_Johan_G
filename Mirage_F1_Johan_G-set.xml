@@ -114,6 +114,33 @@
    </redout>
   </rendering>
 
+  <!-- Archiving some properties to make them persistent between sessions /Johan G, Sun 28 Sep 2014 -->
+  <aircraft-data>
+   <!-- Lighting -->
+   <path>/controls/lighting/consoles-external-norm</path>
+   <path>/controls/lighting/consoles-internal-norm</path>
+   <path>/controls/lighting/panel-external-norm</path>
+   <path>/controls/lighting/panel-internal-norm</path>
+   <path>/controls/lighting/panel-uv-norm</path>
+   <path>/controls/lighting/dimmer-norm</path>
+   <path>/controls/lighting/night-lighting-norm</path>
+   <path>/controls/lighting/misc-norm</path>
+   <!-- Flaps and slats settings -->
+   <path>/controls/flight/flaps</path>
+   <path>/controls/flight/slats</path>
+   <!-- Trim settings -->
+   <path>/controls/flight/aileron-trim</path>
+   <path>/controls/flight/elevator-trim</path>
+   <path>/controls/flight/rudder-trim</path>
+   <!-- Fuel levels -->
+   <path>/consumables/fuel/tank[0]/level-gal_US</path>
+   <path>/consumables/fuel/tank[1]/level-gal_US</path>
+   <path>/consumables/fuel/tank[2]/level-gal_US</path>
+   <path>/consumables/fuel/tank[3]/level-gal_US</path>
+   <!-- Parking brake -->
+   <path>/controls/gear/brake-parking</path>
+  </aircraft-data>
+
  </sim>
 
  <consumables>

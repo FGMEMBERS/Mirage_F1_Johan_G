@@ -9,7 +9,7 @@
   <animation>
     <object-name>Con-ext-knob</object-name>
     <type>rotate</type>
-    <property>controls/lighting/consoles-external-norm</property>
+    <property>/controls/lighting/consoles-external-norm</property>
       <factor>-300</factor>
       <offset-deg>0</offset-deg>
       <center>
@@ -28,7 +28,7 @@
   <animation>
     <object-name>Con-int-knob</object-name>
     <type>rotate</type>
-    <property>controls/lighting/consoles-internal-norm</property>
+    <property>/controls/lighting/consoles-internal-norm</property>
       <factor>-300</factor>
       <offset-deg>0</offset-deg>
       <center>
@@ -48,7 +48,7 @@
   <animation>
     <object-name>Pan-ext-knob</object-name>
     <type>rotate</type>
-    <property>controls/lighting/panel-external-norm</property>
+    <property>/controls/lighting/panel-external-norm</property>
       <factor>-300</factor>
       <offset-deg>0</offset-deg>
       <center>
@@ -67,7 +67,7 @@
   <animation>
     <object-name>Pan-int-knob</object-name>
     <type>rotate</type>
-    <property>controls/lighting/panel-internal-norm</property>
+    <property>/controls/lighting/panel-internal-norm</property>
       <factor>-300</factor>
       <offset-deg>0</offset-deg>
       <center>
@@ -87,7 +87,7 @@
   <animation>
     <object-name>Pan-uv-knob</object-name>
     <type>rotate</type>
-    <property>controls/lighting/panel-uv-norm</property>
+    <property>/controls/lighting/panel-uv-norm</property>
       <factor>-300</factor>
       <offset-deg>0</offset-deg>
       <center>
@@ -107,7 +107,7 @@
   <animation>
     <object-name>Dim-knob</object-name>
     <type>rotate</type>
-    <property>controls/lighting/dimmer-norm</property>
+    <property>/controls/lighting/dimmer-norm</property>
       <factor>-300</factor>
       <offset-deg>0</offset-deg>
       <center>
@@ -129,7 +129,7 @@
     <type>select</type>
     <condition>
       <equals>
-        <property>controls/lighting/night-lighting-norm</property>
+        <property>/controls/lighting/night-lighting-norm</property>
         <value>true</value>
       </equals>
     </condition>
@@ -140,7 +140,7 @@
     <type>select</type>
     <condition>
       <equals>
-        <property>controls/lighting/night-lighting-norm</property>
+        <property>/controls/lighting/night-lighting-norm</property>
         <value>false</value>
       </equals>
     </condition>
@@ -157,7 +157,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/consoles-external-norm</property>
+          <property>/controls/lighting/consoles-external-norm</property>
           <step type="double">0.1</step>
           <min>0</min>
           <max>1</max>
@@ -174,7 +174,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/consoles-external-norm</property>
+          <property>/controls/lighting/consoles-external-norm</property>
           <step type="double">-0.1</step>
           <min>0</min>
           <max>1</max>
@@ -191,7 +191,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/consoles-internal-norm</property>
+          <property>/controls/lighting/consoles-internal-norm</property>
           <step type="double">0.1</step>
           <min>0</min>
           <max>1</max>
@@ -208,7 +208,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/consoles-internal-norm</property>
+          <property>/controls/lighting/consoles-internal-norm</property>
           <step type="double">-0.1</step>
           <min>0</min>
           <max>1</max>
@@ -226,7 +226,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/panel-external-norm</property>
+          <property>/controls/lighting/panel-external-norm</property>
           <step type="double">0.1</step>
           <min>0</min>
           <max>1</max>
@@ -243,7 +243,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/panel-external-norm</property>
+          <property>/controls/lighting/panel-external-norm</property>
           <step type="double">-0.1</step>
           <min>0</min>
           <max>1</max>
@@ -260,7 +260,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/panel-internal-norm</property>
+          <property>/controls/lighting/panel-internal-norm</property>
           <step type="double">0.1</step>
           <min>0</min>
           <max>1</max>
@@ -277,7 +277,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/panel-internal-norm</property>
+          <property>/controls/lighting/panel-internal-norm</property>
           <step type="double">-0.1</step>
           <min>0</min>
           <max>1</max>
@@ -295,7 +295,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/panel-uv-norm</property>
+          <property>/controls/lighting/panel-uv-norm</property>
           <step type="double">0.1</step>
           <min>0</min>
           <max>1</max>
@@ -312,7 +312,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/panel-uv-norm</property>
+          <property>/controls/lighting/panel-uv-norm</property>
           <step type="double">-0.1</step>
           <min>0</min>
           <max>1</max>
@@ -330,7 +330,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/dimmer-norm</property>
+          <property>/controls/lighting/dimmer-norm</property>
           <step type="double">0.1</step>
           <min>0</min>
           <max>1</max>
@@ -347,7 +347,7 @@
       <repeatable>true</repeatable>
         <binding>
           <command>property-adjust</command>
-          <property>controls/lighting/dimmer-norm</property>
+          <property>/controls/lighting/dimmer-norm</property>
           <step type="double">-0.1</step>
           <min>0</min>
           <max>1</max>
@@ -365,7 +365,7 @@
       <repeatable>false</repeatable>
         <binding>
           <command>property-assign</command>
-          <property>controls/lighting/night-lighting-norm</property>
+          <property>/controls/lighting/night-lighting-norm</property>
           <value type="bool">false</value>
         </binding>
     </action>
@@ -379,7 +379,7 @@
       <repeatable>false</repeatable>
         <binding>
           <command>property-assign</command>
-          <property>controls/lighting/night-lighting-norm</property>
+          <property>/controls/lighting/night-lighting-norm</property>
           <value type="bool">true</value>
         </binding>
     </action>
@@ -402,7 +402,7 @@
   <animation>
     <type>material</type>
     <emission>
-      <factor-prop>controls/lighting/consoles-external-norm</factor-prop>
+      <factor-prop>/controls/lighting/consoles-external-norm</factor-prop>
       <red>0.7</red>
       <green>0.2</green>
       <blue>0.2</blue>
