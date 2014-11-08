@@ -18,7 +18,7 @@
    <model type="int">3</model>
   </rating>
 
-  <aircraft-version>2014-09-30</aircraft-version>
+  <aircraft-version>2014-11-08</aircraft-version>
 
   <flight-model>yasim</flight-model>
   <aero>Mirage_F1_Johan_G-yasim</aero>
@@ -37,12 +37,6 @@
   <hud> <!-- Tinkered with by Johan G Sun 18 Dec 2011 -->
    <path n="1">Aircraft/Mirage_F1_Johan_G/Hud/Mirage_F1-hud.xml</path>
    <visibility n="1">true</visibility>
-     <condition>
-       <equals>
-         <property>/sim/view/enabled</property>
-         <value>true</value>
-       </equals>
-     </condition>
    <palette>
     <color n="0">
      <alpha type="float">0.85</alpha>
@@ -202,7 +196,7 @@
  
  <nasal>
   <aar>
-   <file>Aircraft/Generic/aar.nas</file>
+   <file>Aircraft/Mirage_F1_Johan_G/Nasal/aar.nas</file>
   </aar>
   <!-- Hidden by Johan G Thu 11 Apr 2013
   <f16>
@@ -215,6 +209,9 @@
   <radardist>
    <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
   </radardist> -->
+  <hud>
+   <file>Aircraft/Mirage_F1_Johan_G/Nasal/HUD.nas</file>
+  </hud>
  </nasal>
 
  <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
@@ -229,7 +226,7 @@
   <refuel>
    <type>probe</type>
    <serviceable type="bool">true</serviceable>
-   <contact-radius-m>5</contact-radius-m>
+   <contact-radius-m>25</contact-radius-m>
    <max-fuel-transfer-lbs-min>1300</max-fuel-transfer-lbs-min>  <!-- Reasonable guess based on ATP-56(B) - Part 5 (Nov 2012), Figure E3-1 and E4-1 -->
    <offset-x-m>-6.990</offset-x-m>
    <offset-y-m>0.472</offset-y-m>
