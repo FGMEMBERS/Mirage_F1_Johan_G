@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- HUD visibility property rules -->
+
+<PropertyList>
+ <logic>
+  <name>Hiding HUD in external views</name>
+  <debug>true</debug>
+  <input>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value type="int">0</value>
+   <equals>
+  </input>
+  <output>sim/hud/visibility</output>
+ </logic>
+</PropertyList>

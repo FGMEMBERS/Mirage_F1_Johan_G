@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Fuel unit conversions -->
+
+<PropertyList>
+ <filter>
+  <name>gal_us to liter total fuel</name>
+  <type>gain</type>
+  <gain>3.785412</gain>
+  <input>consumables/fuel/total-fuel-gal_us</input>
+  <output>consumables/fuel/total-fuel-liter</output>
+ </filter>
+ <filter>
+  <name>gal_us to liter fuel tank[0]</name>
+  <type>gain</type>
+  <gain>3.785412</gain>
+  <input>consumables/fuel/tank/level-gal_us</input>
+  <output>consumables/fuel/tank/level-liter</output>
+ </filter>
+ <filter>
+  <name>gal_us to liter fuel tank[1]</name>
+  <type>gain</type>
+  <gain>3.785412</gain>
+  <input>consumables/fuel/tank[1]/level-gal_us</input>
+  <output>consumables/fuel/tank[1]/level-liter</output>
+ </filter>
+ <filter>
+  <name>gal_us to liter fuel tank[2]</name>
+  <type>gain</type>
+  <gain>3.785412</gain>
+  <input>consumables/fuel/tank[2]/level-gal_us</input>
+  <output>consumables/fuel/tank[2]/level-liter</output>
+ </filter>
+ <filter>
+  <name>gal_us to liter fuel tank[3]</name>
+  <type>gain</type>
+  <gain>3.785412</gain>
+  <input>consumables/fuel/tank[3]/level-gal_us</input>
+  <output>consumables/fuel/tank[3]/level-liter</output>
+ </filter>
+</PropertyList>

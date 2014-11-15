@@ -36,7 +36,7 @@
   
   <hud> <!-- Tinkered with by Johan G Sun 18 Dec 2011 -->
    <path n="1">Aircraft/Mirage_F1_Johan_G/Hud/Mirage_F1-hud.xml</path>
-   <visibility n="1">true</visibility>
+   <visibility n="1" type="bool">true</visibility>
    <palette>
     <color n="0">
      <alpha type="float">0.85</alpha>
@@ -132,6 +132,12 @@
    <path>/controls/gear/brake-parking</path>
   </aircraft-data>
 
+  <!-- Added by Johan G Sat 15 Nov 2014 -->
+  <systems>
+   <autopilot>Aircraft/Mirage_F1_Johan_G/Systems/HUD-visibility.xml</autopilot>
+   <autopilot>Aircraft/Mirage_F1_Johan_G/Systems/Fuel-unit-conversion.xml</autopilot>
+  </systems>
+
  </sim>
 
  <consumables>
@@ -209,9 +215,6 @@
   <radardist>
    <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
   </radardist> -->
-  <hud>
-   <file>Aircraft/Mirage_F1_Johan_G/Nasal/HUD.nas</file>
-  </hud>
  </nasal>
 
  <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
