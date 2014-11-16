@@ -134,8 +134,14 @@
 
   <!-- Added by Johan G Sat 15 Nov 2014 -->
   <systems>
-   <autopilot>Aircraft/Mirage_F1_Johan_G/Systems/HUD-visibility.xml</autopilot>
-   <autopilot>Aircraft/Mirage_F1_Johan_G/Systems/Fuel-unit-conversion.xml</autopilot>
+   <property-rule n="100">
+    <name>Only show HUD in pilot view</name>
+    <path>Aircraft/Mirage_F1_Johan_G/Systems/HUD-visibility.xml</path>
+   </property-rule>
+   <property-rule n="101">
+    <name>Fuel unit conversions</name>
+    <path>Aircraft/Mirage_F1_Johan_G/Systems/Fuel-unit-conversion.xml</path>
+   </property-rule>
   </systems>
 
  </sim>

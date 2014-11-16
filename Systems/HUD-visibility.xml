@@ -9,9 +9,9 @@
   <input>
    <equals>
     <property>sim/current-view/view-number</property>
-    <value type="int">0</value>
-   <equals>
+    <value>0</value>
+   </equals>
   </input>
-  <output>sim/hud/visibility</output>
+  <output>sim/hud/visibility[1]</output>
  </logic>
 </PropertyList>
