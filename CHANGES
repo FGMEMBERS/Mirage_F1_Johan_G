@@ -15,9 +15,10 @@ Changes
 Up to 16 August 2014
 --------------------
 Additions
-  - Air-to-air refueling (AAR) capability with fuel transfer rate based
-    on NATO Doc ATP-56(B) dated November 2012, figures E3-1 and E4-1
-    Optimum altitude and CAS/Mach is stated to be FL250 and 305 kt/M 0.80
+  - Air-to-air refueling (AAR) capability with a fuel transfer rate of
+    1300 lbs/min based on NATO Doc ATP-56(B) dated November 2012, figures
+    E3-1 and E4-1. Optimum altitude and CAS/Mach is stated to be
+    FL250 and 305 kt/M 0.80.
 
 Acknowledgment
   Many thanks to Jan Rippl for helping me out with getting the AAR to
