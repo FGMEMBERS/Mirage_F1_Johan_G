@@ -31,7 +31,7 @@
     </or>
    </condition>
    <volume>
-    <property>/velocities/airspeed-kt</property>
+    <property>/velocities/groundspeed-kt</property>
     <factor>0.004</factor>
     <max>0.3</max>
    </volume>

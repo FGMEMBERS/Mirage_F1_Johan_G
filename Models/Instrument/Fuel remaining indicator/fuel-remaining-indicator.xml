@@ -2,11 +2,14 @@
 <PropertyList>
     <path>fuel-remaining-indicator.ac</path>
 
+    <!-- Dependent on
+    Mirage F1/Systems/Fuel-unit-conversion.xml -->
+
     <!-- Animation of the first digit wheel -->
     <animation>
         <type>textranslate</type>
         <object-name>digit-wheel-1</object-name>
-        <property>consumables/fuel/total-fuel-gal_us</property>
+        <property>consumables/fuel/total-fuel-liter</property>
         <factor>-0.1</factor>
         <axis>
             <x>1</x>
@@ -19,7 +22,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>digit-wheel-2</object-name>
-        <property>consumables/fuel/total-fuel-gal_us</property>
+        <property>consumables/fuel/total-fuel-liter</property>
         <factor>-0.01</factor>
         <step>10</step>
         <scroll>0.25</scroll>
@@ -34,7 +37,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>digit-wheel-3</object-name>
-        <property>consumables/fuel/total-fuel-gal_us</property>
+        <property>consumables/fuel/total-fuel-liter</property>
         <factor>-0.001</factor>
         <step>100</step>
         <scroll>2.5</scroll>
@@ -49,7 +52,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>digit-wheel-4</object-name>
-        <property>consumables/fuel/total-fuel-gal_us</property>
+        <property>consumables/fuel/total-fuel-liter</property>
         <factor>-0.0001</factor>
         <step>1000</step>
         <scroll>25</scroll>
