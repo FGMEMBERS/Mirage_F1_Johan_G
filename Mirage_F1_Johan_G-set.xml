@@ -115,12 +115,12 @@
    <!-- Lighting -->
    <path>/controls/lighting/consoles-external-norm</path>
    <path>/controls/lighting/consoles-internal-norm</path>
+   <path>/controls/lighting/dimmer-norm</path>
    <path>/controls/lighting/panel-external-norm</path>
    <path>/controls/lighting/panel-internal-norm</path>
    <path>/controls/lighting/panel-uv-norm</path>
-   <path>/controls/lighting/dimmer-norm</path>
-   <path>/controls/lighting/night-lighting-norm</path>
    <path>/controls/lighting/misc-norm</path>
+   <path>/controls/lighting/night-lighting-norm</path>
    <!-- Flaps and slats settings -->
    <path>/controls/flight/flaps</path>
    <path>/controls/flight/slats</path>
@@ -130,6 +130,8 @@
    <path>/controls/flight/rudder-trim</path>
    <!-- Parking brake -->
    <path>/controls/gear/brake-parking</path>
+   <!-- Switches -->
+   <path>/controls/switches/warning-horn</path>
   </aircraft-data>
 
   <!-- Added by Johan G Sat 15 Nov 2014 -->
@@ -159,13 +161,6 @@
    </tank>
   </fuel>
  </consumables>
-
-
- <controls>
-  <flight>
-   <flaps>0.5</flaps>
-  </flight>
- </controls>
 
  <engines>
   <engine n="0">
@@ -223,15 +218,32 @@
   </radardist> -->
  </nasal>
 
- <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
- <!-- Optimum Altitude and CAS/M for AAR is supposed to be FL250 and 305 kt/M 0.80 according to source mentioned below -->
+ <controls>
+  <switches>
+   <warning-horn>true</warning-horn>
+  </switches>
+ </controls>
+
  <instrumentation>
+  <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
   <radar>
    <range type="int" archive="y">20</range>
    <minimized type="bool" archive="y">false</minimized>
   </radar>
+  <!-- Warning horn properties added by Johan G, Sun 23 Nov 2014 -->
+  <warning-horn>
+   <oxygen-regulator type="bool">false</oxygen-regulator>
+   <!-- MC for the red windows of the announciator panel (except [Ox REG]) and AB/engine warning lights -->
+   <master-caution type="bool">false</master-caution>
+   <limits type="bool">false</limits>
+   <limit-incidence type="bool">false</limit-incidence>
+   <servicable type="bool">true</servicable>
+  </warning-horn>
  </instrumentation>
+
  <systems>
+  <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
+  <!-- Optimum Altitude and CAS/M for AAR is supposed to be FL250 and 305 kt/M 0.80 according to source mentioned below -->
   <refuel>
    <type>probe</type>
    <serviceable type="bool">true</serviceable>

@@ -167,6 +167,51 @@
    </pitch>
   </buffet>
 
+  <!-- Warning horn, added by Johan G Sun 23 Nov 2014 -->
+  <warning-horn-master-caution>
+   <name>Warning horn, master caution</name>
+   <mode>looped</mode>
+   <condition>
+    <property>/instrumentation/warning-horn/master-caution</property>
+    <property>/instrumentation/warning-horn/servicable</property>
+    <property>/controls/switches/warning-horn</property>
+   </condition>
+   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-master-caution.wav</path>
+  </warning-horn-master-caution>
+
+  <warning-horn-oxygen-regulator>
+   <name>Warning horn, oxygen regulator</name>
+   <mode>looped</mode>
+   <condition>
+    <property>/instrumentation/warning-horn/oxygen-regulator</property>
+    <property>/instrumentation/warning-horn/servicable</property>
+    <property>/controls/switches/warning-horn</property>
+   </condition>
+   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-oxygen-regulator.wav</path>
+  </warning-horn-oxygen-regulator>
+
+  <warning-horn-limits>
+   <name>Warning horn, limits</name>
+   <mode>looped</mode>
+   <condition>
+    <property>/instrumentation/warning-horn/limits</property>
+    <property>/instrumentation/warning-horn/servicable</property>
+    <property>/controls/switches/warning-horn</property>
+   </condition>
+   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-limits.wav</path>
+  </warning-horn-limits>
+
+  <warning-horn-limit-incidence>
+   <name>Warning horn, limit incidence</name>
+   <mode>looped</mode>
+   <condition>
+    <property>/instrumentation/warning-horn/limit-incidence</property>
+    <property>/instrumentation/warning-horn/servicable</property>
+    <property>/controls/switches/warning-horn</property>
+   </condition>
+   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-limit-incidence.wav</path>
+  </warning-horn-limit-incidence>
+
 </fx>
  
 </PropertyList>
