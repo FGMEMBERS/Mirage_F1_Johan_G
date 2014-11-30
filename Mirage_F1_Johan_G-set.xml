@@ -144,6 +144,10 @@
     <name>Fuel unit conversions</name>
     <path>Aircraft/Mirage_F1_Johan_G/Systems/Fuel-unit-conversion.xml</path>
    </property-rule>
+   <property-rule n="102">
+    <name>High-lift devices</name>
+    <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices.xml</path>
+   </property-rule>
   </systems>
 
  </sim>
@@ -253,6 +257,16 @@
    <offset-y-m>0.472</offset-y-m>
    <offset-z-m>1.015</offset-z-m>
   </refuel>
+  <high-lift-devices>
+   <flaps>
+    <first-interlock-servicable type="bool">true</first-interlock-servicable>
+    <second-interlock-servicable type="bool">true</second-interlock-servicable>
+   </flaps>
+   <slats>
+    <first-interlock-servicable type="bool">true</first-interlock-servicable>
+    <second-interlock-servicable type="bool">true</second-interlock-servicable>
+   </slats>
+  </high-lift-devices>
  </systems>
 
 </PropertyList>
