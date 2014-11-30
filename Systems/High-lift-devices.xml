@@ -7,21 +7,19 @@
  <logic>
   <name>Flaps, 1st interlock</name>
   <input>
-   <condition>
-    <and>
-     <or>
-      <greater-than>
-       <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
-       <value>300</value>
-      </greater-than>
-      <greater-than>
-       <property>velocities/mach</property>
-       <value>0.75</value>
-      </greater-than>
-     </or>
-     <property>systems/high-lift-devices/flaps/first-interlock-servicable</property>
-    </and>
-   </condition>
+   <and>
+    <or>
+     <greater-than>
+      <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
+      <value>300</value>
+     </greater-than>
+     <greater-than>
+      <property>velocities/mach</property>
+      <value>0.75</value>
+     </greater-than>
+    </or>
+    <property>systems/high-lift-devices/flaps/first-interlock-serviceable</property>
+   </and>
   </input>
   <output>systems/high-lift-devices/flaps/first-interlock-enabled</output>
  </logic>
@@ -30,36 +28,32 @@
   <name>Flaps, 2nd interlock</name>
   <type>SR</type>
   <S>
-   <condition>
-    <and>
-     <or>
-      <greater-than>
-       <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
-       <value>335</value>
-      </greater-than>
-      <greater-than>
-       <property>velocities/mach</property>
-       <value>0.85</value>
-      </greater-than>
-     </or>
-     <property>systems/high-lift-devices/flaps/second-interlock-servicable</property>
-    </and>
-   </condition>
-  </S>
-  <R>
-   <condition>
-    <and>
-     <less-than>
+   <and>
+    <or>
+     <greater-than>
       <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
-      <value>320</value>
-     </less-than>
-     <less-than>
+      <value>335</value>
+     </greater-than>
+     <greater-than>
       <property>velocities/mach</property>
       <value>0.85</value>
-     </less-than>
-     <property>systems/high-lift-devices/flaps/second-interlock-servicable</property>
-    </and>
-   </condition>
+     </greater-than>
+    </or>
+    <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
+   </and>
+  </S>
+  <R>
+   <and>
+    <less-than>
+     <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
+     <value>320</value>
+    </less-than>
+    <less-than>
+     <property>velocities/mach</property>
+     <value>0.85</value>
+    </less-than>
+    <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
+   </and>
   </R>
   <output>systems/high-lift-devices/flaps/second-interlock-enabled</output>
   <output>instrumentation/failure-warning-panel/slats-flaps</output>
@@ -69,21 +63,19 @@
  <logic>
   <name>Flaps, 2nd interlock, set, debug</name>
   <input>
-   <condition>
-    <and>
-     <or>
-      <greater-than>
-       <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
-       <value>335</value>
-      </greater-than>
-      <greater-than>
-       <property>velocities/mach</property>
-       <value>0.85</value>
-      </greater-than>
-     </or>
-     <property>systems/high-lift-devices/flaps/second-interlock-servicable</property>
-    </and>
-   </condition>
+   <and>
+    <or>
+     <greater-than>
+      <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
+      <value>335</value>
+     </greater-than>
+     <greater-than>
+      <property>velocities/mach</property>
+      <value>0.85</value>
+     </greater-than>
+    </or>
+    <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
+   </and>
   </input>
   <output>systems/high-lift-devices/flaps/second-interlock-should-enable</output>
  </logic>
@@ -91,19 +83,17 @@
  <logic>
   <name>Flaps, 2nd interlock, reset, debug</name>
   <input>
-   <condition>
-    <and>
-     <less-than>
-      <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
-      <value>320</value>
-     </less-than>
-     <less-than>
-      <property>velocities/mach</property>
-      <value>0.85</value>
-     </less-than>
-     <property>systems/high-lift-devices/flaps/second-interlock-servicable</property>
-    </and>
-   </condition>
+   <and>
+    <less-than>
+     <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
+     <value>320</value>
+    </less-than>
+    <less-than>
+     <property>velocities/mach</property>
+     <value>0.85</value>
+    </less-than>
+    <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
+   </and>
   </input>
   <output>systems/high-lift-devices/flaps/second-interlock-should-disable</output>
  </logic>
@@ -111,21 +101,19 @@
  <logic>
   <name>Slats, 1st interlock</name>
   <input>
-   <condition>
-    <and>
-     <or>
-      <greater-than>
-       <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
-       <value>440</value>
-      </greater-than>
-      <greater-than>
-       <property>velocities/mach</property>
-       <value>0.98</value>
-      </greater-than>
-     </or>
-     <property>systems/high-lift-devices/slats/first-interlock-servicable</property>
-    </and>
-   </condition>
+   <and>
+    <or>
+     <greater-than>
+      <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
+      <value>440</value>
+     </greater-than>
+     <greater-than>
+      <property>velocities/mach</property>
+      <value>0.98</value>
+     </greater-than>
+    </or>
+    <property>systems/high-lift-devices/slats/first-interlock-serviceable</property>
+   </and>
   </input>
   <output>systems/high-lift-devices/slats/first-interlock-enabled</output>
  </logic>
@@ -133,21 +121,19 @@
  <logic>
   <name>Slats, 2nd interlock</name>
   <input>
-   <condition>
-    <and>
-     <or>
-      <greater-than>
-       <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
-       <value>470</value>
-      </greater-than>
-      <greater-than>
-       <property>velocities/mach</property>
-       <value>1.1</value>
-      </greater-than>
-     </or>
-     <property>systems/high-lift-devices/slats/second-interlock-servicable</property>
-    </and>
-   </condition>
+   <and>
+    <or>
+     <greater-than>
+      <property>instrumentation/airspeed-indicator/indicated-speed-knots</property>
+      <value>470</value>
+     </greater-than>
+     <greater-than>
+      <property>velocities/mach</property>
+      <value>1.1</value>
+     </greater-than>
+    </or>
+    <property>systems/high-lift-devices/slats/second-interlock-serviceable</property>
+   </and>
   </input>
   <output>systems/high-lift-devices/slats/second-interlock-enabled</output>
   <output>instrumentation/failure-warning-panel/slats-flaps</output>
