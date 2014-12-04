@@ -61,44 +61,6 @@
  </flipflop>
 
  <logic>
-  <name>Flaps, 2nd interlock, set, debug</name>
-  <input>
-   <and>
-    <or>
-     <greater-than>
-      <property>velocities/airspeed-kt</property>
-      <value>335</value>
-     </greater-than>
-     <greater-than>
-      <property>velocities/mach</property>
-      <value>0.85</value>
-     </greater-than>
-    </or>
-    <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
-   </and>
-  </input>
-  <output>systems/high-lift-devices/flaps/second-interlock-should-enable</output>
- </logic>
-
- <logic>
-  <name>Flaps, 2nd interlock, reset, debug</name>
-  <input>
-   <and>
-    <less-than>
-      <property>velocities/airspeed-kt</property>
-     <value>320</value>
-    </less-than>
-    <less-than>
-     <property>velocities/mach</property>
-     <value>0.85</value>
-    </less-than>
-    <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
-   </and>
-  </input>
-  <output>systems/high-lift-devices/flaps/second-interlock-should-disable</output>
- </logic>
-
- <logic>
   <name>Slats, 1st interlock</name>
   <input>
    <and>

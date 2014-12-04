@@ -259,8 +259,6 @@
    <offset-z-m>1.015</offset-z-m>
   </refuel>
   <high-lift-devices>
-   <!-- <mach>0</mach>  TEST -->
-   <!-- <kias>0</kias>  TEST -->
    <flaps>
     <first-interlock-serviceable type="bool">true</first-interlock-serviceable>
     <second-interlock-serviceable type="bool">true</second-interlock-serviceable>
