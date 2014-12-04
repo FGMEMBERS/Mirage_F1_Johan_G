@@ -147,6 +147,7 @@
    <property-rule n="102">
     <name>High-lift devices</name>
     <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices.xml</path>
+    <!-- <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices-test.xml</path> -->  <!-- TEST -->
    </property-rule>
   </systems>
 
@@ -258,6 +259,8 @@
    <offset-z-m>1.015</offset-z-m>
   </refuel>
   <high-lift-devices>
+   <!-- <mach>0</mach>  TEST -->
+   <!-- <kias>0</kias>  TEST -->
    <flaps>
     <first-interlock-serviceable type="bool">true</first-interlock-serviceable>
     <second-interlock-serviceable type="bool">true</second-interlock-serviceable>

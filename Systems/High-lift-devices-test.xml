@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Test version driven by fictive properties,
+     systems/high-lift-devices/kias and
+     systems/high-lift-devices/mach
+     
+     Which works!!?
+     
+     /Johan G, Wed 3 Dec 2014 -->
+
 <PropertyList>
 
  <!-- Flaps and slats interlocks -->
@@ -10,11 +18,11 @@
    <and>
     <or>
      <greater-than>
-      <property>velocities/airspeed-kt</property>
+      <property>systems/high-lift-devices/kias</property>
       <value>300</value>
      </greater-than>
      <greater-than>
-      <property>velocities/mach</property>
+      <property>systems/high-lift-devices/mach</property>
       <value>0.75</value>
      </greater-than>
     </or>
@@ -31,11 +39,11 @@
    <and>
     <or>
      <greater-than>
-      <property>velocities/airspeed-kt</property>
+      <property>systems/high-lift-devices/kias</property>
       <value>335</value>
      </greater-than>
      <greater-than>
-      <property>velocities/mach</property>
+      <property>systems/high-lift-devices/mach</property>
       <value>0.85</value>
      </greater-than>
     </or>
@@ -45,11 +53,11 @@
   <R>
    <and>
     <less-than>
-      <property>velocities/airspeed-kt</property>
+     <property>systems/high-lift-devices/kias</property>
      <value>320</value>
     </less-than>
     <less-than>
-     <property>velocities/mach</property>
+     <property>systems/high-lift-devices/mach</property>
      <value>0.85</value>
     </less-than>
     <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
@@ -66,11 +74,11 @@
    <and>
     <or>
      <greater-than>
-      <property>velocities/airspeed-kt</property>
+      <property>systems/high-lift-devices/kias</property>
       <value>335</value>
      </greater-than>
      <greater-than>
-      <property>velocities/mach</property>
+      <property>systems/high-lift-devices/mach</property>
       <value>0.85</value>
      </greater-than>
     </or>
@@ -85,11 +93,11 @@
   <input>
    <and>
     <less-than>
-      <property>velocities/airspeed-kt</property>
+     <property>systems/high-lift-devices/kias</property>
      <value>320</value>
     </less-than>
     <less-than>
-     <property>velocities/mach</property>
+     <property>systems/high-lift-devices/mach</property>
      <value>0.85</value>
     </less-than>
     <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
@@ -104,11 +112,11 @@
    <and>
     <or>
      <greater-than>
-      <property>velocities/airspeed-kt</property>
+      <property>systems/high-lift-devices/kias</property>
       <value>440</value>
      </greater-than>
      <greater-than>
-      <property>velocities/mach</property>
+      <property>systems/high-lift-devices/mach</property>
       <value>0.98</value>
      </greater-than>
     </or>
@@ -124,11 +132,11 @@
    <and>
     <or>
      <greater-than>
-      <property>velocities/airspeed-kt</property>
+      <property>systems/high-lift-devices/kias</property>
       <value>470</value>
      </greater-than>
      <greater-than>
-      <property>velocities/mach</property>
+      <property>systems/high-lift-devices/mach</property>
       <value>1.1</value>
      </greater-than>
     </or>
