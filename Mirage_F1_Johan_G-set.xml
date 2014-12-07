@@ -144,6 +144,11 @@
     <name>Fuel unit conversions</name>
     <path>Aircraft/Mirage_F1_Johan_G/Systems/Fuel-unit-conversion.xml</path>
    </property-rule>
+   <property-rule n="102">
+    <name>High-lift devices</name>
+    <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices.xml</path>
+    <!-- <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices-test.xml</path> -->  <!-- TEST -->
+   </property-rule>
   </systems>
 
  </sim>
@@ -225,6 +230,10 @@
  </controls>
 
  <instrumentation>
+  <master-failure-warning>
+   <warning type="bool">false</warning>
+   <caution type="bool">false</caution>
+  </master-failure-warning>
   <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
   <radar>
    <range type="int" archive="y">20</range>
@@ -234,7 +243,7 @@
   <warning-horn>
    <oxygen-regulator type="bool">false</oxygen-regulator>
    <!-- MC for the red windows of the announciator panel (except [Ox REG]) and AB/engine warning lights -->
-   <master-caution type="bool">false</master-caution>
+   <master-failure type="bool">false</master-failure>
    <limits type="bool">false</limits>
    <limit-incidence type="bool">false</limit-incidence>
    <servicable type="bool">true</servicable>
@@ -253,6 +262,16 @@
    <offset-y-m>0.472</offset-y-m>
    <offset-z-m>1.015</offset-z-m>
   </refuel>
+  <high-lift-devices>
+   <flaps>
+    <first-interlock-serviceable type="bool">true</first-interlock-serviceable>
+    <second-interlock-serviceable type="bool">true</second-interlock-serviceable>
+   </flaps>
+   <slats>
+    <first-interlock-serviceable type="bool">true</first-interlock-serviceable>
+    <second-interlock-serviceable type="bool">true</second-interlock-serviceable>
+   </slats>
+  </high-lift-devices>
  </systems>
 
 </PropertyList>

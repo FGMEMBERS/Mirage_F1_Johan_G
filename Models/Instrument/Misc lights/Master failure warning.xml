@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>Master failure warning.ac</path>
+  <object-name>MFW</object-name>
+
+  <!-- Warning light (red) -->
+  <animation>
+    <object-name>MFW-warning</object-name>
+    <type>select</type>
+    <condition>
+     <property>/instrumentation/master-failure-warning/warning</property>
+    </condition>
+  </animation>
+
+  <!-- Caution light (amber) -->
+  <animation>
+    <object-name>MFW-caution</object-name>
+    <type>select</type>
+    <condition>
+     <property>/instrumentation/master-failure-warning/caution</property>
+    </condition>
+  </animation>
+
+
+  <!-- Reset light -->
+  <animation>
+    <object-name>MFW-pik</object-name>
+    <type>pick</type>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/instrumentation/master-failure-warning/warning</property>
+        <value>false</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/instrumentation/master-failure-warning/caution</property>
+        <value>false</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/instrumentation/warning-horn/master-failure</property>
+        <value>false</value>
+      </binding>
+    </action>
+  </animation>
+
+  <!-- Illumination animations -->
+  <animation>
+    <object-name>MFW</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/panel-external-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+</PropertyList>

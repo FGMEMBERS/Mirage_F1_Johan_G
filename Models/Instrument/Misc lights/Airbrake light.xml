@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <PropertyList>
-  <path>airbrake-light.ac</path>
-  <object-name>Enclosure</object-name>
-  <object-name>Glass</object-name>
+  <path>Airbrake light.ac</path>
+  <object-name>AB</object-name>
 
-  <!-- Full slats light -->
+  <!-- Airbrake extended light -->
   <animation>
-    <object-name>Glass</object-name>
+    <object-name>AB-extended</object-name>
     <type>select</type>
     <condition>
       <greater-than>
@@ -18,7 +17,7 @@
 
   <!-- External panel lighting (red flood lights) -->
   <animation>
-  <object-name>Enclosure</object-name>
+  <object-name>AB</object-name>
     <type>material</type>
     <emission>
       <factor-prop>/controls/lighting/panel-external-norm</factor-prop>
@@ -28,10 +27,4 @@
     </emission>
   </animation>
 
-  <!-- Range animation hiding instrument if further away than 5 meters -->
-  <animation>
-    <type>range</type>
-    <min-m>0</min-m>
-    <max-m>5</max-m>
-  </animation>
 </PropertyList>

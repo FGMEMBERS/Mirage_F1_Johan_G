@@ -189,7 +189,7 @@
 	<!-- Airbrake light -->
     <!-- Added 16 Jun 2013 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/airbrake-light.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Misc lights/Airbrake light.xml</path>
 		<offsets>
 			<x-m>-5.000</x-m>
 			<y-m>-0.170</y-m>
@@ -201,11 +201,11 @@
 	<!-- Master caution and limits light -->
     <!-- Added 16 Jun 2013 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/master-caution-and-limits-lights.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Misc lights/Master failure warning.xml</path>
 		<offsets>
 			<x-m>-5.000</x-m>
 			<y-m>-0.095</y-m>
-			<z-m>0.930</z-m>
+			<z-m>0.935</z-m>
 			<pitch-deg>0</pitch-deg>
 		</offsets>
 	</model>
@@ -269,7 +269,16 @@
 
 
 
-
+    <!-- Air-to-air refueling status lights (most probably fictional).  Added Sun 7 dec 2014 by Johan G -->
+    <model>
+        <path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Misc lights/AAR status lights.xml</path>
+        <offsets>
+            <x-m>-4.900</x-m>
+            <y-m>0.120</y-m>
+            <z-m>1.050</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
 
 
 

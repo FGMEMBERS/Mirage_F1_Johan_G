@@ -172,11 +172,11 @@
    <name>Warning horn, master caution</name>
    <mode>looped</mode>
    <condition>
-    <property>/instrumentation/warning-horn/master-caution</property>
+    <property>/instrumentation/warning-horn/master-failure</property>
     <property>/instrumentation/warning-horn/servicable</property>
     <property>/controls/switches/warning-horn</property>
    </condition>
-   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-master-caution.wav</path>
+   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-master-failure.wav</path>
   </warning-horn-master-caution>
 
   <warning-horn-oxygen-regulator>
