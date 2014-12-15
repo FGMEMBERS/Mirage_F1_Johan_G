@@ -273,9 +273,9 @@
     <model>
         <path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Misc lights/AAR status lights.xml</path>
         <offsets>
-            <x-m>-4.900</x-m>
-            <y-m>0.120</y-m>
-            <z-m>1.050</z-m>
+            <x-m>-4.870</x-m>
+            <y-m>0.095</y-m>
+            <z-m>1.020</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
