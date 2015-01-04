@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+ <filter>
+  <name type="string">Chronograph elapsed time</name>
+  <debug type="bool">false</debug>
+  <enable>
+    <condition>
+      <equals>
+        <property>/instrumentation/clock/chronograph-state</property>
+        <value type="string">running</value>
+      </equals>
+    </condition>
+  </enable>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <property>/instrumentation/clock/indicated-sec</property>
+        <product>
+          <property>/instrumentation/clock/chronograph-offset-sec</property>
+          <value>-1</value>
+        </product>
+      </sum>
+    </expression>
+  </input>
+  <output>/instrumentation/clock/elapsed-time-sec</output>
+ </filter>
+</PropertyList>

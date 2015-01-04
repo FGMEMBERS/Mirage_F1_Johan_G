@@ -150,18 +150,6 @@
 		</offsets>
 	</model> -->
 
-	
-	<!--clock-->
-  	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/clock/clock.xml</path>
-		<offsets>
-			<x-m>-4.813</x-m>
-			<y-m>-0.085</y-m>
-			<z-m>1.120</z-m>
-			<pitch-deg>0</pitch-deg>
-		</offsets>
-	</model>
-
 	<!-- Fuel remaining indicator -->
     <!-- Added 8 Apr 2013 by Johan G -->
   	<model>
@@ -267,8 +255,6 @@
         </offsets>
 	</model>
 
-
-
     <!-- Air-to-air refueling status lights (most probably fictional).  Added Sun 7 dec 2014 by Johan G -->
     <model>
         <path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Misc lights/AAR status lights.xml</path>
@@ -280,7 +266,16 @@
         </offsets>
     </model>
 
-
+    <!-- Dodane Type 11 cockpit clock.  Added Fri 2 Jan 2015 by Johan G -->
+    <model>
+        <path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Cockpit clocks/Dodane Type 11/Dodane Type 11.xml</path>
+        <offsets>
+            <x-m>-4.813</x-m>
+            <y-m>-0.085</y-m>
+            <z-m>1.120</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
 
 
 

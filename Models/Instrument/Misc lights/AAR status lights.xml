@@ -16,13 +16,6 @@
             <property>/systems/refuel/contact</property>
           </not>
         </and>
-        <and>
-          <property>/systems/refuel/contact</property>
-          <equals>
-            <property>/consumables/fuel/total-fuel-norm</property>
-            <value>1</value>
-          </equals>
-        </and>
       </or>
     </condition>
   </animation>
@@ -34,6 +27,12 @@
     <condition>
       <and>
         <property>/systems/refuel/contact</property>
+        <not>
+          <equals>
+            <property>/consumables/fuel/total-fuel-norm</property>
+            <value>1</value>
+          </equals>
+        </not>
       </and>
     </condition>
   </animation>

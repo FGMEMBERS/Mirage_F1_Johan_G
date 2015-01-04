@@ -132,6 +132,8 @@
    <path>/controls/gear/brake-parking</path>
    <!-- Switches -->
    <path>/controls/switches/warning-horn</path>
+   <!-- Cockpit clock -->
+   <path>/instrumentation/clock/bezel-min</path>
   </aircraft-data>
 
   <!-- Added by Johan G Sat 15 Nov 2014 -->
@@ -148,6 +150,10 @@
     <name>High-lift devices</name>
     <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices.xml</path>
     <!-- <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices-test.xml</path> -->  <!-- TEST -->
+   </property-rule>
+   <property-rule n="103">
+    <name>Cockpit clock</name>
+    <path>Aircraft/Mirage_F1_Johan_G/Systems/Cockpit clock.xml</path>
    </property-rule>
   </systems>
 
@@ -227,6 +233,9 @@
   <switches>
    <warning-horn>true</warning-horn>
   </switches>
+  <lighting>
+    <misc-norm type="double">0.75</misc-norm>
+  </lighting>
  </controls>
 
  <instrumentation>
@@ -248,6 +257,13 @@
    <limit-incidence type="bool">false</limit-incidence>
    <servicable type="bool">true</servicable>
   </warning-horn>
+  <!-- Cockpit clock properties added by Johan G, Sun 4 Jan 2014 -->
+  <clock>
+   <bezel-min type="int">0</bezel-min>
+   <chronograph-state type="string">reset</chronograph-state>
+   <chronograph-offset-sec type="int">0</chronograph-offset-sec>
+   <elapsed-time-sec type="int">0</elapsed-time-sec>
+  </clock>
  </instrumentation>
 
  <systems>
