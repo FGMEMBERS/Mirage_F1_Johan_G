@@ -60,7 +60,7 @@ TODO
         <property>/instrumentation/clock/bezel-min</property>
         <step>1</step>
         <min>0</min>
-        <max>59</max>
+        <max>60</max>
         <wrap>true</wrap>
       </binding>
     </increase>
@@ -70,7 +70,7 @@ TODO
         <property>/instrumentation/clock/bezel-min</property>
         <step>-1</step>
         <min>0</min>
-        <max>59</max>
+        <max>60</max>
         <wrap>true</wrap>
       </binding>
     </decrease>
@@ -135,10 +135,18 @@ TODO
   <animation>
     <type>rotate</type>
     <object-name>Chrono minutes</object-name>
-    <!-- Should preferably move the minute hand in 1/2 minute steps -->
-    <property>/instrumentation/clock/elapsed-time-sec</property>
-    <factor>0.4</factor>
-    <step>10</step>
+    <!-- Should move the minute hand in 1/2 minute steps -->
+    <expression>
+      <product>
+        <floor>
+          <div>
+            <property>/instrumentation/clock/elapsed-time-sec</property>
+            <value>30</value>
+          </div>
+        </floor>
+        <value>12</value>  <!-- Rotate 12 deg every 30 sec -->
+      </product>
+    </expression>
     <center>
       <x-m>0.000</x-m>
       <y-m>0.000</y-m>

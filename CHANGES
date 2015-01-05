@@ -2,6 +2,22 @@ List of changes (incomplete)
 ============================
 
 
+Up to 5 January 2015
+--------------------
+
+Changes
+  - The aerial refueling status light logic is changed to closer
+    reflect the rel ones on tankers
+      - Amber when system is ready
+      - Green when in contact
+      - No lights whentanks are full
+  - Replaced the cockpit clock with one more like the real one
+    The main features are
+      - Rotating minute bezel (kept in place between sessions)
+      - Button below dial to start/stop/reset cronograph
+      - Chronograph minute hand move in 1/2 minute steps
+
+
 Up to 8 December 2014
 ---------------------
 

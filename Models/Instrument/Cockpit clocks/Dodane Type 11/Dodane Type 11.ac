@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "Texture" rgb 0.839723 0.824787 0.824787 amb 0.1 0.1 0.1 emis 0 0 0 spec 0.874058 0.874058 0.874058 shi 6 trans 0
-MATERIAL "White clay" rgb 0.839723 0.824787 0.824787 amb 0.1 0.1 0.1 emis 0 0 0 spec 0.874058 0.874058 0.874058 shi 6 trans 0
+MATERIAL "Texture" rgb 0.839723 0.824787 0.824787 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.874058 0.874058 0.874058 shi 6 trans 0
+MATERIAL "White clay" rgb 0.839723 0.824787 0.824787 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.874058 0.874058 0.874058 shi 6 trans 0
 OBJECT world
 kids 9
 OBJECT group
