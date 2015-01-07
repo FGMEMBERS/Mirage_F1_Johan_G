@@ -6,37 +6,21 @@ This clock is dependent upon the property rule in
 Aircraft/Mirage_F1_Johan_G/Systems/Cockpit clock.xml
 for the update of the elapsed seconds.
 
-TODO
-
-- 3D model
-  - Better texture
-  - Rename
-    - Chrono x      >  Chronometer x hand
-    - Housing       >  Casing
-    - Winding stem  >  Setting knob
-    - Button        >  Cronometer button
-  - Add pick objects for bezel clockwise and counterclockwise rotation
-    (in addition to the existing knob animation)
-
-- Additional properties
-  - offset-sec
-  - setable
-
 -->
 
 
 <PropertyList>
   <path>Dodane Type 11.ac</path>
 
-  <object-name>Housing</object-name>
+  <object-name>Case</object-name>
   <object-name>Bezel</object-name>
   <object-name>Hour hand</object-name>
   <object-name>Minute hand</object-name>
-  <object-name>Chrono minutes</object-name>
-  <object-name>Chrono seconds</object-name>
+  <object-name>Elapsed minutes hand</object-name>
+  <object-name>Elapsed seconds hand</object-name>
   <object-name>Setting lever</object-name>
-  <object-name>Winding stem</object-name>
-  <object-name>Button</object-name>
+  <object-name>Setting knob</object-name>
+  <object-name>Chronograph button</object-name>
 
 
   <!-- Bezel knob animation -->
@@ -134,7 +118,7 @@ TODO
   <!-- Chronoghraph hands animation -->
   <animation>
     <type>rotate</type>
-    <object-name>Chrono minutes</object-name>
+    <object-name>Elapsed minutes hand</object-name>
     <!-- Should move the minute hand in 1/2 minute steps -->
     <expression>
       <product>
@@ -150,7 +134,7 @@ TODO
     <center>
       <x-m>0.000</x-m>
       <y-m>0.000</y-m>
-      <z-m>-0.010</z-m>
+      <z-m>-0.0104</z-m>
     </center>
     <axis>
       <x>-1</x>
@@ -161,7 +145,7 @@ TODO
 
   <animation>
     <type>rotate</type>
-    <object-name>Chrono seconds</object-name>
+    <object-name>Elapsed seconds hand</object-name>
     <property>/instrumentation/clock/elapsed-time-sec</property>
     <factor>6</factor>
     <center>
@@ -180,7 +164,7 @@ TODO
   <!-- Pick animation for the start/stop/reset button -->
   <animation>
     <type>pick</type>
-    <object-name>Button</object-name>
+    <object-name>Chronograph button</object-name>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -228,15 +212,15 @@ TODO
 
   <!-- Misc instruments lighting -->
   <animation>
-  <object-name>Housing</object-name>
+  <object-name>Case</object-name>
   <object-name>Bezel</object-name>
   <object-name>Hour hand</object-name>
   <object-name>Minute hand</object-name>
-  <object-name>Chrono minutes</object-name>
-  <object-name>Chrono seconds</object-name>
+  <object-name>Elapsed minutes hand</object-name>
+  <object-name>Elapsed seconds hand</object-name>
   <object-name>Setting lever</object-name>
-  <object-name>Winding stem</object-name>
-  <object-name>Button</object-name>
+  <object-name>Setting knob</object-name>
+  <object-name>Chronograph button</object-name>
     <type>material</type>
     <emission>
       <factor-prop>/controls/lighting/misc-norm</factor-prop>
