@@ -2,7 +2,7 @@
 # the cronograph of the cockpit clock.
 #
 # When /instrumentation/clock/chronograph-state == "started"
-# the property rule defined in Cockpit clock.xml
+# the property rule defined in Chronograph.xml
 # will continuously update /instrumentation/clock/elapsed-time-sec.
 
 

@@ -2,7 +2,7 @@ List of changes (incomplete)
 ============================
 
 
-Up to 5 January 2015
+Up to 8 January 2015
 --------------------
 
 Changes
@@ -14,7 +14,8 @@ Changes
   - Replaced the cockpit clock with one more like the real one
     The main features are
       - Rotating minute bezel (kept in place between sessions)
-      - Button below dial to start/stop/reset cronograph
+      - Chronograph is started/stopped/reset with a button below
+        the dial or with the keyboard binding [q]
       - Chronograph minute hand move in 1/2 minute steps
 
 
