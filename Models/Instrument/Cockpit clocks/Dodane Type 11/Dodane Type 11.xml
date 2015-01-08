@@ -172,38 +172,8 @@ for the update of the elapsed seconds.
 
       <!-- Cycle the chronograph to the next state -->
       <binding>
-        <command>property-cycle</command>
-        <property>/instrumentation/clock/chronograph-state</property>
-        <value type="string">running</value>
-        <value type="string">stopped</value>
-        <value type="string">reset</value>
-      </binding>
-
-      <!-- Chronograph is to be started -->
-      <binding>
-        <condition>
-          <equals>
-            <property>/instrumentation/clock/chronograph-state</property>
-            <value type="string">running</value>
-          </equals>
-        </condition>
-        <command>property-assign</command>
-        <property>/instrumentation/clock/chronograph-offset-sec</property>
-        <property>/instrumentation/clock/indicated-sec</property>
-      </binding>
-
-      <!-- Chronograph is to be reset -->
-      <binding>
-        <condition>
-          <equals>
-            <property>/instrumentation/clock/chronograph-state</property>
-            <value type="string">reset</value>
-          </equals>
-        </condition>
-        <command>property-interpolate</command>
-        <property>/instrumentation/clock/elapsed-time-sec</property>
-        <value type="int">0</value>
-        <time>0.2</time>
+        <command>nasal</command>
+        <script>chronograph.cycle();</script>
       </binding>
 
     </action>

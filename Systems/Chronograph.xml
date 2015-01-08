@@ -8,7 +8,7 @@
     <condition>
       <equals>
         <property>/instrumentation/clock/chronograph-state</property>
-        <value type="string">running</value>
+        <value type="string">started</value>
       </equals>
     </condition>
   </enable>

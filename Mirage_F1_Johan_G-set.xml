@@ -152,8 +152,8 @@
     <!-- <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices-test.xml</path> -->  <!-- TEST -->
    </property-rule>
    <property-rule n="103">
-    <name>Cockpit clock</name>
-    <path>Aircraft/Mirage_F1_Johan_G/Systems/Cockpit clock.xml</path>
+    <name>Chronograph</name>
+    <path>Aircraft/Mirage_F1_Johan_G/Systems/Chronograph.xml</path>
    </property-rule>
   </systems>
 
@@ -227,6 +227,9 @@
   <radardist>
    <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
   </radardist> -->
+  <chronograph>
+   <file>Aircraft/Mirage_F1_Johan_G/Nasal/Chronograph.nas</file>
+  </chronograph>
  </nasal>
 
  <controls>
@@ -237,6 +240,19 @@
     <misc-norm type="double">0.75</misc-norm>
   </lighting>
  </controls>
+
+ <input>
+  <keyboard n="0">
+   <key n="113">
+    <name>q</name>
+    <desc>Chronograph start/stop/reset</desc>
+    <binding>
+     <command>nasal</command>
+    <script>chronograph.cycle();</script>
+    </binding>
+   </key>
+  </keyboard>
+ </input>
 
  <instrumentation>
   <master-failure-warning>
