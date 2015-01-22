@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
+
  <filter>
   <name type="string">Chronograph elapsed time</name>
   <debug type="bool">false</debug>
@@ -17,7 +18,12 @@
   <input>
     <expression>
       <sum>
-        <property>/instrumentation/clock/indicated-sec</property>
+        <!--
+          The only non-integer time property is /sim/time/elapsed-sec.
+          It tells how long FlightGear have been running.
+        -->
+        <property>/sim/time/elapsed-sec</property>
+        <property>/sim/time/warp</property>
         <product>
           <property>/instrumentation/clock/chronograph-offset-sec</property>
           <value>-1</value>
@@ -27,4 +33,5 @@
   </input>
   <output>/instrumentation/clock/elapsed-time-sec</output>
  </filter>
+
 </PropertyList>

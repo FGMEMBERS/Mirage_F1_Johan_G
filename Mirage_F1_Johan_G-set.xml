@@ -18,7 +18,7 @@
    <model type="int">3</model>
   </rating>
 
-  <aircraft-version>2015-01-08</aircraft-version>
+  <aircraft-version>2015-01-22</aircraft-version>
 
   <flight-model>yasim</flight-model>
   <aero>Mirage_F1_Johan_G-yasim</aero>
@@ -277,8 +277,8 @@
   <clock>
    <bezel-min type="int">0</bezel-min>
    <chronograph-state type="string">reset</chronograph-state>
-   <chronograph-offset-sec type="int">0</chronograph-offset-sec>
-   <elapsed-time-sec type="int">0</elapsed-time-sec>
+   <chronograph-offset-sec type="double">0</chronograph-offset-sec>
+   <elapsed-time-sec type="double">0</elapsed-time-sec>
   </clock>
  </instrumentation>
 

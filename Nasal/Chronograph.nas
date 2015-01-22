@@ -46,9 +46,8 @@ var resetElapsedTime = func() {
 # This property is used by the property rule that updates the elapsed time.
 var resetChronographOffset = func() {
 
-  var t = getprop("/instrumentation/clock/indicated-sec");
+  var t = getprop("/sim/time/elapsed-sec") + getprop("/sim/time/warp");
 
   setprop("/instrumentation/clock/chronograph-offset-sec", t);
 
 }
-

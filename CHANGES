@@ -2,6 +2,21 @@ List of changes (incomplete)
 ============================
 
 
+Up to 22 January 2015
+---------------------
+
+Fix
+  - Multiplayer pilots having the Mirage F1 from the official
+    repository or download page will now see this aircraft.
+
+Changes
+  - The cokpit chronograph now has a sweeping second hand.
+
+Notes
+  - In order to see the external model, the Mirage F1 from the
+    official download page or repository must also be installed.
+
+
 Up to 8 January 2015
 --------------------
 
