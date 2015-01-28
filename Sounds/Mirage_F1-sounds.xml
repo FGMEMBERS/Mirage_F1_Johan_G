@@ -1,217 +1,217 @@
 <?xml version="1.0"?>
- 
+  
 <PropertyList>
 
- <fx>
+  <fx>
 
-  <engine>
-   <name>engine</name>
-   <mode>looped</mode>
-   <path>Aircraft/Mirage_F1/Sounds/Mirage_F1-engines.wav</path>
-   <condition>
-    <property>/engines/engine/run[0]</property>
-   </condition>
-   <volume>
-    <property>/controls/throttle[0]</property>
-    <factor>1</factor>
-    <min>0.5</min>
-    <max>1.0</max>
-   </volume>
-  </engine>
+    <engine>
+      <name>engine</name>
+      <mode>looped</mode>
+      <path>Aircraft/Mirage_F1/Sounds/Mirage_F1-engines.wav</path>
+      <condition>
+        <property>/engines/engine/run[0]</property>
+      </condition>
+      <volume>
+        <property>/controls/throttle[0]</property>
+        <factor>1</factor>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+    </engine>
 
-  <tire-rumble>
-   <name>tire-rumble</name>
-   <mode>looped</mode>
-   <path>Sounds/rumble.wav</path>
-   <condition>
-    <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[1]/wow</property>
-     <property>/gear/gear[2]/wow</property>
-    </or>
-   </condition>
-   <volume>
-    <property>/velocities/groundspeed-kt</property>
-    <factor>0.004</factor>
-    <max>0.3</max>
-   </volume>
-  </tire-rumble>
+    <tire-rumble>
+      <name>tire-rumble</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <or>
+          <property>/gear/gear[0]/wow</property>
+          <property>/gear/gear[1]/wow</property>
+          <property>/gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>/velocities/groundspeed-kt</property>
+        <factor>0.004</factor>
+        <max>0.3</max>
+      </volume>
+    </tire-rumble>
 
-  <gear-wind>
-   <name>gear-wind</name>
-   <mode>looped</mode>
-   <path>Sounds/rumble.wav</path>
-   <condition>
-     <greater-than>
-      <property>/gear/gear[1]/position-norm[0]</property>
-      <value>0.01</value>
-     </greater-than>
-   </condition>
-   <volume>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.004</factor>
-    <max>1.0</max>
-   </volume>
-  </gear-wind>
+    <gear-wind>
+      <name>gear-wind</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <greater-than>
+          <property>/gear/gear[1]/position-norm[0]</property>
+          <value>0.01</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.004</factor>
+        <max>1.0</max>
+      </volume>
+    </gear-wind>
 
-  <gear-lock>
-   <name>gear-lock</name>
-   <path>Sounds/gear-lck.wav</path>
-   <condition>
-    <equals>
-     <property>/gear/gear[0]/position-norm</property>
-     <value>0</value>
-    </equals>
-   </condition>
-  </gear-lock>
+    <gear-lock>
+      <name>gear-lock</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[0]/position-norm</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </gear-lock>
 
-  <!-- Bip button sound effect, beeps if the landing gear are down and locked and the bip test button is depressed  -->
-  <!-- Added by Johan G Wed 12 Jun 2013 -->
-  <bip-test>
-   <name>Gear locked bip test</name>
-   <path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/configuration indicator/Bip test.wav</path>
-   <mode>looped</mode>
-   <type>avionics</type>
-   <condition>
-    <and>
-     <property>/controls/switches/gear-bip-test</property>
-     <equals>
-      <property>/gear/gear/position-norm</property>
-      <value>1</value>
-     </equals>
-     <equals>
-      <property>/gear/gear[1]/position-norm</property>
-      <value>1</value>
-     </equals>
-     <equals>
-      <property>/gear/gear[2]/position-norm</property>
-      <value>1</value>
-     </equals>
-    </and>
-   </condition>
-  </bip-test>
+    <!-- Bip button sound effect, beeps if the landing gear are down and locked and the bip test button is depressed  -->
+    <!-- Added by Johan G Wed 12 Jun 2013 -->
+    <bip-test>
+      <name>Gear locked bip test</name>
+      <path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Configuration indicator/Bip test.wav</path>
+      <mode>looped</mode>
+      <type>avionics</type>
+      <condition>
+        <and>
+          <property>/controls/switches/gear-bip-test</property>
+          <equals>
+            <property>/gear/gear/position-norm</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/gear/gear[1]/position-norm</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/gear/gear[2]/position-norm</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </bip-test>
 
-  <squeal>
-   <name>squeal</name>
-   <path>Sounds/squeal.wav</path>
-   <condition>
-    <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[2]/wow</property>
-     <property>/gear/gear[4]/wow</property>
-    </or>
-   </condition>
-   <volume>
-    <property>/velocities/speed-down-fps</property>
-    <factor>0.05</factor>
-   </volume>
-   <volume>
-    <property>/velocities/groundspeed-kt</property>
-    <factor>0.01</factor>
-   </volume>
-   <volume>
-    <internal>dt_stop</internal>
-    <factor>0.05</factor>
-    <max>1.0</max>
-   </volume>
-   <pitch>
-    <property>/velocities/groundspeed-kt</property>
-    <factor>0.0025</factor>
-    <offset>1.2</offset>
-   </pitch>
-  </squeal>
+    <squeal>
+      <name>squeal</name>
+      <path>Sounds/squeal.wav</path>
+      <condition>
+        <or>
+         <property>/gear/gear[0]/wow</property>
+         <property>/gear/gear[2]/wow</property>
+         <property>/gear/gear[4]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>/velocities/speed-down-fps</property>
+        <factor>0.05</factor>
+      </volume>
+      <volume>
+        <property>/velocities/groundspeed-kt</property>
+        <factor>0.01</factor>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>/velocities/groundspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+    </squeal>
 
-  <wind>
-   <name>wind</name>
-   <mode>looped</mode>
-   <path>Sounds/wind.wav</path>
-   <property>/velocities/airspeed-kt</property>
-   <volume>
-    <property>/position/altitude-ft</property>
-    <factor>-0.000015</factor>
-    <offset>1.0</offset>
-    <min>0.1</min>
-    <max>1.0</max>
-   </volume>
-   <volume>
-     <property>/velocities/airspeed-kt</property>
-     <factor>0.0015</factor>
-     <min>0.03</min>
-     <max>0.25</max>
-   </volume>
-   <pitch>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.01</factor>
-    <offset>1.25</offset>
-   </pitch>
-  </wind>
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>1.0</max>
+      </volume>
+      <volume>
+         <property>/velocities/airspeed-kt</property>
+         <factor>0.0015</factor>
+         <min>0.03</min>
+         <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <offset>1.25</offset>
+      </pitch>
+    </wind>
 
-  <buffet>
-   <name>alpha-buffet</name>
-   <mode>looped</mode>
-   <condition>
-    <greater-than>
-     <property>/fdm/jsbsim/aero/alpha-rad[0]</property>
-     <value>0.1</value>
-    </greater-than>
-   </condition>
-   <path>Sounds/rumble.wav</path>
-   <volume>
-    <property>/fdm/jsbsim/aero/alpha-rad[0]</property>
-    <factor>15.0</factor>
-    <max>1.0</max>
-   </volume>
-   <pitch>
-    <property>/fdm/jsbsim/aero/alpha-rad[0]</property>
-    <factor>0.1</factor>
-   </pitch>
-  </buffet>
+    <buffet>
+      <name>alpha-buffet</name>
+      <mode>looped</mode>
+      <condition>
+        <greater-than>
+         <property>/fdm/jsbsim/aero/alpha-rad[0]</property>
+         <value>0.1</value>
+        </greater-than>
+      </condition>
+      <path>Sounds/rumble.wav</path>
+      <volume>
+        <property>/fdm/jsbsim/aero/alpha-rad[0]</property>
+        <factor>15.0</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>/fdm/jsbsim/aero/alpha-rad[0]</property>
+        <factor>0.1</factor>
+      </pitch>
+    </buffet>
 
-  <!-- Warning horn, added by Johan G Sun 23 Nov 2014 -->
-  <warning-horn-master-caution>
-   <name>Warning horn, master caution</name>
-   <mode>looped</mode>
-   <condition>
-    <property>/instrumentation/warning-horn/master-failure</property>
-    <property>/instrumentation/warning-horn/servicable</property>
-    <property>/controls/switches/warning-horn</property>
-   </condition>
-   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-master-failure.wav</path>
-  </warning-horn-master-caution>
+    <!-- Warning horn, added by Johan G Sun 23 Nov 2014 -->
+    <warning-horn-master-caution>
+      <name>Warning horn, master caution</name>
+      <mode>looped</mode>
+      <condition>
+        <property>/instrumentation/warning-horn/master-failure</property>
+        <property>/instrumentation/warning-horn/servicable</property>
+        <property>/controls/switches/warning-horn</property>
+      </condition>
+      <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/Warning horn master failure.wav</path>
+    </warning-horn-master-caution>
 
-  <warning-horn-oxygen-regulator>
-   <name>Warning horn, oxygen regulator</name>
-   <mode>looped</mode>
-   <condition>
-    <property>/instrumentation/warning-horn/oxygen-regulator</property>
-    <property>/instrumentation/warning-horn/servicable</property>
-    <property>/controls/switches/warning-horn</property>
-   </condition>
-   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-oxygen-regulator.wav</path>
-  </warning-horn-oxygen-regulator>
+    <warning-horn-oxygen-regulator>
+      <name>Warning horn, oxygen regulator</name>
+      <mode>looped</mode>
+      <condition>
+        <property>/instrumentation/warning-horn/oxygen-regulator</property>
+        <property>/instrumentation/warning-horn/servicable</property>
+        <property>/controls/switches/warning-horn</property>
+      </condition>
+      <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/Warning horn oxygen regulator.wav</path>
+    </warning-horn-oxygen-regulator>
 
-  <warning-horn-limits>
-   <name>Warning horn, limits</name>
-   <mode>looped</mode>
-   <condition>
-    <property>/instrumentation/warning-horn/limits</property>
-    <property>/instrumentation/warning-horn/servicable</property>
-    <property>/controls/switches/warning-horn</property>
-   </condition>
-   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-limits.wav</path>
-  </warning-horn-limits>
+    <warning-horn-limits>
+      <name>Warning horn, limits</name>
+      <mode>looped</mode>
+      <condition>
+        <property>/instrumentation/warning-horn/limits</property>
+        <property>/instrumentation/warning-horn/servicable</property>
+        <property>/controls/switches/warning-horn</property>
+      </condition>
+      <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/Warning horn limits.wav</path>
+    </warning-horn-limits>
 
-  <warning-horn-limit-incidence>
-   <name>Warning horn, limit incidence</name>
-   <mode>looped</mode>
-   <condition>
-    <property>/instrumentation/warning-horn/limit-incidence</property>
-    <property>/instrumentation/warning-horn/servicable</property>
-    <property>/controls/switches/warning-horn</property>
-   </condition>
-   <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/warning-horn-limit-incidence.wav</path>
-  </warning-horn-limit-incidence>
+    <warning-horn-limit-incidence>
+      <name>Warning horn, limit incidence</name>
+      <mode>looped</mode>
+      <condition>
+        <property>/instrumentation/warning-horn/limit-incidence</property>
+        <property>/instrumentation/warning-horn/servicable</property>
+        <property>/controls/switches/warning-horn</property>
+      </condition>
+      <path>Aircraft/Mirage_F1_Johan_G/Sounds/Warning horn/Warning horn limit incidence.wav</path>
+    </warning-horn-limit-incidence>
 
-</fx>
- 
+  </fx>
+  
 </PropertyList>
