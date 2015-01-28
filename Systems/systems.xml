@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <electrical>
+    <name>electrical</name>
+    <number>0</number>
+    <path>Aircraft/Generic/generic-electrical.xml</path>
+  </electrical>
+
+
+
+  <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
+  <!-- Optimum Altitude and CAS/M for AAR is supposed to be FL250 and 305 kt/M 0.80 according to source mentioned below -->
+  <refuel>
+    <type>probe</type>
+    <serviceable type="bool">true</serviceable>
+    <contact-radius-m>25</contact-radius-m>
+    <max-fuel-transfer-lbs-min>1300</max-fuel-transfer-lbs-min>  <!-- Reasonable guess based on ATP-56(B) - Part 5 (Nov 2012), Figure E3-1 and E4-1 -->
+    <offset-x-m>-6.990</offset-x-m>
+    <offset-y-m>0.472</offset-y-m>
+    <offset-z-m>1.015</offset-z-m>
+  </refuel>
+
+  <high-lift-devices>
+    <flaps>
+      <first-interlock-serviceable type="bool">true</first-interlock-serviceable>
+      <second-interlock-serviceable type="bool">true</second-interlock-serviceable>
+    </flaps>
+    <slats>
+      <first-interlock-serviceable type="bool">true</first-interlock-serviceable>
+      <second-interlock-serviceable type="bool">true</second-interlock-serviceable>
+    </slats>
+  </high-lift-devices>
+
+
+  <!-- Pitot 1 and 2 -->
+
+  <!-- Pitot T1 (left side of forward fuselage) -->
+  <pitot>
+   <name type="string">pitot</name>
+   <number type="int">0</number>
+  </pitot>
+
+  <!-- Pitot T2 (right side of forward fuselage) -->
+  <pitot n="1">
+   <name type="string">pitot</name>
+   <number type="int">1</number>
+  </pitot>
+
+
+  <!-- Static ports 1-4 -->
+
+  <!-- Static port S1 (left side of nose probe) -->
+  <static>
+   <name type="string">static</name>
+   <number type="int">0</number>
+  </static>
+
+  <!-- Static port S2 (right side of nose probe) -->
+  <static n="1">
+   <name type="string">static</name>
+   <number type="int">1</number>
+  </static>
+
+  <!-- Static port S3 (left side of forward fuselage) -->
+  <static n="2">
+   <name type="string">static</name>
+   <number type="int">2</number>
+  </static>
+
+  <!-- Static port S4 (right side of forward fuselage) -->
+  <static n="3">
+   <name type="string">static</name>
+   <number type="int">3</number>
+  </static>
+
+  <vacum/>  <!-- Will this cause there to be no vacum system? -->
+
+</PropertyList>
