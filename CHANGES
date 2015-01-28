@@ -2,8 +2,60 @@ List of changes (incomplete)
 ============================
 
 
+Up to 22 January 2015
+---------------------
+
+Fix
+  - Multiplayer pilots having the Mirage F1 from the official
+    repository or download page will now see this aircraft.
+
+Changes
+  - The cokpit chronograph now has a sweeping second hand.
+
+Notes
+  - In order to see the external model, the Mirage F1 from the
+    official download page or repository must also be installed.
+
+
+Up to 8 January 2015
+--------------------
+
+Changes
+  - The aerial refueling status light logic is changed to closer
+    reflect the real ones on tankers
+      - Amber when system is ready
+      - Green when in contact
+      - No lights when tanks are full
+  - Replaced the cockpit clock with one more like the real one
+    The main features are
+      - Rotating minute bezel (kept in place between sessions)
+      - Chronograph is started/stopped/reset with a button below
+        the dial or with the keyboard binding [q]
+      - Chronograph minute hand move in 1/2 minute steps
+
+
+Up to 8 December 2014
+---------------------
+
+Additions
+  - Aerial refueling status lights (fictional, due to *all* tankers
+    missing their ones)
+      - One amber ready/tanks full light
+      - One green contact light
+  - Warning horn sounds (not yet used)
+
+Changes
+  - Fuel remaining indicator is now in liters
+  - Improved master failure warning light (not yet used)
+  - Improved airbrake light
+
+Bug fixes
+  - Areal refueling is working again
+
+
 Up to 8 November 2014
 ---------------------
+
 Bug fixes
   - HUD is now only visible in pilot view (finally :-)
 
@@ -14,15 +66,12 @@ Changes
 
 Up to 16 August 2014
 --------------------
+
 Additions
   - Air-to-air refueling (AAR) capability with a fuel transfer rate of
     1300 lbs/min based on NATO Doc ATP-56(B) dated November 2012, figures
     E3-1 and E4-1. Optimum altitude and CAS/Mach is stated to be
     FL250 and 305 kt/M 0.80.
-
-Acknowledgment
-  Many thanks to Jan Rippl for helping me out with getting the AAR to
-  work in FlightGear! :-)
 
 Known issues
   - HUD visible in external views
@@ -30,6 +79,7 @@ Known issues
 
 Up to 31 May 2014
 -----------------
+
 Additions
   - Trim gauge
 

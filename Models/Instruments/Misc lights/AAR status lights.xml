@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>AAR status.ac</path>
+  <object-name>AAR-ready</object-name>
+  <object-name>AAR-contact</object-name>
+
+  <!-- Air-to-air refueling ready light -->
+  <animation>
+    <object-name>AAR-ready-lit</object-name>
+    <type>select</type>
+    <condition>
+      <or>
+        <and>
+          <property>/systems/refuel/serviceable</property>
+          <not>
+            <property>/systems/refuel/contact</property>
+          </not>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Air-to-air refueling contact light -->
+  <animation>
+    <object-name>AAR-contact-lit</object-name>
+    <type>select</type>
+    <condition>
+      <and>
+        <property>/systems/refuel/contact</property>
+        <not>
+          <equals>
+            <property>/consumables/fuel/total-fuel-norm</property>
+            <value>1</value>
+          </equals>
+        </not>
+      </and>
+    </condition>
+  </animation>
+
+</PropertyList>

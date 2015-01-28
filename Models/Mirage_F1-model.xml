@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <PropertyList>
- <path>Mirage_F1.ac</path>
+ <path>Aircraft/Mirage_F1/Models/Mirage_F1.ac</path>
  
  
  <!-- tableau de bord -->
 
 <!--Anemometre--> <!-- Moved slightly, JG 16 Jun 2013 -->
  	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/asi/asi.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/asi/asi.xml</path>
 		<offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.105</y-m>
@@ -18,7 +18,7 @@
 
 <!--horizon artificiel--> <!-- Moved slightly, JG 16 Jun 2013 -->
 	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/adi/adi.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/adi/adi.xml</path>
 		<offsets>
 			<x-m>-4.993</x-m>
 			<y-m>-0.110</y-m>
@@ -29,7 +29,7 @@
 <!--Indicateur mach-->
 
  	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/mach/mach.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/mach/mach.xml</path>
 		<offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.168</y-m>
@@ -40,7 +40,7 @@
 
 <!--altimetre-->
 	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/alt/alt.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/alt/alt.xml</path>
 		<offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.174</y-m>
@@ -52,7 +52,7 @@
 
 <!--egt-->	
 	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/egt/egt1.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/egt/egt1.xml</path>
 		<offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.172</y-m>
@@ -64,7 +64,7 @@
 
 <!--Variometre-->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/IVSI/IVSI.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/IVSI/IVSI.xml</path>
 		<offsets>
 			<x-m>-5.01</x-m>
 			<y-m>-0.008</y-m>
@@ -75,7 +75,7 @@
 	
 <!--ADI 2-->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/adi2/adi.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/adi2/adi.xml</path>
 		<offsets>
 			<x-m>-5.011</x-m>
 			<y-m>0.05</y-m>
@@ -86,7 +86,7 @@
 
 <!-- instru provisoire-->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/DessusImage/DessusImage.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/DessusImage/DessusImage.xml</path>
 		<offsets>
 			<x-m>-4.984</x-m>
 			<y-m>0.025</y-m>
@@ -97,7 +97,7 @@
 
 <!--hud-->
 	  <model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/hud/hud.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/hud/hud.xml</path>
 		<offsets>
 			<x-m>-4.93</x-m>
 			<y-m>0.02</y-m>
@@ -109,7 +109,7 @@
 <!--radar-->
  <model>
   <name>RADAR_SCREEN</name>
-  <path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/radar/radar.xml</path>
+  <path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/radar/radar.xml</path>
   <offsets>
    <x-m>-4.99</x-m>
    <y-m>0.188</y-m>
@@ -119,7 +119,7 @@
 
  <!-- Bouton Largage detresse-->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Bouton Indicateurs/urgence.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Bouton Indicateurs/urgence.xml</path>
 		<offsets>
 			<x-m>-4.997</x-m>
 			<y-m>-0.155</y-m>
@@ -130,7 +130,7 @@
 
 	 <!-- Panneau Alarme-->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Panneau Alarme/Panneau Alarme.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Panneau Alarme/Panneau Alarme.xml</path>
 		<offsets>
 			<x-m>-4.995</x-m>
 			<y-m>0.33</y-m>
@@ -141,7 +141,7 @@
  
  <!-- Indicateur ALT CAP...--> <!-- Moved slightly, JG 16 Jun 2013
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Bouton Indicateurs/Indicateur.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Bouton Indicateurs/Indicateur.xml</path>
 		<offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.164</y-m>
@@ -150,22 +150,10 @@
 		</offsets>
 	</model> -->
 
-	
-	<!--clock-->
-  	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/clock/clock.xml</path>
-		<offsets>
-			<x-m>-4.813</x-m>
-			<y-m>-0.085</y-m>
-			<z-m>1.120</z-m>
-			<pitch-deg>0</pitch-deg>
-		</offsets>
-	</model>
-
 	<!-- Fuel remaining indicator -->
     <!-- Added 8 Apr 2013 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Fuel remaining indicator/fuel-remaining-indicator.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Fuel remaining indicator/fuel-remaining-indicator.xml</path>
 		<offsets>
 			<x-m>-4.990</x-m>
 			<y-m>0.097</y-m>
@@ -177,7 +165,7 @@
 	<!-- Configuration indicator -->
     <!-- Added 10 Jun 2013 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/configuration indicator/configuration-indicator.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/configuration indicator/configuration-indicator.xml</path>
 		<offsets>
 			<x-m>-5.000</x-m>
 			<y-m>-0.105</y-m>
@@ -189,7 +177,7 @@
 	<!-- Airbrake light -->
     <!-- Added 16 Jun 2013 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/airbrake-light.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Misc lights/Airbrake light.xml</path>
 		<offsets>
 			<x-m>-5.000</x-m>
 			<y-m>-0.170</y-m>
@@ -201,11 +189,11 @@
 	<!-- Master caution and limits light -->
     <!-- Added 16 Jun 2013 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/master-caution-and-limits-lights.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Misc lights/Master failure warning.xml</path>
 		<offsets>
 			<x-m>-5.000</x-m>
 			<y-m>-0.095</y-m>
-			<z-m>0.930</z-m>
+			<z-m>0.935</z-m>
 			<pitch-deg>0</pitch-deg>
 		</offsets>
 	</model>
@@ -213,7 +201,7 @@
 	<!-- Cockpit lighting control panel -->
     <!-- Added 23 Jun 2013 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Cockpit lighting control box/ac-zc-cockpit-lighting-control-box.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Cockpit lighting control box/ac-zc-cockpit-lighting-control-box.xml</path>
 		<offsets>
 			<x-m>-4.430</x-m>
 			<y-m>0.330</y-m>
@@ -226,7 +214,7 @@
 	<!-- New autopilot control panel -->
     <!-- Added 13 Jul 2013 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Autopilot control panel/autopilot-control-panel.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Autopilot control panel/autopilot-control-panel.xml</path>
 		<offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.170</y-m>
@@ -237,7 +225,7 @@
 	</model>
 
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Autopilot control panel/autopilot-panel-test-button.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Autopilot control panel/autopilot-panel-test-button.xml</path>
         <offsets>
 			<x-m>-5</x-m>
 			<y-m>-0.120</y-m>
@@ -247,7 +235,7 @@
 
     <!-- Trim guage.  Added Sat 31 May 2014 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Trim gauge/Trim gauge.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Trim gauge/Trim gauge.xml</path>
         <offsets>
 			<x-m>-5.00</x-m>
 			<y-m>0.05</y-m>
@@ -258,7 +246,7 @@
 
     <!-- Accelerometer.  Added Wed 24 Sep 2014 by Johan G -->
   	<model>
-		<path>Aircraft/Mirage_F1_Johan_G/Models/Instrument/Accelerometer/Accelerometer.xml</path>
+		<path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Accelerometer/Accelerometer.xml</path>
         <offsets>
 			<x-m>-4.975</x-m>
 			<y-m>-0.003</y-m>
@@ -267,11 +255,27 @@
         </offsets>
 	</model>
 
+    <!-- Air-to-air refueling status lights (most probably fictional).  Added Sun 7 dec 2014 by Johan G -->
+    <model>
+        <path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Misc lights/AAR status lights.xml</path>
+        <offsets>
+            <x-m>-4.870</x-m>
+            <y-m>0.095</y-m>
+            <z-m>1.020</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
 
-
-
-
-
+    <!-- Dodane Type 11 cockpit clock.  Added Fri 2 Jan 2015 by Johan G -->
+    <model>
+        <path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Cockpit clocks/Dodane Type 11/Dodane Type 11.xml</path>
+        <offsets>
+            <x-m>-4.813</x-m>
+            <y-m>-0.085</y-m>
+            <z-m>1.120</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
 
 
 

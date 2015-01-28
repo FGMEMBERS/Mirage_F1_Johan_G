@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+
+<!--
+
+This clock is dependent upon the property rule in
+Aircraft/Mirage_F1_Johan_G/Systems/Cockpit clock.xml
+for the update of the elapsed seconds.
+
+-->
+
+
+<PropertyList>
+  <path>Dodane Type 11.ac</path>
+
+  <object-name>Case</object-name>
+  <object-name>Bezel</object-name>
+  <object-name>Hour hand</object-name>
+  <object-name>Minute hand</object-name>
+  <object-name>Elapsed minutes hand</object-name>
+  <object-name>Elapsed seconds hand</object-name>
+  <object-name>Setting lever</object-name>
+  <object-name>Setting knob</object-name>
+  <object-name>Chronograph button</object-name>
+
+
+  <!-- Bezel knob animation -->
+  <animation>
+    <type>knob</type>
+    <object-name>Bezel</object-name>
+    <value>0.0</value>
+    <center>
+      <x-m>0.000</x-m>
+      <y-m>0.000</y-m>
+      <z-m>0.000</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <increase>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/clock/bezel-min</property>
+        <step>1</step>
+        <min>0</min>
+        <max>60</max>
+        <wrap>true</wrap>
+      </binding>
+    </increase>
+    <decrease>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/clock/bezel-min</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>60</max>
+        <wrap>true</wrap>
+      </binding>
+    </decrease>
+  </animation>
+
+  <!-- Bezel animation -->
+  <animation>
+    <type>rotate</type>
+    <object-name>Bezel</object-name>
+    <property>/instrumentation/clock/bezel-min</property>
+    <factor>6</factor>
+    <center>
+      <x-m>0.000</x-m>
+      <y-m>0.000</y-m>
+      <z-m>0.000</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <!-- Clock hands animmation -->
+  <animation>
+    <type>rotate</type>
+    <object-name>Hour hand</object-name>
+    <property>/instrumentation/clock/indicated-sec</property>
+    <factor>0.008333333</factor>
+    <center>
+      <x-m>0.000</x-m>
+      <y-m>0.000</y-m>
+      <z-m>0.000</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Minute hand</object-name>
+    <property>/instrumentation/clock/indicated-sec</property>
+    <factor>0.1</factor>
+    <center>
+      <x-m>0.000</x-m>
+      <y-m>0.000</y-m>
+      <z-m>0.000</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <!-- Chronoghraph hands animation -->
+  <animation>
+    <type>rotate</type>
+    <object-name>Elapsed minutes hand</object-name>
+    <!-- Should move the minute hand in 1/2 minute steps -->
+    <expression>
+      <product>
+        <floor>
+          <div>
+            <property>/instrumentation/clock/elapsed-time-sec</property>
+            <value>30</value>
+          </div>
+        </floor>
+        <value>12</value>  <!-- Rotate 12 deg every 30 sec -->
+      </product>
+    </expression>
+    <center>
+      <x-m>0.000</x-m>
+      <y-m>0.000</y-m>
+      <z-m>-0.0104</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Elapsed seconds hand</object-name>
+    <property>/instrumentation/clock/elapsed-time-sec</property>
+    <factor>6</factor>
+    <center>
+      <x-m>0.000</x-m>
+      <y-m>0.000</y-m>
+      <z-m>-0.000</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <!-- Pick animation for the start/stop/reset button -->
+  <animation>
+    <type>pick</type>
+    <object-name>Chronograph button</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <interval-sec>0.2</interval-sec>
+
+      <!-- Cycle the chronograph to the next state -->
+      <binding>
+        <command>nasal</command>
+        <script>chronograph.cycle();</script>
+      </binding>
+
+    </action>
+  </animation>
+
+
+  <!-- Misc instruments lighting -->
+  <animation>
+  <object-name>Case</object-name>
+  <object-name>Bezel</object-name>
+  <object-name>Hour hand</object-name>
+  <object-name>Minute hand</object-name>
+  <object-name>Elapsed minutes hand</object-name>
+  <object-name>Elapsed seconds hand</object-name>
+  <object-name>Setting lever</object-name>
+  <object-name>Setting knob</object-name>
+  <object-name>Chronograph button</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>/controls/lighting/misc-norm</factor-prop>
+      <red>0.7</red>
+      <green>0.2</green>
+      <blue>0.2</blue>
+    </emission>
+  </animation>
+
+  <!-- Range animation hiding instrument if further away than 5 meters -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+</PropertyList>
