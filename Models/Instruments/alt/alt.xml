@@ -4,6 +4,8 @@
 
  <path>alt.ac</path>
 
+ <!-- Property subtree was changed from /altimeter/ to /standby-altimeter/ by Johan G Wed 28 Jan 2015 -->
+
  <animation>
   <type>material</type>
   <object-name>Face</object-name>
@@ -33,7 +35,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Needle100</object-name>
-  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <property>/instrumentation/standby-altimeter/indicated-altitude-ft</property>
   <factor>0.36</factor>
   <axis>
    <x>-1</x>
@@ -45,7 +47,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Needle1000</object-name>
-  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <property>/instrumentation/standby-altimeter/indicated-altitude-ft</property>
   <factor>0.036</factor>
   <axis>
    <x>-1</x>
@@ -57,7 +59,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Needle10000</object-name>
-  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <property>/instrumentation/standby-altimeter/indicated-altitude-ft</property>
   <factor>0.0036</factor>
   <axis>
    <x>-1</x>
@@ -69,7 +71,7 @@
  <animation>
    <type>texrotate</type>
    <object-name>inhg</object-name>
-   <property>/instrumentation/altimeter/setting-inhg</property>
+   <property>/instrumentation/standby-altimeter/setting-inhg</property>
    <interpolation>
      <entry>
        <ind>27.90</ind>
@@ -135,7 +137,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/altimeter/setting-inhg</property>
+      <property>/instrumentation/standby-altimeter/setting-inhg</property>
       <step>-0.01</step>
       <min>26.0</min>
       <max>33.0</max>
@@ -148,7 +150,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/altimeter/setting-inhg</property>
+      <property>/instrumentation/standby-altimeter/setting-inhg</property>
       <step>-0.1</step>
       <min>26.0</min>
       <max>33.0</max>
@@ -167,7 +169,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/altimeter/setting-inhg</property>
+      <property>/instrumentation/standby-altimeter/setting-inhg</property>
       <step>0.01</step>
       <min>26.0</min>
       <max>33.0</max>
@@ -180,7 +182,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/altimeter/setting-inhg</property>
+      <property>/instrumentation/standby-altimeter/setting-inhg</property>
       <step>0.1</step>
       <min>26.0</min>
       <max>33.0</max>

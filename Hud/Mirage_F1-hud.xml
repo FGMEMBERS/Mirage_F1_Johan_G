@@ -13,7 +13,8 @@
       <height>3</height>
       
       <input>
-        <property>/velocities/airspeed-kt</property>
+        <!-- Will in time be from the air data computer -->
+        <property>/instrumentation/airspeed-right-system/indicated-speed-kt</property>
       </input>
       
       <format>%3d</format>
@@ -28,7 +29,8 @@
       <height>3</height>
       
       <input>
-        <property>/instrumentation/altimeter/pressure-alt-ft</property>
+        <!-- Will in time be from the air data computer -->
+        <property>/instrumentation/altimeter-right-system/pressure-alt-ft</property>
       </input>
       
       <format>Z %5d</format>
@@ -58,7 +60,8 @@
       <height>3</height>
       
       <input>
-        <property>/velocities/mach</property>
+        <!-- Will in time be from the air data computer -->
+        <property>/instrumentation/airspeed-right-system/indicated-mach</property>
       </input>
       
       <format>%3.2f</format>
@@ -89,7 +92,7 @@
       <height>15</height>
       
       <input>
-        <property>orientation/heading-magnetic-deg</property>
+        <property>/orientation/heading-magnetic-deg</property>
         <factor>0.1</factor>
         <max>85</max>
         <min>0</min>

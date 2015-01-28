@@ -68,9 +68,38 @@ file, these values will be used (they are hardcoded).
     <number>0</number>
   </tacan>
 
+  <clock>
+    <name>clock</name>
+    <number>0</number>
+  </clock>
+
   <!-- Pressure instruments and devices -->
 
-  <!-- Actual airspeed indicator -->
+  <!--
+    Airspeed indicators
+    
+    There are more than these, but for the sake of simplicity I have
+    aggregated them into a left and a right airspeed indicator.
+    
+    The left system uses pitot tube 1 and static port 1, and consists
+    of the:
+      - Airpseed indicator
+      - Mach number switch
+      - Slat aneroid for the second limit
+      - Flap aneroid for the second limit
+    
+    As the airspeed-indicator property subtree is often used the left
+    system is simply named airspeed-indicator.
+    
+    The right system uses pitot tube 2 and static port 2 and consists
+    of the:
+      - Airspeed input to the air data computer
+      - Flap aneroid for the first limit
+    
+    In addition there is also an elevator dash-pot getting airspeed
+    using pitot tube 2 and static port 4.
+  -->
+
   <airspeed-indicator>
     <name type="string">airspeed-indicator</name>
     <number type="int">0</number>
@@ -78,37 +107,8 @@ file, these values will be used (they are hardcoded).
     <static-pressure>/systems/static[0]/pressure-inhg</static-pressure>
   </airspeed-indicator>
 
-  <!-- Not actual airspeed indicators -->
   <airspeed-indicator>
-    <name type="string">airspeed-aneroid-slat-2nd-lim</name>
-    <number type="int">0</number>
-    <total-pressure>/systems/pitot[0]/total-pressure-inhg</total-pressure>
-    <static-pressure>/systems/static[0]/pressure-inhg</static-pressure>
-  </airspeed-indicator>
-
-  <airspeed-indicator>
-    <name type="string">airspeed-aneroid-flap-2nd-lim</name>
-    <number type="int">0</number>
-    <total-pressure>/systems/pitot[0]/total-pressure-inhg</total-pressure>
-    <static-pressure>/systems/static[0]/pressure-inhg</static-pressure>
-  </airspeed-indicator>
-
-  <airspeed-indicator>
-    <name type="string">Mach-switch-aneroid</name>
-    <number type="int">0</number>
-    <total-pressure>/systems/pitot[0]/total-pressure-inhg</total-pressure>
-    <static-pressure>/systems/static[0]/pressure-inhg</static-pressure>
-  </airspeed-indicator>
-
-  <airspeed-indicator>
-    <name type="string">airspeed-air-data-computer</name>
-    <number type="int">0</number>
-    <total-pressure>/systems/pitot[1]/total-pressure-inhg</total-pressure>
-    <static-pressure>/systems/static[1]/pressure-inhg</static-pressure>
-  </airspeed-indicator>
-
-  <airspeed-indicator>
-    <name type="string">airspeed-aneroid-flap-1st-lim</name>
+    <name type="string">airspeed-right-system</name>
     <number type="int">0</number>
     <total-pressure>/systems/pitot[1]/total-pressure-inhg</total-pressure>
     <static-pressure>/systems/static[1]/pressure-inhg</static-pressure>
@@ -121,7 +121,23 @@ file, these values will be used (they are hardcoded).
     <static-pressure>/systems/static[3]/pressure-inhg</static-pressure>
   </airspeed-indicator>
 
-  <!-- Misc other pressure instruments and devices -->
+  <!--
+    Altimeters
+    
+    Similarly to the airspeed indicators I have split them up in a left
+    and right system.
+    
+    The left system uses static port 1, and consists only of the
+    standby altimeter.
+    
+    The right system uses static port 2 and consists of the:
+      - Altitude input to the air data computer
+      - Altitude input to the autopilot
+    
+    In addition there is also a a system that gives altitude input to
+    the cabin pressure regulator.
+  -->
+
   <altimeter>
     <name type="string">standby-altimeter</name>
     <number type="int">0</number>
@@ -131,15 +147,7 @@ file, these values will be used (they are hardcoded).
   </altimeter>
 
   <altimeter>
-    <name type="string">altimeter-air-data-computer</name>
-    <number type="int">0</number>
-    <static-pressure>/systems/static[1]/pressure-inhg</static-pressure>
-    <quantum>0</quantum>
-    <tau>0</tau>
-  </altimeter>
-
-  <altimeter>
-    <name type="string">altimeter-autopilot</name>
+    <name type="string">altimeter-right-system</name>
     <number type="int">0</number>
     <static-pressure>/systems/static[1]/pressure-inhg</static-pressure>
     <quantum>0</quantum>

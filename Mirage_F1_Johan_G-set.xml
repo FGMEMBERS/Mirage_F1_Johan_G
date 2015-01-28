@@ -306,43 +306,44 @@
 
   <airspeed-indicator>
    <serviceable type="bool">1</serviceable>
+   <indicated-mach-greater-than-1.1 type="bool">false</indicated-mach-greater-than-1.1>
   </airspeed-indicator>
 
-  <airspeed-aneroid-slat-2nd-lim>
+  <airspeed-right-system>
    <serviceable type="bool">1</serviceable>
-  </airspeed-aneroid-slat-2nd-lim>
-
-  <airspeed-aneroid-flap-2nd-lim>
-   <serviceable type="bool">1</serviceable>
-  </airspeed-aneroid-flap-2nd-lim>
-
-  <Mach-switch-aneroid>
-   <serviceable type="bool">1</serviceable>
-  </Mach-switch-aneroid>
-
-  <airspeed-air-data-computer>
-   <serviceable type="bool">1</serviceable>
-  </airspeed-air-data-computer>
-
-  <airspeed-aneroid-flap-1st-lim>
-   <serviceable type="bool">1</serviceable>
-  </airspeed-aneroid-flap-1st-lim>
+  </airspeed-right-system>
 
   <airspeed-dash-pot>
    <serviceable type="bool">1</serviceable>
   </airspeed-dash-pot>
 
+  <airspeed-aneroid-slats-2nd-lim>
+   <serviceable type="bool">1</serviceable>
+   <indicated-speed-greater-than-470-kt type="bool">false</indicated-speed-greater-than-470-kt>
+  </airspeed-aneroid-slats-2nd-lim>
+
+  <airspeed-aneroid-flaps-2nd-lim>
+   <serviceable type="bool">1</serviceable>
+   <indicated-speed-greater-than-335-kt type="bool">false</indicated-speed-greater-than-335-kt>
+  </airspeed-aneroid-flaps-2nd-lim>
+
+  <mach-number-switch>
+   <serviceable type="bool">1</serviceable>
+   <indicated-mach-greater-than-0.85 type="bool">false</indicated-mach-greater-than-0.85>
+  </mach-number-switch>
+
+  <airspeed-aneroid-flaps-1st-lim>
+   <serviceable type="bool">1</serviceable>
+   <indicated-speed-greater-than-300-kt type="bool">false</indicated-speed-greater-than-300-kt>
+  </airspeed-aneroid-flaps-1st-lim>
+
   <standby-altimeter>
    <serviceable type="bool">1</serviceable>
   </standby-altimeter>
 
-  <altimeter-air-data-computer>
+  <altimeter-right-system>
    <serviceable type="bool">1</serviceable>
-  </altimeter-air-data-computer>
-
-  <altimeter-autopilot>
-   <serviceable type="bool">1</serviceable>
-  </altimeter-autopilot>
+  </altimeter-right-system>
 
   <altimeter-cabin-pressure-regulator>
    <serviceable type="bool">1</serviceable>

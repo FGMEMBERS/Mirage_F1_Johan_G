@@ -28,6 +28,7 @@
   <type>rotate</type>
   <object-name>needle</object-name>
   <property>velocities/vertical-speed-fps</property>
+  <factor>0.0167</factor>
   <min>-100.0</min>
   <max>100.0</max>
   <interpolation>
