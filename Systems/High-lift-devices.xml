@@ -2,8 +2,20 @@
 
 <PropertyList>
 
- <!-- Aneroid switches -->
- <!-- These are devices connected to the pitot and static systems. -->
+ <!--
+  Aneroid switches
+  
+  These are switches connected to the pitot and static systems.
+  At certain indicated airspeeds or indicated Mach numbers they will
+  close signalling that a limit have passed.
+  
+  In addition to these ones, signalling the slats and flaps interlocks,
+  there are also signals from the air data computer (ADC) and from the
+  ADC through the flying aid rack.
+  
+  The ADC also outputs airspeed limit signals not related to the slats
+  and flaps interlocks.
+ -->
  
  <logic>
   <name>Flaps aneroid switch, 1st limit</name>
@@ -13,7 +25,7 @@
     <value>300</value>
    </greater-than>
   </input>
-  <output>/instrumentation/airspeed-aneroid-flaps-1st-lim/indicated-speed-greater-than-300-kt</output>
+  <output>/systems/high-lift-devices/airspeed-aneroid-flaps-1st-lim/indicated-speed-greater-than-300-kt</output>
  </logic>
 
  <flipflop>
@@ -31,7 +43,7 @@
       <value>320</value>
     </less-than>
   </R>
-  <output>/instrumentation/airspeed-aneroid-flaps-2nd-lim/indicated-speed-greater-than-335-kt</output>
+  <output>/systems/high-lift-devices/airspeed-aneroid-flaps-2nd-lim/indicated-speed-greater-than-335-kt</output>
  </flipflop>
 
  <logic>
@@ -42,7 +54,7 @@
     <value>470</value>
    </greater-than>
   </input>
-  <output>/instrumentation/airspeed-aneroid-slats-2nd-lim/indicated-speed-greater-than-470-kt</output>
+  <output>/systems/high-lift-devices/airspeed-aneroid-slats-2nd-lim/indicated-speed-greater-than-470-kt</output>
  </logic>
 
  <logic>
@@ -53,7 +65,7 @@
     <value>0.85</value>
    </greater-than>
   </input>
-  <output>/instrumentation/mach-number-switch/indicated-mach-greater-than-0.85</output>
+  <output>/systems/high-lift-devices/mach-number-switch/indicated-mach-greater-than-0.85</output>
  </logic>
 
  <logic>
@@ -68,20 +80,38 @@
  </logic>
 
 
- <!-- Flaps and slats interlocks -->
+ <!--
+  Flaps and slats interlocks
+  
+  These are logic that will drive the automatic extension and
+  retraction of the auto slats and the combat flaps to keep them
+  retracted outside the safe envelope.
+  
+  In case the first interlock would malfunction there is a second set
+  of interlocks.  If the second interlocks engages without the first
+  interlocks already being engaged the caution side (amber) of the
+  master failure warning light and the [S/F] light (amber)* on the
+  failure warning panel will become lit.
+  
+  * Only a property for now.
+ -->
 
  <logic>
   <name>Flaps, 1st interlock</name>
   <input>
    <and>
     <or>
-     <property>/instrumentation/airspeed-aneroid-flaps-1st-lim/indicated-speed-greater-than-300-kt</property>
+     <property>/systems/high-lift-devices/airspeed-aneroid-flaps-1st-lim/indicated-speed-greater-than-300-kt</property>
      <greater-than>
       <!-- Will in time come from the flying aid rack -->
       <property>/instrumentation/airspeed-right-system/indicated-mach</property>
       <value>0.75</value>
      </greater-than>
     </or>
+    <!-- greater-than>
+     <property>/surface-positions/flap-pos-norm</property>
+     <value>0</value>
+    </greater-than -->
     <property>/systems/high-lift-devices/flaps/first-interlock-serviceable</property>
    </and>
   </input>
@@ -93,15 +123,19 @@
   <input>
    <and>
     <or>
-     <property>/instrumentation/airspeed-aneroid-flaps-2nd-lim/indicated-speed-greater-than-335-kt</property>
-     <property>/instrumentation/mach-number-switch/indicated-mach-greater-than-0.85</property>
+     <property>/systems/high-lift-devices/airspeed-aneroid-flaps-2nd-lim/indicated-speed-greater-than-335-kt</property>
+     <property>/systems/high-lift-devices/mach-number-switch/indicated-mach-greater-than-0.85</property>
     </or>
-    <property>systems/high-lift-devices/flaps/second-interlock-serviceable</property>
+    <!-- greater-than>
+     <property>/surface-positions/flap-pos-norm</property>
+     <value>0</value>
+    </greater-than -->
+    <property>/systems/high-lift-devices/flaps/second-interlock-serviceable</property>
    </and>
   </input>
   <output>/systems/high-lift-devices/flaps/second-interlock-enabled</output>
   <output>/instrumentation/failure-warning-panel/slats-flaps</output>
-  <output>/instrumentation/master-warning/caution</output>
+  <output>/instrumentation/master-failure-warning/caution</output>
  </logic>
 
  <logic>
@@ -120,6 +154,10 @@
       <value>0.98</value>
      </greater-than>
     </or>
+    <greater-than>
+     <property>/surface-positions/slat-pos-norm</property>
+     <value>0</value>
+    </greater-than>
     <property>/systems/high-lift-devices/slats/first-interlock-serviceable</property>
    </and>
   </input>
@@ -131,15 +169,19 @@
   <input>
    <and>
     <or>
-     <property>/instrumentation/airspeed-aneroid-slats-2nd-lim/indicated-speed-greater-than-470-kt</property>
+     <property>/systems/high-lift-devices/airspeed-aneroid-slats-2nd-lim/indicated-speed-greater-than-470-kt</property>
      <property>/instrumentation/airspeed-indicator/indicated-mach-greater-than-1.1</property>
     </or>
+    <greater-than>
+     <property>/surface-positions/slat-pos-norm</property>
+     <value>0</value>
+    </greater-than>
     <property>/systems/high-lift-devices/slats/second-interlock-serviceable</property>
    </and>
   </input>
   <output>/systems/high-lift-devices/slats/second-interlock-enabled</output>
   <output>/instrumentation/failure-warning-panel/slats-flaps</output>
-  <output>/instrumentation/master-warning/caution</output>
+  <output>/instrumentation/master-failure-warning/caution</output>
  </logic>
 
 </PropertyList>

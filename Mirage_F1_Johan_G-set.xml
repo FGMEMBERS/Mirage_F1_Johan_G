@@ -154,7 +154,6 @@
    <property-rule n="102">
     <name>High-lift devices</name>
     <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices.xml</path>
-    <!-- <path>Aircraft/Mirage_F1_Johan_G/Systems/High-lift-devices-test.xml</path> -->  <!-- TEST -->
    </property-rule>
 
    <property-rule n="103">
@@ -231,10 +230,13 @@
   </ecm>
  </instrumentation> -->
  
+ 
  <nasal>
+ 
   <aar>
    <file>Aircraft/Mirage_F1_Johan_G/Nasal/aar.nas</file>
   </aar>
+  
   <!-- Hidden by Johan G Thu 11 Apr 2013
   <f16>
    <file>Aircraft/f16/Nasal/liveries.nas</file>
@@ -246,19 +248,26 @@
   <radardist>
    <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
   </radardist> -->
+  
   <chronograph>
    <file>Aircraft/Mirage_F1_Johan_G/Nasal/Chronograph.nas</file>
   </chronograph>
+  
  </nasal>
 
+
  <controls>
+ 
   <switches>
    <warning-horn>true</warning-horn>
   </switches>
+  
   <lighting>
     <misc-norm type="double">0.75</misc-norm>
   </lighting>
+  
  </controls>
+
 
  <input>
   <keyboard n="0">
@@ -317,26 +326,6 @@
    <serviceable type="bool">1</serviceable>
   </airspeed-dash-pot>
 
-  <airspeed-aneroid-slats-2nd-lim>
-   <serviceable type="bool">1</serviceable>
-   <indicated-speed-greater-than-470-kt type="bool">false</indicated-speed-greater-than-470-kt>
-  </airspeed-aneroid-slats-2nd-lim>
-
-  <airspeed-aneroid-flaps-2nd-lim>
-   <serviceable type="bool">1</serviceable>
-   <indicated-speed-greater-than-335-kt type="bool">false</indicated-speed-greater-than-335-kt>
-  </airspeed-aneroid-flaps-2nd-lim>
-
-  <mach-number-switch>
-   <serviceable type="bool">1</serviceable>
-   <indicated-mach-greater-than-0.85 type="bool">false</indicated-mach-greater-than-0.85>
-  </mach-number-switch>
-
-  <airspeed-aneroid-flaps-1st-lim>
-   <serviceable type="bool">1</serviceable>
-   <indicated-speed-greater-than-300-kt type="bool">false</indicated-speed-greater-than-300-kt>
-  </airspeed-aneroid-flaps-1st-lim>
-
   <standby-altimeter>
    <serviceable type="bool">1</serviceable>
   </standby-altimeter>
@@ -370,14 +359,37 @@
   </refuel>
 
   <high-lift-devices>
+  
    <flaps>
     <first-interlock-serviceable type="bool">true</first-interlock-serviceable>
     <second-interlock-serviceable type="bool">true</second-interlock-serviceable>
    </flaps>
+   
    <slats>
     <first-interlock-serviceable type="bool">true</first-interlock-serviceable>
     <second-interlock-serviceable type="bool">true</second-interlock-serviceable>
    </slats>
+   
+   <airspeed-aneroid-slats-2nd-lim>
+    <indicated-speed-greater-than-470-kt type="bool">false</indicated-speed-greater-than-470-kt>
+    <serviceable type="bool">1</serviceable>
+   </airspeed-aneroid-slats-2nd-lim>
+
+   <airspeed-aneroid-flaps-2nd-lim>
+    <indicated-speed-greater-than-335-kt type="bool">false</indicated-speed-greater-than-335-kt>
+    <serviceable type="bool">1</serviceable>
+   </airspeed-aneroid-flaps-2nd-lim>
+
+   <mach-number-switch>
+    <indicated-mach-greater-than-0.85 type="bool">false</indicated-mach-greater-than-0.85>
+    <serviceable type="bool">1</serviceable>
+   </mach-number-switch>
+
+   <airspeed-aneroid-flaps-1st-lim>
+    <indicated-speed-greater-than-300-kt type="bool">false</indicated-speed-greater-than-300-kt>
+    <serviceable type="bool">1</serviceable>
+   </airspeed-aneroid-flaps-1st-lim>
+
   </high-lift-devices>
 
   <pitot n="0">

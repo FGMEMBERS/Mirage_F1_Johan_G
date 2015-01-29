@@ -73,6 +73,7 @@ file, these values will be used (they are hardcoded).
     <number>0</number>
   </clock>
 
+
   <!-- Pressure instruments and devices -->
 
   <!--
@@ -85,8 +86,8 @@ file, these values will be used (they are hardcoded).
     of the:
       - Airpseed indicator
       - Mach number switch
-      - Slat aneroid for the second limit
-      - Flap aneroid for the second limit
+      - Slat aneroid switch for the second limit
+      - Flap aneroid switch for the second limit
     
     As the airspeed-indicator property subtree is often used the left
     system is simply named airspeed-indicator.
