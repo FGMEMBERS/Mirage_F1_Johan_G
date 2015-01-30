@@ -69,7 +69,7 @@
     <!-- Added by Johan G Wed 12 Jun 2013 -->
     <bip-test>
       <name>Gear locked bip test</name>
-      <path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/Configuration indicator/Bip test.wav</path>
+      <path>Aircraft/Mirage_F1_Johan_G/Models/Instruments/configuration indicator/Bip test.wav</path>
       <mode>looped</mode>
       <type>avionics</type>
       <condition>
