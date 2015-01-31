@@ -121,17 +121,19 @@
    <path>/controls/lighting/panel-uv-norm</path>
    <path>/controls/lighting/misc-norm</path>
    <path>/controls/lighting/night-lighting-norm</path>
+   
    <!-- Flaps and slats settings -->
    <path>/controls/flight/flaps</path>
    <path>/controls/flight/slats</path>
+   
    <!-- Trim settings -->
    <path>/controls/flight/aileron-trim</path>
    <path>/controls/flight/elevator-trim</path>
    <path>/controls/flight/rudder-trim</path>
+   
    <!-- Parking brake -->
    <path>/controls/gear/brake-parking</path>
-   <!-- Switches -->
-   <path>/controls/switches/warning-horn</path>
+   
    <!-- Cockpit clock -->
    <path>/instrumentation/clock/bezel-min</path>
   </aircraft-data>
@@ -160,6 +162,11 @@
    <property-rule n="103">
     <name>Chronograph</name>
     <path>Aircraft/Mirage_F1_Johan_G/Systems/Chronograph.xml</path>
+   </property-rule>
+
+   <property-rule n="104">
+    <name>Warnings, cautions and limits</name>
+    <path>Aircraft/Mirage_F1_Johan_G/Systems/Warnings, cautions and limits.xml</path>
    </property-rule>
 
    <path>Aircraft/Mirage_F1_Johan_G/Systems/systems.xml</path>
@@ -251,13 +258,29 @@
   </chronograph>
  </nasal>
 
+
  <controls>
+ 
   <switches>
-   <warning-horn>true</warning-horn>
+   <warning-horn type="bool">true</warning-horn>
+   
+   <!-- Master warning light and warning horn reset -->
+   <master-failure-warning-reset type="bool">false</master-failure-warning-reset>
+   
+   <!-- Switches on the failure warning panel -->
+   <battery type="bool">true</battery>  <!-- en: BATT., fr: BATT -->
+   <alternator n="0" type="bool">true</alternator>  <!-- en: ALT.1, fr: ALT.1 -->
+   <alternator n="1" type="bool">true</alternator>  <!-- en: ALT.2, fr: ALT.2 -->
+   <transformer-rectifier-reset type="bool">false</transformer-rectifier-reset>  <!-- en: T.R., fr: T.R. -->
+   <inverter type="string">auto</inverter>  <!-- en: INV, AUTO, RESET; fr: CONV., AUTO, REARM -->
+   <warning-caution-limits-test type="bool">false</warning-caution-limits-test>  <!-- en: T, fr: T -->
+   <oxygen-warning-test type="bool">false</oxygen-warning-test>  <!-- en: OxT, fr: T.O^2 -->
   </switches>
+
   <lighting>
     <misc-norm type="double">0.75</misc-norm>
   </lighting>
+  
  </controls>
 
  <input>
@@ -278,8 +301,72 @@
   <master-failure-warning>
    <warning type="bool">false</warning>
    <caution type="bool">false</caution>
+   <trip-warning type="bool">false</trip-warning>
+   <trip-caution type="bool">false</trip-caution>
   </master-failure-warning>
- 
+
+  <!--
+   Failure varning panel lights
+   
+   The lights are also vired to the master warning light, red lights to
+   the red left side (warning) and the amber ones to the amber right
+   (caution) side.
+   
+   The red lights are in addition wired to the warning horn.
+   
+   The master warning light and the warning horn can be reset by
+   depressing the master warning light.  This will not reset the oxygen
+   warning, which will be on as long as the failure persists.
+  -->
+  <failure-warning-panel>
+   <!-- 1st row -->
+   <battery type="bool">false</battery>  <!-- en: BATT, fr: ? (red) -->
+   <alternator n="0" type="bool">false</alternator>  <!-- en: ALT.1, fr: ALT.1 (amber) -->
+   <alternator n="1" type="bool">false</alternator>  <!-- en: ALT.2, fr: ALT.2 (amber) -->
+   <transformer-rectifier n="0" type="bool">false</transformer-rectifier>  <!-- en: TR.1, fr:  (amber) -->
+   <emergency-ac-power type="bool">false</emergency-ac-power>  <!-- en: EMG~, fr: SEC~ (red) -->
+   
+   <!-- 2nd row -->
+   <fuel-pressure-engine type="bool">false</fuel-pressure-engine>  <!-- en: LP, fr: ? (red) -->
+   <fuel-pressure-pump n="0" type="bool">false</fuel-pressure-pump>  <!-- en: L/H P, fr: BP.G (amber) -->
+   <fuel-pressure-pump n="0" type="bool">false</fuel-pressure-pump>  <!-- en: R/H P, fr: BP.D (amber) -->
+   <transformer-rectifier n="1" type="bool">false</transformer-rectifier>  <!-- en: TR.2, fr: TR.2 (amber) -->
+   <fuel-level type="bool">false</fuel-level>  <!-- en: 500 L, fr: NIV (amber) -->
+   
+   <!-- 3rd row -->
+   <oil-pressure type="bool">false</oil-pressure>  <!-- en: OIL, fr: ? (red) -->
+   <electric-hydraulic-pump type="bool">false</electric-hydraulic-pump>  <!-- en: E.P, fr: ? (red) -->
+   <emergency-hydraulic type="bool">false</emergency-hydraulic>  <!-- en: EMG.HYD, fr: ? (red) -->
+   <hydraulic-pressure n="0" type="bool">false</hydraulic-pressure>  <!-- en: HYD.1, fr: HYDR.1 (amber) -->
+   <hydraulic-pressure n="1" type="bool">false</hydraulic-pressure>  <!-- en: HYD.2, fr: HYDR.2 (amber) -->
+   
+   <!-- 4th row -->
+   <oxygen-regulator type="bool">false</oxygen-regulator>  <!-- en: Ox REG, fr: ? (red) -->
+   <oxygen-level type="bool">false</oxygen-level>  <!-- en: 5mn Ox, fr: 5mnO^2 (amber) -->
+   <equipment-temperature type="bool">false</equipment-temperature>  <!-- en: EQ.T, fr: T.EQ (amber) -->
+   <cabin-temperature type="bool">false</cabin-temperature>  <!-- en: CAB.T, fr: ? (red) -->
+   <cabin-pressure type="bool">false</cabin-pressure>  <!-- en: CAB.P, fr: ? (red) -->
+   
+   <!-- 5th row -->
+   <autotrim type="bool">false</autotrim>  <!-- en: TRIM, fr: TRIM (amber) -->
+   <autopilot type="bool">false</autopilot>  <!-- en: AP, fr: PA ? (red) -->
+   <transponder type="bool">false</transponder>  <!-- en: IFF, fr: CAP (amber) -->
+   <pitot type="bool">false</pitot>  <!-- en: PITOT, fr: ANEMO (amber) -->
+   <air-data-computer type="bool">false</air-data-computer>  <!-- en: ADC, fr: C.AERO (amber) -->
+   
+   <!-- 6th row -->
+   <yaw-damper type="bool">false</yaw-damper>  <!-- en: YAW, fr: LACET (amber) -->
+   <pitch-damper type="bool">false</pitch-damper>  <!-- en: PITCH, fr: TANG. (amber) -->
+   <roll-damper type="bool">false</roll-damper>  <!-- en: ROLL, fr: ROUL. (amber) -->
+   <elevator type="bool">false</elevator>  <!-- en: ELEV, fr: EMP. (amber) -->
+   <rudder type="bool">false</rudder>  <!-- en: RUD, fr: DIR. (amber) -->
+   
+   <!-- 7th row -->
+   <slat-flap type="bool">false</slat-flap>  <!-- en: S/F, fr: HYPER (amber) -->
+   <alternator-modulation type="bool">false</alternator-modulation>  <!-- en: MODUL, fr: ? (red) -->
+   <bleed-off-valve type="bool">false</bleed-off-valve>  <!-- en: B.O.V, fr: ? (red) -->
+  </failure-warning-panel>
+
   <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
   <radar>
    <range type="int" archive="y">20</range>
@@ -288,11 +375,25 @@
  
   <!-- Warning horn properties added by Johan G, Sun 23 Nov 2014 -->
   <warning-horn>
-   <oxygen-regulator type="bool">false</oxygen-regulator>
-   <!-- MC for the red windows of the announciator panel (except [Ox REG]) and AB/engine warning lights -->
+   <!--
+    Oxygen regulator warning horn
+    
+    On as long as oxygen regulator failure warning light
+    [OxRGE] is lit.
+    
+    Not resettable!
+   -->
+   <oxygen-regulator alias="/instrumentation/failure-warning-panel/oxygen-regulator"/>
+   
+   <!--
+    MC for the red windows of the announciator panel
+    (except [Ox REG]) and AB/engine warning lights
+   -->
    <master-failure type="bool">false</master-failure>
+   
    <limits type="bool">false</limits>
    <limit-incidence type="bool">false</limit-incidence>
+   
    <servicable type="bool">true</servicable>
   </warning-horn>
 

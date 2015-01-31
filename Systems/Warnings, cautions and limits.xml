@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <params>
+    <!-- Red lights on the failure warning panel -->
+    <battery alias="/instrumentation/failure-warning-panel/battery"/>
+    <emergency-ac-power alias="/instrumentation/failure-warning-panel/emergency-ac-power"/>
+    <fuel-pressure-engine alias="/instrumentation/failure-warning-panel/fuel-pressure-engine"/>
+    <oil-pressure alias="/instrumentation/failure-warning-panel/oil-pressure"/>
+    <electric-hydraulic-pump alias="/instrumentation/failure-warning-panel/electric-hydraulic-pump"/>
+    <emergency-hydraulic alias="/instrumentation/failure-warning-panel/emergency-hydraulic"/>
+    <oxygen-regulator alias="/instrumentation/failure-warning-panel/oxygen-regulator"/>
+    <cabin-temperature alias="/instrumentation/failure-warning-panel/cabin-temperature"/>
+    <cabin-pressure alias="/instrumentation/failure-warning-panel/cabin-pressure"/>
+    <autopilot alias="/instrumentation/failure-warning-panel/autopilot"/>
+    <alternator-modulation alias="/instrumentation/failure-warning-panel/alternator-modulation"/>
+    <bleed-off-valve alias="/instrumentation/failure-warning-panel/bleed-off-valve"/>
+    
+    <!-- Amber lights on the failure warning panel -->
+    <alternator n="0" alias="/instrumentation/failure-warning-panel/alternator"/>
+    <alternator n="1" alias="/instrumentation/failure-warning-panel/alternator"/>
+    <transformer-rectifier n="0" alias="/instrumentation/failure-warning-panel/transformer-rectifier"/>
+    <fuel-pressure-pump n="0" alias="/instrumentation/failure-warning-panel/fuel-pressure-pump"/>
+    <fuel-pressure-pump n="0" alias="/instrumentation/failure-warning-panel/fuel-pressure-pump"/>
+    <transformer-rectifier n="1" alias="/instrumentation/failure-warning-panel/transformer-rectifier"/>
+    <fuel-level alias="/instrumentation/failure-warning-panel/fuel-level"/>
+    <hydraulic-pressure n="0" alias="/instrumentation/failure-warning-panel/hydraulic-pressure"/>
+    <hydraulic-pressure n="1" alias="/instrumentation/failure-warning-panel/hydraulic-pressure"/>
+    <oxygen-level alias="/instrumentation/failure-warning-panel/oxygen-level"/>
+    <equipment-temperature alias="/instrumentation/failure-warning-panel/equipment-temperature"/>
+    <autotrim alias="/instrumentation/failure-warning-panel/autotrim"/>
+    <transponder alias="/instrumentation/failure-warning-panel/transponder"/>
+    <pitot alias="/instrumentation/failure-warning-panel/pitot"/>
+    <air-data-computer alias="/instrumentation/failure-warning-panel/air-data-computer"/>
+    <yaw-damper alias="/instrumentation/failure-warning-panel/yaw-damper"/>
+    <pitch-damper alias="/instrumentation/failure-warning-panel/pitch-damper"/>
+    <roll-damper alias="/instrumentation/failure-warning-panel/roll-damper"/>
+    <elevator alias="/instrumentation/failure-warning-panel/elevator"/>
+    <rudder alias="/instrumentation/failure-warning-panel/rudder"/>
+    <slat-flap alias="/instrumentation/failure-warning-panel/slat-flap"/>
+    
+    <!-- Trippers -->
+    <trip-warning alias="/instrumentation/master-failure-warning/trip-warning"/>
+    <trip-caution alias="/instrumentation/master-failure-warning/trip-caution"/>
+
+    <!-- Master warning light and horn reset -->
+    <master-failure-warning-reset alias="/controls/switches/master-failure-warning-reset"/>
+  </params>
+
+
+  <!--
+    About the oxygen regulator warning
+    
+    Lits the master failure warning light and sound the oxygen
+    regulator sound on the warning horn.
+    
+    The master failure warning can be reset, but the light on the
+    failure warning panel and the warning horn is not resettable
+    and will remain as long as the failure persists.
+    
+    The failure warning panel light property is hardwired to the
+    ogygen regulator warning horn sound in the -set.xml file.
+  -->
+
+
+  <!-- Trip the master failure warning light and horn -->
+  <flipflop>
+    <name type="string">Master failure warning and warning horn</name>
+    <type>monostable</type>
+    <S>
+      <or>
+        <property>/params/battery</property>
+        <property>/params/emergency-ac-power</property>
+        <property>/params/fuel-pressure-engine</property>
+        <property>/params/oil-pressure</property>
+        <property>/params/electric-hydraulic-pump</property>
+        <property>/params/emergency-hydraulic</property>
+        <property>/params/oxygen-regulator</property>
+        <property>/params/cabin-temperature</property>
+        <property>/params/cabin-pressure</property>
+        <property>/params/autopilot</property>
+        <property>/params/alternator-modulation</property>
+        <property>/params/bleed-off-valve</property>
+      </or>
+    </S>
+    <time>
+      <value>0.2</value>
+    </time>
+    <output>
+      <property>/instrumentation/master-failure-warning/warning</property>
+      <property>/instrumentation/warning-horn/master-failure</property>
+    </output>
+  </flipflop>
+
+
+  <!-- Trip the master failure caution light -->
+  <flipflop>
+    <name type="string">Master failure caution</name>
+    <type>monostable</type>
+    <S>
+      <or>
+        <property>/params/alternator[0]</property>
+        <property>/params/alternator[1]</property>
+        <property>/params/transformer-rectifier[0]</property>
+        <property>/params/fuel-pressure-pump[0]</property>
+        <property>/params/fuel-pressure-pump[0]</property>
+        <property>/params/transformer-rectifier[1]</property>
+        <property>/params/fuel-level</property>
+        <property>/params/hydraulic-pressure[0]</property>
+        <property>/params/hydraulic-pressure[1]</property>
+        <property>/params/oxygen-level</property>
+        <property>/params/equipment-temperature</property>
+        <property>/params/autotrim</property>
+        <property>/params/transponder</property>
+        <property>/params/pitot</property>
+        <property>/params/air-data-computer</property>
+        <property>/params/yaw-damper</property>
+        <property>/params/pitch-damper</property>
+        <property>/params/roll-damper</property>
+        <property>/params/elevator</property>
+        <property>/params/rudder</property>
+        <property>/params/slat-flap</property>
+      </or>
+    </S>
+    <time>
+      <value>0.2</value>
+    </time>
+    <output>/instrumentation/master-failure-warning/caution</output>
+  </flipflop>
+
+
+  <!--
+    Resetting the
+      - Master failure warning light
+      - Warning horn
+      - Failure warning panel
+    
+    Except the oxygen regulator light [OxReg] and the oxygen
+    regulator failure warning horn sound!
+  -->
+  <flipflop>
+    <inverted>true</inverted>
+    <input>
+      <property>/params/master-failure-warning-reset</property>
+    </input>
+    <output>
+      <!-- Red lights on the failure warning panel -->
+      <property>/params/battery</property>
+      <property>/params/emergency-ac-power</property>
+      <property>/params/fuel-pressure-engine</property>
+      <property>/params/oil-pressure</property>
+      <property>/params/electric-hydraulic-pump</property>
+      <property>/params/emergency-hydraulic</property>
+      <property>/params/cabin-temperature</property>
+      <property>/params/cabin-pressure</property>
+      <property>/params/autopilot</property>
+      <property>/params/alternator-modulation</property>
+      <property>/params/bleed-off-valve</property>
+
+      <!-- Amber lights on the failure warning panel -->
+      <property>/params/alternator[0]</property>
+      <property>/params/alternator[1]</property>
+      <property>/params/transformer-rectifier[0]</property>
+      <property>/params/fuel-pressure-pump[0]</property>
+      <property>/params/fuel-pressure-pump[0]</property>
+      <property>/params/transformer-rectifier[1]</property>
+      <property>/params/fuel-level</property>
+      <property>/params/hydraulic-pressure[0]</property>
+      <property>/params/hydraulic-pressure[1]</property>
+      <property>/params/oxygen-level</property>
+      <property>/params/equipment-temperature</property>
+      <property>/params/autotrim</property>
+      <property>/params/transponder</property>
+      <property>/params/pitot</property>
+      <property>/params/air-data-computer</property>
+      <property>/params/yaw-damper</property>
+      <property>/params/pitch-damper</property>
+      <property>/params/roll-damper</property>
+      <property>/params/elevator</property>
+      <property>/params/rudder</property>
+      <property>/params/slat-flap</property>
+
+      <!-- Master failure warning light -->
+      <property>/instrumentation/master-failure-warning/warning</property>
+      <property>/instrumentation/master-failure-warning/caution</property>
+
+      <!-- Warning horn -->
+      <property>/instrumentation/warning-horn/master-failure</property>
+      <property>/instrumentation/warning-horn/limits</property>
+      <property>/instrumentation/warning-horn/limit-incidence</property>
+    </output>
+  </flipflop>
+
+</PropertyList>
