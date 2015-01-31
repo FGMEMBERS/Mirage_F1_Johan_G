@@ -375,22 +375,16 @@
  
   <!-- Warning horn properties added by Johan G, Sun 23 Nov 2014 -->
   <warning-horn>
-   <!--
-    Oxygen regulator warning horn
-    
-    On as long as oxygen regulator failure warning light
-    [OxRGE] is lit.
-    
-    Not resettable!
-   -->
-   <oxygen-regulator alias="/instrumentation/failure-warning-panel/oxygen-regulator"/>
+   <!-- Oxygen regulator warning horn Not resettable! -->
+   <oxygen-regulator type="bool">false</oxygen-regulator>
    
    <!--
-    MC for the red windows of the announciator panel
-    (except [Ox REG]) and AB/engine warning lights
+    Master failure warning for the red windows of the announciator
+    panel (except [Ox REG]) and AB/engine warning lights.
    -->
    <master-failure type="bool">false</master-failure>
-   
+
+   <!-- Envelope limits warnings -->
    <limits type="bool">false</limits>
    <limit-incidence type="bool">false</limit-incidence>
    
