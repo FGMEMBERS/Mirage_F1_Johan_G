@@ -3,7 +3,53 @@
 <PropertyList>
 
   <params>
-    <!-- Red light on the failure warning panel, NON-RESETTABLE -->
+    <!-- Signals to trip failure or limit indication -->
+
+    <!-- Signals to trip red lights on the failure warning panel -->
+    <trip-battery>/systems/warning-caution-limit/trip-battery</trip-battery>
+    <trip-emergency-ac-power>/systems/warning-caution-limit/trip-emergency-ac-power</trip-emergency-ac-power>
+    <trip-fuel-pressure-engine>/systems/warning-caution-limit/trip-fuel-pressure-engine</trip-fuel-pressure-engine>
+    <trip-oil-pressure>/systems/warning-caution-limit/trip-oil-pressure</trip-oil-pressure>
+    <trip-oxygen-regulator>/systems/warning-caution-limit/trip-oxygen-regulator</trip-oxygen-regulator>
+    <trip-electric-hydraulic-pump>/systems/warning-caution-limit/trip-electric-hydraulic-pump</trip-electric-hydraulic-pump>
+    <trip-emergency-hydraulic>/systems/warning-caution-limit/trip-emergency-hydraulic</trip-emergency-hydraulic>
+    <trip-cabin-temperature>/systems/warning-caution-limit/trip-cabin-temperature</trip-cabin-temperature>
+    <trip-cabin-pressure>/systems/warning-caution-limit/trip-cabin-pressure</trip-cabin-pressure>
+    <trip-autopilot>/systems/warning-caution-limit/trip-autopilot</trip-autopilot>
+    <trip-alternator-modulation>/systems/warning-caution-limit/trip-alternator-modulation</trip-alternator-modulation>
+    <trip-bleed-off-valve>/systems/warning-caution-limit/trip-bleed-off-valve</trip-bleed-off-valve>
+    
+    <!-- Signals to trip amber lights on the failure warning panel -->
+    <trip-alternator n="0">/systems/warning-caution-limit/trip-alternator[0]</trip-alternator>
+    <trip-alternator n="1">/systems/warning-caution-limit/trip-alternator[1]</trip-alternator>
+    <trip-transformer-rectifier n="0">/systems/warning-caution-limit/trip-transformer-rectifier[0]</trip-transformer-rectifier>
+    <trip-fuel-pressure-pump n="0">/systems/warning-caution-limit/trip-fuel-pressure-pump[0]</trip-fuel-pressure-pump>
+    <trip-fuel-pressure-pump n="1">/systems/warning-caution-limit/trip-fuel-pressure-pump[1]</trip-fuel-pressure-pump>
+    <trip-transformer-rectifier n="1">/systems/warning-caution-limit/trip-transformer-rectifier[1]</trip-transformer-rectifier>
+    <trip-fuel-level>/systems/warning-caution-limit/trip-fuel-level</trip-fuel-level>
+    <trip-hydraulic-pressure n="0">/systems/warning-caution-limit/trip-hydraulic-pressure[0]</trip-hydraulic-pressure>
+    <trip-hydraulic-pressure n="1">/systems/warning-caution-limit/trip-hydraulic-pressure[1]</trip-hydraulic-pressure>
+    <trip-oxygen-level>/systems/warning-caution-limit/trip-oxygen-level</trip-oxygen-level>
+    <trip-equipment-temperature>/systems/warning-caution-limit/trip-equipment-temperature</trip-equipment-temperature>
+    <trip-autotrim>/systems/warning-caution-limit/trip-autotrim</trip-autotrim>
+    <trip-transponder>/systems/warning-caution-limit/trip-transponder</trip-transponder>
+    <trip-pitot>/systems/warning-caution-limit/trip-pitot</trip-pitot>
+    <trip-air-data-computer>/systems/warning-caution-limit/trip-air-data-computer</trip-air-data-computer>
+    <trip-yaw-damper>/systems/warning-caution-limit/trip-yaw-damper</trip-yaw-damper>
+    <trip-pitch-damper>/systems/warning-caution-limit/trip-pitch-damper</trip-pitch-damper>
+    <trip-roll-damper>/systems/warning-caution-limit/trip-roll-damper</trip-roll-damper>
+    <trip-elevator>/systems/warning-caution-limit/trip-elevator</trip-elevator>
+    <trip-rudder>/systems/warning-caution-limit/trip-rudder</trip-rudder>
+    <trip-slat-flap>/systems/warning-caution-limit/trip-slat-flap</trip-slat-flap>
+
+    <!-- Signals to trip the master failure warning light -->
+    <trip-master-failure-warning>/systems/warning-caution-limit/trip-master-warning</trip-master-failure-warning>
+    <trip-master-failure-caution>/systems/warning-caution-limit/trip-master-caution</trip-master-failure-caution>
+
+
+    <!-- Failure warning panel indicator lights -->
+
+    <!-- Oxygen regulator light (red) on the failure warning panel, NON-RESETTABLE -->
     <oxygen-regulator>/instrumentation/failure-warning-panel/oxygen-regulator</oxygen-regulator>
 
     <!-- Red lights on the failure warning panel -->
@@ -41,20 +87,19 @@
     <elevator>/instrumentation/failure-warning-panel/elevator</elevator>
     <rudder>/instrumentation/failure-warning-panel/rudder</rudder>
     <slat-flap>/instrumentation/failure-warning-panel/slat-flap</slat-flap>
-    
-    <!-- Trippers -->
-    <trip-master-failure-warning>/instrumentation/master-failure-warning/trip-warning</trip-master-failure-warning>
-    <trip-master-failure-caution>/instrumentation/master-failure-warning/trip-caution</trip-master-failure-caution>
+
 
     <!-- Master failure warning light -->
     <master-failure-warning>/instrumentation/master-failure-warning/warning</master-failure-warning>
     <master-failure-caution>/instrumentation/master-failure-warning/caution</master-failure-caution>
- 
+
+
     <!-- Warning horn -->
     <oxygen-regulator-horn>/instrumentation/warning-horn/oxygen-regulator</oxygen-regulator-horn>
     <master-failure-horn>/instrumentation/warning-horn/master-failure</master-failure-horn>
     <limits-horn>/instrumentation/warning-horn/imits</limits-horn>
     <limit-incidence-horn>/instrumentation/warning-horn/limit-incidence</limit-incidence-horn>
+
 
     <!-- Master failure warning light and horn reset -->
     <master-failure-warning-reset>/controls/switches/master-failure-warning-reset</master-failure-warning-reset>
@@ -62,57 +107,365 @@
 
 
   <!--
-    Experimenting with the oxygen regulator failure warning
+    Oxygen regulator failure warning
     
-    What I am trying to do is to have the master failure warning
-    enable only if the oxygen regulator warning was not enabled
-    before the previous master failure warning light reset.
+    Unlike the other lights on the failure warning panel the oxygen
+    regulator failure light [OxREG] (red) is not resettable, neither
+    is the warning hor oxygen regulator warning sound.
     
-    Otherwise the master failure warning will be always be enabled
-    unless the master failure warning always is enabled.
-    
-    I think that what I really would need is 1) more sleep, and
-    2) a state machine.
-    
-    /Johan G, Sat 31 Jan 2015, 08:33 UTC
+    An oxygen regulator failure will also trigger the master failure
+    warning light (red side) and this light is resettable.
   -->
-
   <logic>
-    <name type="string">Test</name>
-    <input>
-      <property alias="/params/oxygen-regulator"/>
-    </input>
-    <output>
-      <property alias="/params/oxygen-regulator-horn"/>
-    </output>
+    <name type="string">Trip oxygen failure warning light and warning horn</name>
+    <input><property alias="/params/trip-oxygen-regulator"/></input>
+    <output><property alias="/params/oxygen-regulator-horn"/></output>
+    <output><property alias="/params/oxygen-regulator"/></output>
   </logic>
-
   <flipflop>
     <name type="string">Trip master failure warning</name>
-    <type>RS</type>
+    <type>monostable</type>
+    <inverted type="bool">true</inverted>
     <S>
-      <property alias="/params/oxygen-regulator"/>
+      <not>
+        <property alias="/params/oxygen-regulator"/>
+      </not>
     </S>
-    <R>
-      <property alias="/params/master-failure-warning"/>
-    </R>
+    <time>
+      <value>0.2</value>
+    </time>
     <output>
       <property alias="/params/trip-master-failure-warning"/>
     </output>
   </flipflop>
 
+
+
+  <!-- Failure warning panel indication logic, warning lights (red) -->
+
   <flipflop>
-    <name type="string">Master failure warning</name>
-    <type>RS</type>
-    <S>
+    <name type="string">Trip low battery voltage warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-battery"/>
+    </clock>
+    <output>
+      <property alias="/params/battery"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip emergency AC power warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-emergency-ac-power"/>
+    </clock>
+    <output>
+      <property alias="/params/emergency-ac-power"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip low engine fuel pressure warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-fuel-pressure-engine"/>
+    </clock>
+    <output>
+      <property alias="/params/fuel-pressure-engine"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip low engine oil pressure warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-oil-pressure"/>
+    </clock>
+    <output>
+      <property alias="/params/oil-pressure"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip electric hydraulic pump warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-electric-hydraulic-pump"/>
+    </clock>
+    <output>
+      <property alias="/params/electric-hydraulic-pump"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip emergency hydraulic warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-emergency-hydraulic"/>
+    </clock>
+    <output>
+      <property alias="/params/emergency-hydraulic"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip cabin temperature failure warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-cabin-temperature"/>
+    </clock>
+    <output>
+      <property alias="/params/cabin-temperature"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip cabin pressure failure warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-cabin-pressure"/>
+    </clock>
+    <output>
+      <property alias="/params/trip-cabin-pressure"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip autopilot failure warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-autopilot"/>
+    </clock>
+    <output>
+      <property alias="/params/autopilot"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip excessive alternator modulation warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-alternator-modulation"/>
+    </clock>
+    <output>
+      <property alias="/params/alternator-modulation"/>
+    </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Trip bleed off valve failure warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-bleed-off-valve"/>
+    </clock>
+    <output>
+      <property alias="/params/bleed-off-valve"/>
+    </output>
+  </flipflop>
+
+
+  <!-- Failure warning panel indication logic, caution lights (amber) -->
+
+
+
+  <!-- Master failure indication logic -->
+
+  <!-- Tie master failure warning horn to master failure warning light -->
+  <logic>
+    <name type="string">Tie master failure warning horn to master failure warning light</name>
+    <input><property alias="/params/master-failure-warning"/></input>
+    <output><property alias="/params/master-failure-horn"/></output>
+  </logic>
+
+  <!-- Combining failure warning indicators to trip master failure warning -->
+  <logic>
+    <name type="string">Combining all failure warnings</name>
+    <input>
+      <or>
+        <property alias="/params/battery"/>
+        <property alias="/params/emergency-ac-power"/>
+        <property alias="/params/fuel-pressure-engine"/>
+        <property alias="/params/oil-pressure"/>
+        <property alias="/params/electric-hydraulic-pump"/>
+        <property alias="/params/emergency-hydraulic"/>
+        <property alias="/params/cabin-temperature"/>
+        <property alias="/params/cabin-pressure"/>
+        <property alias="/params/autopilot"/>
+        <property alias="/params/alternator-modulation"/>
+        <property alias="/params/bleed-off-valve"/>
+      </or>
+    </input>
+    <output><property alias="/params/trip-master-failure-warning"/></output>
+  </logic>
+
+  <!-- Combining failure caution indicators to trip master failure caution -->
+  <logic>
+    <name type="string">Combining all failure cautions</name>
+    <input>
+      <or>
+        <property alias="/params/alternator[0]"/>
+        <property alias="/params/alternator[1]"/>
+        <property alias="/params/transformer-rectifier[0]"/>
+        <property alias="/params/fuel-pressure-pump[0]"/>
+        <property alias="/params/fuel-pressure-pump[1]"/>
+        <property alias="/params/transformer-rectifier[1]"/>
+        <property alias="/params/fuel-level"/>
+        <property alias="/params/hydraulic-pressure[0]"/>
+        <property alias="/params/hydraulic-pressure[1]"/>
+        <property alias="/params/oxygen-level"/>
+        <property alias="/params/equipment-temperature"/>
+        <property alias="/params/autotrim"/>
+        <property alias="/params/transponder"/>
+        <property alias="/params/pitot"/>
+        <property alias="/params/air-data-computer"/>
+        <property alias="/params/yaw-damper"/>
+        <property alias="/params/pitch-damper"/>
+        <property alias="/params/roll-damper"/>
+        <property alias="/params/elevator"/>
+        <property alias="/params/rudder"/>
+        <property alias="/params/slat-flap"/>
+      </or>
+    </input>
+    <output><property alias="/params/trip-master-failure-caution"/></output>
+  </logic>
+
+  <!-- Trip master failure warning -->
+  <flipflop>
+    <name type="string">Trip master failure warning</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
       <property alias="/params/trip-master-failure-warning"/>
-    </S>
-    <R>
-      <property alias="/params/master-failure-warning-reset"/>
-    </R>
+    </clock>
     <output>
       <property alias="/params/master-failure-warning"/>
     </output>
+  </flipflop>
+
+  <flipflop>
+    <name type="string">Reset master failure warning tripper</name>
+    <type>D</type>
+    <inverted type="bool">true</inverted>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/master-failure-warning"/>
+    </clock>
+    <output>
+      <property alias="/params/trip-master-failure-warning"/>
+    </output>
+  </flipflop>
+
+  <!-- Trip master failure caution -->
+  <flipflop>
+    <name type="string">Trip master failure caution</name>
+    <type>D</type>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/trip-master-failure-caution"/>
+    </clock>
+    <output>
+      <property alias="/params/master-failure-caution"/>
+    </output>
+  </flipflop>
+
+
+  <!-- Reset master failure warning -->
+  <flipflop>
+    <name type="string">Reset master failure warning</name>
+    <type>D</type>
+    <inverted type="bool">true</inverted>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/master-failure-warning-reset"/>
+    </clock>
+    <output>
+      <property alias="/params/master-failure-warning"/>
+    </output>
+  </flipflop>
+
+  <!-- Reset master failure caution -->
+  <flipflop>
+    <name type="string">Reset master failure caution</name>
+    <type>D</type>
+    <inverted type="bool">true</inverted>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/master-failure-warning-reset"/>
+    </clock>
+    <output>
+      <property alias="/params/master-failure-caution"/>
+    </output>
+  </flipflop>
+
+
+  <!-- Reset failure warning panel lights -->
+  <flipflop>
+    <name type="string">Reset battery failure indication</name>
+    <type>D</type>
+    <inverted type="bool">true</inverted>
+    <D>
+      <value>true</value>
+    </D>
+    <clock>
+      <property alias="/params/master-failure-warning-reset"/>
+    </clock>
+    
+    <!-- Warning lights (red) -->
+    <output><property alias="/params/battery"/></output>
+    <output><property alias="/params/emergency-ac-power"/></output>
+    <output><property alias="/params/fuel-pressure-engine"/></output>
+    <output><property alias="/params/oil-pressure"/></output>
+    <output><property alias="/params/electric-hydraulic-pump"/></output>
+    <output><property alias="/params/emergency-hydraulic"/></output>
+    <output><property alias="/params/cabin-temperature"/></output>
+    <output><property alias="/params/cabin-pressure"/></output>
+    <output><property alias="/params/autopilot"/></output>
+    <output><property alias="/params/alternator-modulation"/></output>
+    <output><property alias="/params/bleed-off-valve"/></output>
   </flipflop>
 
 </PropertyList>

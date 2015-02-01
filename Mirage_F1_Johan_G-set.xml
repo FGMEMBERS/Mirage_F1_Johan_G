@@ -301,8 +301,6 @@
   <master-failure-warning>
    <warning type="bool">false</warning>
    <caution type="bool">false</caution>
-   <trip-warning type="bool">false</trip-warning>
-   <trip-caution type="bool">false</trip-caution>
   </master-failure-warning>
 
   <!--
@@ -450,6 +448,52 @@
  </instrumentation>
 
  <systems>
+
+  <warning-caution-limit>
+   <!-- Signals to trip failure or limit indication -->
+
+   <!-- Signals to trip red lights on the failure warning panel -->
+   <trip-battery type="bool">false</trip-battery>
+   <trip-emergency-ac-power type="bool">false</trip-emergency-ac-power>
+   <trip-fuel-pressure-engine type="bool">false</trip-fuel-pressure-engine>
+   <trip-oil-pressure type="bool">false</trip-oil-pressure>
+   <trip-oxygen-regulator type="bool">false</trip-oxygen-regulator>
+   <trip-electric-hydraulic-pump type="bool">false</trip-electric-hydraulic-pump>
+   <trip-emergency-hydraulic type="bool">false</trip-emergency-hydraulic>
+   <trip-cabin-temperature type="bool">false</trip-cabin-temperature>
+   <trip-cabin-pressure type="bool">false</trip-cabin-pressure>
+   <trip-autopilot type="bool">false</trip-autopilot>
+   <trip-alternator-modulation type="bool">false</trip-alternator-modulation>
+   <trip-bleed-off-valve type="bool">false</trip-bleed-off-valve>
+
+   <!-- Signals to trip Signals to trip amber lights on the failure warning panel -->
+   <trip-alternator n="0" type="bool">false[0]</trip-alternator>
+   <trip-alternator n="1" type="bool">false[1]</trip-alternator>
+   <trip-transformer-rectifier n="0" type="bool">false[0]</trip-transformer-rectifier>
+   <trip-fuel-pressure-pump n="0" type="bool">false[0]</trip-fuel-pressure-pump>
+   <trip-fuel-pressure-pump n="1" type="bool">false[1]</trip-fuel-pressure-pump>
+   <trip-transformer-rectifier n="1" type="bool">false[1]</trip-transformer-rectifier>
+   <trip-fuel-level type="bool">false</trip-fuel-level>
+   <trip-hydraulic-pressure n="0" type="bool">false[0]</trip-hydraulic-pressure>
+   <trip-hydraulic-pressure n="1" type="bool">false[1]</trip-hydraulic-pressure>
+   <trip-oxygen-level type="bool">false</trip-oxygen-level>
+   <trip-equipment-temperature type="bool">false</trip-equipment-temperature>
+   <trip-autotrim type="bool">false</trip-autotrim>
+   <trip-transponder type="bool">false</trip-transponder>
+   <trip-pitot type="bool">false</trip-pitot>
+   <trip-air-data-computer type="bool">false</trip-air-data-computer>
+   <trip-yaw-damper type="bool">false</trip-yaw-damper>
+   <trip-pitch-damper type="bool">false</trip-pitch-damper>
+   <trip-roll-damper type="bool">false</trip-roll-damper>
+   <trip-elevator type="bool">false</trip-elevator>
+   <trip-rudder type="bool">false</trip-rudder>
+   <trip-slat-flap type="bool">false</trip-slat-flap>
+
+
+   <!-- Signals to trip master failure indication -->
+   <trip-master-warning type="bool">false</trip-master-warning>
+   <trip-master-caution type="bool">false</trip-master-caution>
+  </warning-caution-limit>
 
   <pitot n="0">
    <serviceable type="bool">1</serviceable>
