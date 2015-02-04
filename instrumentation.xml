@@ -25,6 +25,11 @@ file, these values will be used (they are hardcoded).
 
 <PropertyList>
 
+  <clock>
+    <name>clock</name>
+    <number>0</number>
+  </clock>
+
   <dme>
     <name>dme</name>
     <number>0</number>
