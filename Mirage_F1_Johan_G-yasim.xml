@@ -210,21 +210,24 @@ Derniere modif ( 9/4/10)
 -->
 
 <!-- Feeder Tanks -->
-<tank x="-1.00" y="0.41" z="0.84" jet="true" capacity="927"/>
-<tank x="-1.00" y="-0.41" z="0.84" jet="true" capacity="927"/>
+<tank x="-1.00" y="0.41" z="0.84" jet="true" capacity="947.5"/>
+<tank x="-1.00" y="-0.41" z="0.84" jet="true" capacity="947.5"/>
 
 <!-- Forward Group -->
-<tank x="1.94" y="0.84" z="0.63" jet="true" capacity="949"/>
-<tank x="1.94" y="-0.84" z="0.63" jet="true" capacity="949"/>
-<tank x="2.05" y="0.0" z="1.02" jet="true" capacity="1019"/>
+<tank x="1.94" y="0.84" z="0.63" jet="true" capacity="967.7"/>
+<tank x="1.94" y="-0.84" z="0.63" jet="true" capacity="967.7"/>
+<tank x="2.05" y="0.0" z="1.02" jet="true" capacity="1041.6"/>
 
 <!-- Aft Group -->
-<tank x="-3.01" y="0.4" z="0.88" jet="true" capacity="975"/>
-<tank x="-3.01" y="-0.4" z="0.88" jet="true" capacity="975"/>
+<tank x="-3.01" y="0.4" z="0.88" jet="true" capacity="994.6"/>
+<tank x="-3.01" y="-0.4" z="0.88" jet="true" capacity="994.6"/>
 
 <!-- Wing Tanks -->
-<tank x="-0.75" y="1.78" z="0.98" jet="true" capacity="331"/>
-<tank x="-0.75" y="-1.78" z="0.98" jet="true" capacity="331"/>
+<tank x="-0.75" y="1.78" z="0.98" jet="true" capacity="336"/>
+<tank x="-0.75" y="-1.78" z="0.98" jet="true" capacity="336"/>
+
+<!-- negative G Accumulator -->
+<tank x="1.9" y="0.0" z="0.6" jet="true" capacity="107.5"/>
 
 <!--tank x="-0.5" y="-2.096" z="0.44" jet="true" capacity="650"/>
 <tank x="-0.5" y="2.096" z="0.44" jet="true" capacity="650"/>

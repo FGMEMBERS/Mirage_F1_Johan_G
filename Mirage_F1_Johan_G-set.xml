@@ -212,6 +212,10 @@
     <level-gal_us>50</level-gal_us> 
    </tank>
 
+   <tank n="9">
+    <level-gal_us>16</level-gal_us>
+   </tank>	
+
   </fuel>
 
  </consumables>
