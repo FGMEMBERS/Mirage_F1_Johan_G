@@ -146,8 +146,18 @@ for the update of the elapsed seconds.
   <animation>
     <type>rotate</type>
     <object-name>Elapsed seconds hand</object-name>
-    <property>/instrumentation/clock/elapsed-time-sec</property>
-    <factor>6</factor>
+    <!-- Should move the second hand 5 steps per second -->
+    <expression>
+      <div>
+        <floor>
+          <product>
+            <property>/instrumentation/clock/elapsed-time-sec</property>
+            <value>5</value>
+          </product>
+        </floor>
+        <value>0.83333</value>  <!-- Move the second hand 5/6 deg every 1/5 second -->
+      </div>
+    </expression>
     <center>
       <x-m>0.000</x-m>
       <y-m>0.000</y-m>
