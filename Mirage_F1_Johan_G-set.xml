@@ -309,10 +309,13 @@
    <elapsed-time-sec type="double">0</elapsed-time-sec>
   </clock>
 
+
+  <!-- Pressure intruments.  Added by Johan G Feb 2015. -->
+
   <!--
     Left pitot-static system airspeed devices
     
-    Source for:
+    Source to:
       - Airspeed indicator
       - Airspeed switches for the flap and slat interlocks
           - Slat aneroid airspeed switch (2nd limit)
@@ -320,25 +323,25 @@
           - Mach number switch
   -->
   <airspeed-indicator n="0">
-   <description type="string">Left pitot-static (T1-S1) airspeed devices</description>
+   <description type="string">Left pitot-static (T1, S1) airspeed devices</description>
    <serviceable type="bool">true</serviceable>
   </airspeed-indicator>
 
   <!--
     Right pitot-static system airspeed devices
     
-    Source for:
+    Source to:
       - Air data computer (ADC)
       - Airspeed switch for the flap and slat interlocks
           - Flap aneroid airspeed switch (1st limit)
   -->
   <airspeed-indicator n="1">
-   <description type="string">Right pitot-static (T2-S2) airspeed devices</description>
+   <description type="string">Right pitot-static (T2, S2) airspeed devices</description>
    <serviceable type="bool">true</serviceable>
   </airspeed-indicator>
 
   <airspeed-indicator n="2">
-   <description type="string">Dash-pot pitot-static (T2-S4) airspeed</description>
+   <description type="string">Dash-pot pitot-static (T2, S4) airspeed</description>
    <serviceable type="bool">true</serviceable>
   </airspeed-indicator>
 
@@ -355,8 +358,9 @@
   <!--
     S2 static port altimeter
     
-      - Static air pressure for the air data computer (ADC)
-      - Altitude for the autopilot
+    Source to:
+      - Air data computer (ADC)
+      - Autopilot
   -->
   <altimeter n="1">
    <description type="string">S2 static port altimeter</description>
@@ -366,10 +370,11 @@
   <!--
     S3 static port altimeter
     
-    Cabin regulator
+    Source to the cabin regulator
   -->
   <altimeter n="2">
    <description type="string">S3 static port altimeter</description>
+   <pressure-setting-hpa type="double">1013.25</pressure-setting-hpa>
    <serviceable type="bool">true</serviceable>
   </altimeter>
 
@@ -380,6 +385,8 @@
  </instrumentation>
 
  <systems>
+
+  <!-- Pitot tubes and static ports.  Added by Johan G Feb 2015. -->
 
   <pitot n="0">
    <description type="string">Pitot T1 (left side of forward fuselage)</description>
