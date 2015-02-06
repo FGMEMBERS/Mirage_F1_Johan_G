@@ -14,7 +14,7 @@
       
       <input>
         <!-- Will in time be from the air data computer -->
-        <property>/instrumentation/airspeed-right-system/indicated-speed-kt</property>
+        <property>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</property>
       </input>
       
       <format>%3d</format>
@@ -30,7 +30,7 @@
       
       <input>
         <!-- Will in time be from the air data computer -->
-        <property>/instrumentation/altimeter-right-system/pressure-alt-ft</property>
+        <property>/instrumentation/altimeter[1]/indicated-altitude-ft</property>
       </input>
       
       <format>Z %5d</format>
@@ -61,7 +61,7 @@
       
       <input>
         <!-- Will in time be from the air data computer -->
-        <property>/instrumentation/airspeed-right-system/indicated-mach</property>
+        <property>/instrumentation/airspeed-indicator[1]/indicated-mach</property>
       </input>
       
       <format>%3.2f</format>

@@ -75,6 +75,4 @@
    <number type="int">3</number>
   </static>
 
-  <vacum/>  <!-- Will this cause there to be no vacum system? -->
-
 </PropertyList>
