@@ -1,12 +1,12 @@
 <!--
-Dernière modif ( 9/4/10)
+Derniere modif ( 9/4/10)
 	Dassault Mirage F1 Yasim flight model
 	
 	Envergure				: 8,44 m
 	Longueur				: 15,33 m
 	Hauteur					: 4,50 m
-	Surface alaire			: 25 m²
-	Masse à vide			: 7400 kg (16280 lbs)
+	Surface alaire			: 25 m^2
+	Masse a vide			: 7400 kg (16280 lbs)
 	Carburant interne		: 4100 l
 	Masse maximale			: 16200 kg (35640 lbs)
 	Vitesse maximale		: 2570 km/h (1387 kts)
@@ -14,27 +14,27 @@ Dernière modif ( 9/4/10)
 	Plafond pratique		: 18500 m (60700 ft)
 	Vitesse ascen.			: 12780 m/min
 	Distance franchissable	: 475 km
-	Charge alaire			: 450 kg/m²
-	Rapport poids/poussée	: 0,64
+	Charge alaire			: 450 kg/m^2
+	Rapport poids/poussee	: 0,64
 	Charge externe			: 6300 kg (13680 lbs)
 	
-	Réacteur				: Atar 9K50
-	Poussée à sec			: 7900 kgp (17380 lbs)
-	Poussée avec PC			: 15532 kgp (34170 lbs)
-	Température turbine		: 935°
+	Reacteur				: Atar 9K50
+	Poussee a sec			: 7900 kgp (17380 lbs)
+	Poussee avec PC			: 15532 kgp (34170 lbs)
+	Temperature turbine		: 935 	degrees
 	Poids					: 1582 kg (3480 lbs)
 	
 -->
 
 <!--
- Les masses sont exprimées en livres (pounds). 1 kg = 2.2 lbs 
+ Les masses sont exprimees en livres (pounds). 1 kg = 2.2 lbs 
 -->
 
 <airplane mass="16280">
 
 <!--
- La position du réacteur, ainsi que la position du point d'application
-	 de la poussée doivent être adaptées. Il faut relever les positions sous
+ La position du reacteur, ainsi que la position du point d'application
+	 de la poussee doivent etre adaptees. Il faut relever les positions sous
 	 Blender.
 -->
 <fuselage ax="8.6" ay="0" az="0.1" bx="4.673" by="0.0" bz="0.615" width="1.3" taper="0.1" midpoint="1" idrag="1" cx="1.3" cy="1.05"/>
@@ -111,12 +111,12 @@ Dernière modif ( 9/4/10)
 
 <!--
  La vitesse d'approche est d'environ 260 km/h (140 kts).
-	Pour la phase d'approche, le FDM tient compte des paramètres suivants:
-	- puissance à 25%
+	Pour la phase d'approche, le FDM tient compte des parametres suivants:
+	- puissance a 25%
 	- pas de PC
 	- volets sortis
-	- train sorti (évident non ?)
-	- aérofrein sorti
+	- train sorti (evident non ?)
+	- aerofrein sorti
 -->
 
 <approach speed="145" aoa="3" fuel-fraction="0.2"> <!--  -->
@@ -129,7 +129,7 @@ Dernière modif ( 9/4/10)
 </approach>
 
 <!--
- Vitesse de croisière environ 1800 km/h (971 kts). 
+ Vitesse de croisiere environ 1800 km/h (971 kts). 
 -->
 
 <cruise speed="971" alt="40700">
@@ -157,7 +157,7 @@ Dernière modif ( 9/4/10)
 <control-speed control="EXTEND" transition-time="7"/>
 <control-output control="EXTEND" prop="/gear/gear/position-norm"/>
 </gear>
-<!-- Roues arrière gauches. -->
+<!-- Roues arriere gauches. -->
 
 <!-- gear x="-0.956" y="-1.620" z="-1.652" compression="0.2" -->
 <gear x="-0.956" y="-1.620" z="-1.652" compression="0.3" sfric="1" dfric="0.7">
@@ -176,7 +176,7 @@ Dernière modif ( 9/4/10)
 <control-speed control="EXTEND" transition-time="7"/>
 <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
 </gear>
-<!-- Roues arrière droites. -->
+<!-- Roues arriere droites. -->
 
 <!-- gear x="-0.956" y="1.121" z="-1.652" compression="0.2" -->
 <gear x="-0.956" y="1.121" z="-1.652" compression="0.3" sfric="1" dfric="0.7">
@@ -200,13 +200,13 @@ Dernière modif ( 9/4/10)
 <ballast x="4" y="0" z="2" mass="1400"/>
 
 <!--
- La position des réservoirs de carburant ainsi que leur
-	 contenance doit être renseignée, sachant que l'avion contient
+ La position des reservoirs de carburant ainsi que leur
+	 contenance doit etre renseignee, sachant que l'avion contient
 	 environ 4100 l de carburant en configuration lisse.
-	 Des réservoirs supplémentaires de 6000 l environ peuvent être 
-	 ajoutés dans la configuration suivante:
-	 - 2 réservoirs  (1 sous chaque aile)
-	 - 1 réservoir ventral
+	 Des reservoirs supplementaires de 6000 l environ peuvent etre 
+	 ajoutes dans la configuration suivante:
+	 - 2 reservoirs  (1 sous chaque aile)
+	 - 1 reservoir ventral
 -->
 <tank x="-0.5" y="-2.096" z="0.44" jet="false" capacity="650"/>
 <tank x="-0.5" y="2.096" z="0.44" jet="false" capacity="650"/>
