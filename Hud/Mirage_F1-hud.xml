@@ -13,7 +13,7 @@
       <height>3</height>
       
       <input>
-        <property>/velocities/airspeed-kt</property>
+        <property>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</property>
       </input>
       
       <format>%3d</format>
@@ -28,7 +28,7 @@
       <height>3</height>
       
       <input>
-        <property>/instrumentation/altimeter/pressure-alt-ft</property>
+        <property>/instrumentation/altimeter[1]/indicated-altitude-ft</property>
       </input>
       
       <format>Z %5d</format>
@@ -58,7 +58,7 @@
       <height>3</height>
       
       <input>
-        <property>/velocities/mach</property>
+        <property>/instrumentation/airspeed-indicator[1]/indicated-mach</property>
       </input>
       
       <format>%3.2f</format>
