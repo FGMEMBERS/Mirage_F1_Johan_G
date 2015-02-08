@@ -2,6 +2,15 @@
 
 <PropertyList>
 
+ <params>
+  <adc-indicated-airspeed-kt alias="/instrumentation/airspeed-indicator[1]/indicated-speed-kt"/>
+  <adc-indicated-mach alias="/instrumentation/airspeed-indicator[1]/indicated-mach"/>
+  <adc-serviceable alias="/systems/air-data-comp/serviceable"/>
+  <left-system-indicated-airspeed-kt alias="/instrumentation/airspeed-indicator[0]/indicated-speed-kt"/>
+  <left-system-indicated-mach alias="/instrumentation/airspeed-indicator[0]/indicated-mach"/>
+  <left-system-serviceable alias="/instrumentation/airspeed-indicator[0]/serviceable"/>
+ </params>
+
  <!--
   Aneroid switches
   
@@ -21,7 +30,7 @@
   <name>Flaps aneroid switch, 1st limit</name>
   <input>
    <greater-than>
-    <property>/instrumentation/airspeed-right-system/indicated-speed-kt</property>
+    <property>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</property>
     <value>300</value>
    </greater-than>
   </input>
@@ -33,13 +42,13 @@
   <type>SR</type>
   <S>
      <greater-than>
-      <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+      <property>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</property>
       <value>335</value>
      </greater-than>
   </S>
   <R>
     <less-than>
-      <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+      <property>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</property>
       <value>320</value>
     </less-than>
   </R>
@@ -50,7 +59,7 @@
   <name>Slats aneroid switch, 1st limit</name>
   <input>
    <greater-than>
-    <property>/instrumentation/airspeed-right-system/indicated-speed-kt</property>
+    <property>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</property>
     <value>470</value>
    </greater-than>
   </input>
@@ -61,7 +70,7 @@
   <name>Mach number switch</name>
   <input>
    <greater-than>
-    <property>/instrumentation/airspeed-indicator/indicated-mach</property>
+    <property>/instrumentation/airspeed-indicator[0]/indicated-mach</property>
     <value>0.85</value>
    </greater-than>
   </input>
@@ -72,11 +81,11 @@
   <name>Airspeed indicator mach number switch</name>
   <input>
    <greater-than>
-    <property>/instrumentation/airspeed-indicator/indicated-mach</property>
+    <property>/instrumentation/airspeed-indicator[0]/indicated-mach</property>
     <value>1.1</value>
    </greater-than>
   </input>
-  <output>/instrumentation/airspeed-indicator/indicated-mach-greater-than-1.1</output>
+  <output>/instrumentation/airspeed-indicator[0]/indicated-mach-greater-than-1.1</output>
  </logic>
 
 
@@ -104,7 +113,7 @@
      <property>/systems/high-lift-devices/airspeed-aneroid-flaps-1st-lim/indicated-speed-greater-than-300-kt</property>
      <greater-than>
       <!-- Will in time come from the flying aid rack -->
-      <property>/instrumentation/airspeed-right-system/indicated-mach</property>
+      <property>/instrumentation/airspeed-indicator[1]/indicated-mach</property>
       <value>0.75</value>
      </greater-than>
     </or>
@@ -145,12 +154,12 @@
     <or>
      <greater-than>
       <!-- Will in time come from the air data computer -->
-      <property>/instrumentation/airspeed-right-system/indicated-speed-kt</property>
+      <property>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</property>
       <value>440</value>
      </greater-than>
      <greater-than>
       <!-- Will in time come from the flying aid rack -->
-      <property>/instrumentation/airspeed-right-system/indicated-mach</property>
+      <property>/instrumentation/airspeed-indicator[1]/indicated-mach</property>
       <value>0.98</value>
      </greater-than>
     </or>
@@ -170,7 +179,7 @@
    <and>
     <or>
      <property>/systems/high-lift-devices/airspeed-aneroid-slats-2nd-lim/indicated-speed-greater-than-470-kt</property>
-     <property>/instrumentation/airspeed-indicator/indicated-mach-greater-than-1.1</property>
+     <property>/instrumentation/airspeed-indicator[0]/indicated-mach-greater-than-1.1</property>
     </or>
     <greater-than>
      <property>/surface-positions/slat-pos-norm</property>

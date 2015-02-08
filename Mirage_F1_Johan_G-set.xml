@@ -369,6 +369,7 @@
     
     Source to:
       - Air data computer (ADC)
+        (In reality driven by the ADC, should therefore fail with the ADC)
       - Autopilot
   -->
   <altimeter n="1">
@@ -429,6 +430,9 @@
 
   </high-lift-devices>
 
+  <air-data-computer>
+   <serviceable type="bool">true</serviceable>
+  </air-data-computer>
 
   <!-- Pitot tubes and static ports.  Added by Johan G Feb 2015. -->
 
