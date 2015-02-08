@@ -298,5 +298,5 @@ foreach (var tank; tanks) {
 }
 
 
-print("L-159 fuel system initialized");
+print("Mirage F1 fuel system initialized");
 
