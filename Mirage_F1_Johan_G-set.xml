@@ -180,42 +180,52 @@
   <fuel>
 
    <tank n="0">
+    <name>Feeder-R</name>
     <level-gal_us>141</level-gal_us>
    </tank>
 
    <tank n="1">
+    <name>Feeder-L</name>
     <level-gal_us>141</level-gal_us>
    </tank>
 
    <tank n="2">
+    <name>Forward-R</name>
     <level-gal_us>144</level-gal_us> 
    </tank>
 
    <tank n="3">
+    <name>Forward-L</name>
     <level-gal_us>144</level-gal_us> 
    </tank>
 
    <tank n="4">
+    <name>Forward-C</name>
     <level-gal_us>155</level-gal_us> 
    </tank>
 
    <tank n="5">
+    <name>Aft-L</name>
     <level-gal_us>148</level-gal_us> 
    </tank>
 
    <tank n="6">
+    <name>Aft-R</name>
     <level-gal_us>148</level-gal_us> 
    </tank>
 
    <tank n="7">
+    <name>Wing-L</name>
     <level-gal_us>50</level-gal_us> 
    </tank>
 
    <tank n="8">
+    <name>Wing-R</name>
     <level-gal_us>50</level-gal_us> 
    </tank>
 
    <tank n="9">
+    <name>Accumulator</name>
     <level-gal_us>16</level-gal_us>
    </tank>	
 
@@ -266,6 +276,9 @@
   <aar>
    <file>Aircraft/Mirage_F1_Johan_G/Nasal/aar.nas</file>
   </aar>
+  <fuelsystem>
+   <file>Aircraft/Mirage_F1_Johan_G/Nasal/FuelSystem.nas</file>
+  </fuelsystem>
   <!-- Hidden by Johan G Thu 11 Apr 2013
   <f16>
    <file>Aircraft/f16/Nasal/liveries.nas</file>
