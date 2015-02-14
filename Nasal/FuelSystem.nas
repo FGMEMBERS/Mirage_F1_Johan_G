@@ -1,12 +1,17 @@
 ### Universal fuel transfer system by Tomaskom ###
 
-#Script for automated fuel transfer from fuel tanks to Engine feed tank based on fuel tank priority. Gathers fuel from fuel tanks within a priority group that have most fuel first - results in equalized fuel levels within the group. Also manages enabling all tanks when refueling. 
+#Script for automated fuel transfer from fuel tanks to Engine feed tank based on fuel tank priority. Gathers fuel from fuel tanks within a priority group that have most fuel first - results in equalized fuel levels within the group. Also manages enabling all tanks when refueling.
 
-#Fuel tanks priority: fist empty droptanks (4,3), then wingtip fixed tanks (2) and fuselage tanks are last (1). 
+# Modified to (partially) represent the Mirage F1 fuel system by enrogue - correctly detects inverted flight, but incorrectly all feed is via accumulator
+# fuel float valves in feeder tanks & aft tanks simulated via multiple tanks in the same place
+# this is to give the correct change of balance/CG thoroughout the flight regime as the real aircraft
+# no valve/pump/electric dependancies (yet)
+# no crossfeed valve yet
+# no pylon tanks yet - this would require a listener on the sequence switch that then re(set) the priority values
 
 var fuel_node = props.globals.getNode("/consumables/fuel");
 
-var engFeedN = 9; #number of tank which serves as engine feed
+var engFeedN = 21; #number of tank which serves as engine feed
 
 var interval = 0.1; #approximate transfer cycle interval
 var galsPerSec = 1.5; #fuel flow to engine feed tank (gal_us/sec)
@@ -84,7 +89,7 @@ var fuelTank = {
 	},
 };
 
-var engineFeedTank = fuelTank.new(engFeedN, 0); 
+var engineFeedTank = fuelTank.new(engFeedN, 0);
 
 #keep Engine feed tank enabled, TODO: change when engine startup procedures are implemented
 engFeedEnable = func {
@@ -99,34 +104,48 @@ engFeedEnable = func {
 }
 setlistener("/consumables/fuel/tank["~engFeedN~"]/selected", engFeedEnable);
 
+# to change the sequence for 'CLEAN' vs 'WG.PYL.TK' the priorites
+# would be modified according to a setlistener on the switch value
 var tanks = [
 	#feeder tanks
-	fuelTank.new(0, 1),
-	fuelTank.new(1, 1),
-	#forward group
-	fuelTank.new(2, 2),
-	fuelTank.new(3, 2),
-	fuelTank.new(4, 4),
-	#aft group
-	fuelTank.new(5, 3),
-	fuelTank.new(6, 3),
-	#wing tanks
+	fuelTank.new(0, 11),
+	fuelTank.new(1, 11),
+	fuelTank.new(2, 9),
+	fuelTank.new(3, 9),
+	fuelTank.new(4, 7),
+	fuelTank.new(5, 7),
+	fuelTank.new(6, 5),
 	fuelTank.new(7, 5),
-	fuelTank.new(8, 5),
+	fuelTank.new(8, 3),
+	fuelTank.new(9, 3),
+	fuelTank.new(10, 1),
+	fuelTank.new(11, 1),
+	#forward group
+	fuelTank.new(12, 4),
+	fuelTank.new(13, 4),
+	fuelTank.new(14, 8),
+	#aft group
+	fuelTank.new(15, 6),
+	fuelTank.new(16, 6),
+	fuelTank.new(17, 2),
+	fuelTank.new(18, 2),
+	#wing tanks
+	fuelTank.new(19, 10),
+	fuelTank.new(20, 10),
 	#pylon droptanks
-	#fuelTank.new(10, 6),
-	#fuelTank.new(11, 6),
-	#fuelTank.new(12, 6),
+	#fuelTank.new(22, 12),
+	#fuelTank.new(23, 12),
+	#fuelTank.new(24, 12),
 ];
 
 var doRefuel = func(dt) {
-	if( getprop("/gear/gear[0]/wow") 
-	and getprop("/gear/gear[1]/wow") 
-	and getprop("/gear/gear[2]/wow") 
+	if( getprop("/gear/gear[0]/wow")
+	and getprop("/gear/gear[1]/wow")
+	and getprop("/gear/gear[2]/wow")
 	and (getprop("/velocities/groundspeed-kt") < 2) ) {
 		#determine fuel to be allocated in this cycle
 		var refuelAmmount = refuel_galsPerSec * dt;
-		
+
 		var maxPrio = 0;
 		foreach(var tank; tanks) {
 			if(tank.getPriority() > maxPrio) maxPrio = tank.getPriority();
@@ -141,11 +160,11 @@ var doRefuel = func(dt) {
 				}
 			}
 			if(size(thisGroup) == 0) continue;
-			
+
 			#get previous array sorted - descending order
-			var sortedGroup = sort(thisGroup, 
+			var sortedGroup = sort(thisGroup,
 				func(h1, h2){return h1.fuelLevel-h2.fuelLevel;} );
-			
+
 			#try to push remaining available fuel and save overflow for next tanks
 			foreach(var iSorted; sortedGroup) {
 				#print("prerefuelAmmount: "~refuelAmmount);
@@ -153,7 +172,7 @@ var doRefuel = func(dt) {
 				#print("refuelAmmount:    "~refuelAmmount);
 			}
 		}
-		
+
 		if(refuelAmmount > 0) {
 			screen.log.write("Refueling finished, all mounted tanks are full. ", 1, 0.6, 0.1);
 			refuel_galsPerSec = 0;
@@ -182,98 +201,103 @@ var refuel = func(fuelGalsPerSec) {
 #request balanced ammount of fuel from each tank (to keep levels equal)
 #store the fuel to the Engine feed tank
 var fuelTransfer = func {
-	#get delta time
-	nowTime = getprop("/sim/time/elapsed-sec");
-	dTime = (nowTime - lastTime) * getprop("/sim/speed-up");
-	if(dTime < 0) dTime = 0;
-	
-	#try ground refuel
-	if(refuel_galsPerSec > 0) doRefuel(dTime);
-	
-	var cycleAmmount = galsPerSec * dTime;
+	#detect if inverted/negative-G
+	var inverted = getprop("/accelerations/pilot-g") or 1.00;
+	if (inverted > 0) {
+		#get delta time
+		nowTime = getprop("/sim/time/elapsed-sec");
+		dTime = (nowTime - lastTime) * getprop("/sim/speed-up");
+		if(dTime < 0) dTime = 0;
 
-	#check how much fuel is missing in the Engine feed tank
-	var missingFuel = engineFeedTank.getCapacity() - engineFeedTank.getLevel();
-		
-	var fuelToGet = (cycleAmmount < missingFuel ? cycleAmmount : missingFuel);
-	
-	#check which highest priority still has fuel (and perform dump if tank is set to do it)
-	var maxNonemptyPrio = 0;
-	forindex(var i; tanks) {
-		tanks[i].performDump(dTime);
-		if( tanks[i].getLevel() > 0 and tanks[i].getPriority() > maxNonemptyPrio ) {
+		#try ground refuel
+		if(refuel_galsPerSec > 0) doRefuel(dTime);
+
+		var cycleAmmount = galsPerSec * dTime;
+
+		#check how much fuel is missing in the Engine feed tank
+		var missingFuel = engineFeedTank.getCapacity() - engineFeedTank.getLevel();
+
+		var fuelToGet = (cycleAmmount < missingFuel ? cycleAmmount : missingFuel);
+
+		#check which highest priority still has fuel (and perform dump if tank is set to do it)
+		var maxNonemptyPrio = 0;
+		forindex(var i; tanks) {
+			tanks[i].performDump(dTime);
+			if( tanks[i].getLevel() > 0 and tanks[i].getPriority() > maxNonemptyPrio ) {
 			maxNonemptyPrio = tanks[i].getPriority();
+			}
 		}
-	}
-	
-	#create array of hashes, each hash contains index (from tanks[]), fuel level and fuel to be requested
-	var activeTanks = [];
-	forindex(var i; tanks) {
-		if( tanks[i].getPriority() == maxNonemptyPrio ) {
-			append(activeTanks, {index:i, fuelLevel:tanks[i].getLevel(), reqFuel:0});
+
+		#create array of hashes, each hash contains index (from tanks[]), fuel level and fuel to be requested
+		var activeTanks = [];
+		forindex(var i; tanks) {
+			if( tanks[i].getPriority() == maxNonemptyPrio ) {
+				append(activeTanks, {index:i, fuelLevel:tanks[i].getLevel(), reqFuel:0});
+			}
 		}
-	}
-	
-	#skip loop if no tanks (eg. when not yet initialized on startup)
-	if(size(activeTanks) == 0) {
-		settimer(fuelTransfer, interval);
+
+		#skip loop if no tanks (eg. when not yet initialized on startup)
+		if(size(activeTanks) == 0) {
+			settimer(fuelTransfer, interval);
+			lastTime = nowTime;
+			return;
+		}
+
+		#get previous array sorted - descending order
+		var sortedTanks = sort(activeTanks,
+			func(h1, h2){return h2.fuelLevel-h1.fuelLevel;} );
+
+			#debug check for correct sorting
+			#forindex(var i; sortedTanks) {
+			#	print("Sorted tank " ~ sortedTanks[i].index ~ ", fuel level: " ~ sortedTanks[i].fuelLevel);
+			#}
+
+		var numTanks = size(sortedTanks);
+
+		var gatheredFuel = 0;
+		var cont = 1; #continue looping?
+		var stopIndex = -1; #index where looping stopped
+		for(var i = 0; cont; i+=1) {
+			if( (i+1) < numTanks and (gatheredFuel + (sortedTanks[i].fuelLevel - sortedTanks[i+1].fuelLevel) * (i+1)) < fuelToGet ) {
+				gatheredFuel += (sortedTanks[i].fuelLevel - sortedTanks[i+1].fuelLevel) * (i+1);
+			}
+			else {
+				stopIndex = i;
+				cont = 0;
+			}
+		}
+
+		var toGather = fuelToGet - gatheredFuel;
+		var leastReducedLevel = sortedTanks[stopIndex].fuelLevel; #level of tank with least fuel which still gets used
+
+		#set required fuel
+		for(var i = 0; i < stopIndex; i+=1) {
+			sortedTanks[i].reqFuel += sortedTanks[i].fuelLevel - leastReducedLevel;
+		}
+
+		for(var i = 0; i <= stopIndex; i+=1) {
+			sortedTanks[i].reqFuel += toGather/(stopIndex+1);
+		}
+
+		#debug check for correct reqFuel
+		#forindex(var i; sortedTanks) {
+		#	print("Tank " ~ sortedTanks[i].index ~ ", fuel level: " ~ sortedTanks[i].fuelLevel);
+		#	print("Requesting fuel: " ~ sortedTanks[i].reqFuel);
+		#}
+
+		#execute fuel transfer
+		var transferedFuel = 0;
+		forindex(var i; sortedTanks) {
+			transferedFuel += tanks[sortedTanks[i].index].takeFuel(sortedTanks[i].reqFuel);
+		}
+		engineFeedTank.pushFuel(transferedFuel);
+
 		lastTime = nowTime;
-		return;
+
 	}
-	
-	#get previous array sorted - descending order
-	var sortedTanks = sort(activeTanks, 
-		func(h1, h2){return h2.fuelLevel-h1.fuelLevel;} );
-	
-	#debug check for correct sorting
-	#forindex(var i; sortedTanks) {
-	#	print("Sorted tank " ~ sortedTanks[i].index ~ ", fuel level: " ~ sortedTanks[i].fuelLevel);
-	#}
-	
-	var numTanks = size(sortedTanks);
-	
-	var gatheredFuel = 0;
-	var cont = 1; #continue looping?
-	var stopIndex = -1; #index where looping stopped
-	for(var i = 0; cont; i+=1) {
-		if( (i+1) < numTanks and (gatheredFuel + (sortedTanks[i].fuelLevel - sortedTanks[i+1].fuelLevel) * (i+1)) < fuelToGet ) {
-			gatheredFuel += (sortedTanks[i].fuelLevel - sortedTanks[i+1].fuelLevel) * (i+1);
-		}
-		else {
-			stopIndex = i;
-			cont = 0;
-		}
-	}
-	
-	var toGather = fuelToGet - gatheredFuel;
-	var leastReducedLevel = sortedTanks[stopIndex].fuelLevel; #level of tank with least fuel which still gets used
-	
-	#set required fuel
-	for(var i = 0; i < stopIndex; i+=1) {
-		sortedTanks[i].reqFuel += sortedTanks[i].fuelLevel - leastReducedLevel;
-	}
-	
-	for(var i = 0; i <= stopIndex; i+=1) {
-		sortedTanks[i].reqFuel += toGather/(stopIndex+1);
-	}
-	
-	#debug check for correct reqFuel
-	#forindex(var i; sortedTanks) {
-	#	print("Tank " ~ sortedTanks[i].index ~ ", fuel level: " ~ sortedTanks[i].fuelLevel);
-	#	print("Requesting fuel: " ~ sortedTanks[i].reqFuel);
-	#}
-	
-	#execute fuel transfer
-	var transferedFuel = 0;
-	forindex(var i; sortedTanks) {
-		transferedFuel += tanks[sortedTanks[i].index].takeFuel(sortedTanks[i].reqFuel);
-	}
-	engineFeedTank.pushFuel(transferedFuel);
-	
-	lastTime = nowTime;
-	
 	settimer(fuelTransfer, interval);
 }
+
 fuelTransfer();
 
 
@@ -299,4 +323,3 @@ foreach (var tank; tanks) {
 
 
 print("Mirage F1 fuel system initialized");
-
