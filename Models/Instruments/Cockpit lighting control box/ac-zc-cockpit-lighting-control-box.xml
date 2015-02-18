@@ -103,7 +103,13 @@
   </animation>
 
 
-  <!-- Lighting dimmer knob -->
+  <!--
+    Lighting dimmer knob
+    
+    When /controls/switches/night-lighting=true it dims
+    the failure warning panel, indicator lights and
+    various panels.
+  -->
   <animation>
     <object-name>Dim-knob</object-name>
     <type>rotate</type>
@@ -129,7 +135,7 @@
     <type>select</type>
     <condition>
       <equals>
-        <property>/controls/lighting/night-lighting-norm</property>
+        <property>/controls/switches/night-lighting</property>
         <value>true</value>
       </equals>
     </condition>
@@ -140,7 +146,7 @@
     <type>select</type>
     <condition>
       <equals>
-        <property>/controls/lighting/night-lighting-norm</property>
+        <property>/controls/switches/night-lighting</property>
         <value>false</value>
       </equals>
     </condition>
@@ -365,8 +371,8 @@
       <repeatable>false</repeatable>
         <binding>
           <command>property-assign</command>
-          <property>/controls/lighting/night-lighting-norm</property>
-          <value type="bool">false</value>
+          <property>/controls/switches/night-lighting</property>
+          <value>false</value>
         </binding>
     </action>
   </animation>
@@ -379,8 +385,8 @@
       <repeatable>false</repeatable>
         <binding>
           <command>property-assign</command>
-          <property>/controls/lighting/night-lighting-norm</property>
-          <value type="bool">true</value>
+          <property>/controls/switches/night-lighting</property>
+          <value>true</value>
         </binding>
     </action>
   </animation>

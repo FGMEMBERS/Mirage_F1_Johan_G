@@ -116,11 +116,11 @@
    <path>/controls/lighting/consoles-external-norm</path>
    <path>/controls/lighting/consoles-internal-norm</path>
    <path>/controls/lighting/dimmer-norm</path>
+   <path>/controls/lighting/map-norm</path>
+   <path>/controls/lighting/misc-norm</path>
    <path>/controls/lighting/panel-external-norm</path>
    <path>/controls/lighting/panel-internal-norm</path>
    <path>/controls/lighting/panel-uv-norm</path>
-   <path>/controls/lighting/misc-norm</path>
-   <path>/controls/lighting/night-lighting-norm</path>
    <!-- Flaps and slats settings -->
    <path>/controls/flight/flaps</path>
    <path>/controls/flight/slats</path>
@@ -131,6 +131,8 @@
    <!-- Parking brake -->
    <path>/controls/gear/brake-parking</path>
    <!-- Switches -->
+   <path>/controls/switches/misc-lighting</path>
+   <path>/controls/switches/night-lighting</path>
    <path>/controls/switches/warning-horn</path>
    <!-- Cockpit clock -->
    <path>/instrumentation/clock/bezel-min</path>
@@ -356,12 +358,21 @@
  </nasal>
 
  <controls>
+  <lighting>
+   <consoles-external-norm type="double">0.75</consoles-external-norm>
+   <consoles-internal-norm type="double">0.75</consoles-internal-norm>
+   <dimmer-norm type="double">0.75</dimmer-norm>
+   <map-norm type="double">0.75</map-norm>
+   <misc-norm type="double">0.75</misc-norm>
+   <panel-external-norm type="double">0.75</panel-external-norm>
+   <panel-internal-norm type="double">0.75</panel-internal-norm>
+   <panel-uv-norm type="double">0.75</panel-uv-norm>
+  </lighting>
   <switches>
+   <misc-lighting type="bool">true</misc-lighting>
+   <night-lighting type="bool">false</night-lighting>
    <warning-horn>true</warning-horn>
   </switches>
-  <lighting>
-    <misc-norm type="double">0.75</misc-norm>
-  </lighting>
  </controls>
 
  <input>
