@@ -1,7 +1,7 @@
 <!--
 Derniere modif ( 9/4/10)
 	Dassault Mirage F1 Yasim flight model
-	
+
 	Envergure				: 8,44 m
 	Longueur				: 15,33 m
 	Hauteur					: 4,50 m
@@ -17,17 +17,17 @@ Derniere modif ( 9/4/10)
 	Charge alaire			: 450 kg/m^2
 	Rapport poids/poussee	: 0,64
 	Charge externe			: 6300 kg (13680 lbs)
-	
+
 	Reacteur				: Atar 9K50
 	Poussee a sec			: 7900 kgp (17380 lbs)
 	Poussee avec PC			: 15532 kgp (34170 lbs)
-	Temperature turbine		: 935 	degrees
+	Temperature turbine		: 935 degrees
 	Poids					: 1582 kg (3480 lbs)
-	
+
 -->
 
 <!--
- Les masses sont exprimees en livres (pounds). 1 kg = 2.2 lbs 
+ Les masses sont exprimees en livres (pounds). 1 kg = 2.2 lbs
 -->
 
 <airplane mass="16280">
@@ -69,7 +69,7 @@ Derniere modif ( 9/4/10)
 	<control-input axis="/controls/flight/speedbrake" control="SPOILER"/>
 	<control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
 	<control-speed control="SPOILER" transition-time="1"/>
-	
+
 
 <!-- Slats -->
 <slat start="0.023" end="0.9" lift="2" drag="1.1" aoa="8"/>
@@ -98,7 +98,7 @@ Derniere modif ( 9/4/10)
 
 
 <!--
- <jet x="-1.716" y="0.0" z="0.625" mass="3480" thrust="17380" afterburner="34170" egt="935"> 
+ <jet x="-1.716" y="0.0" z="0.625" mass="3480" thrust="17380" afterburner="34170" egt="935">
 -->
 
 <jet x="3.5" y="0.0" z="0.693" mass="3480" thrust="16000" afterburner="34170" egt="935" spool-time="5">
@@ -129,7 +129,7 @@ Derniere modif ( 9/4/10)
 </approach>
 
 <!--
- Vitesse de croisiere environ 1800 km/h (971 kts). 
+ Vitesse de croisiere environ 1800 km/h (971 kts).
 -->
 
 <cruise speed="971" alt="40700">
@@ -203,19 +203,52 @@ Derniere modif ( 9/4/10)
  La position des reservoirs de carburant ainsi que leur
 	 contenance doit etre renseignee, sachant que l'avion contient
 	 environ 4100 l de carburant en configuration lisse.
-	 Des reservoirs supplementaires de 6000 l environ peuvent etre 
+	 Des reservoirs supplementaires de 6000 l environ peuvent etre
 	 ajoutes dans la configuration suivante:
 	 - 2 reservoirs  (1 sous chaque aile)
 	 - 1 reservoir ventral
 -->
-<tank x="-0.5" y="-2.096" z="0.44" jet="false" capacity="650"/>
-<tank x="-0.5" y="2.096" z="0.44" jet="false" capacity="650"/>
-<tank x="-0.632" y="0.0" z="0.029" jet="false" capacity="1650"/>
+
+<!-- Feeder Tanks - multiple tanks to simulate a float switch -->
+<tank x="-1.00" y="0.41" z="0.84" jet="true" capacity="26.9"/>
+<tank x="-1.00" y="-0.41" z="0.84" jet="true" capacity="26.9"/>
+<tank x="-1.00" y="0.41" z="0.84" jet="true" capacity="53.8"/>
+<tank x="-1.00" y="-0.41" z="0.84" jet="true" capacity="53.8"/>
+<tank x="-1.00" y="0.41" z="0.84" jet="true" capacity="174.7"/>
+<tank x="-1.00" y="-0.41" z="0.84" jet="true" capacity="174.7"/>
+<tank x="-1.00" y="0.41" z="0.84" jet="true" capacity="87.4"/>
+<tank x="-1.00" y="-0.41" z="0.84" jet="true" capacity="87.4"/>
+<tank x="-1.00" y="0.41" z="0.84" jet="true" capacity="87.4"/>
+<tank x="-1.00" y="-0.41" z="0.84" jet="true" capacity="87.4"/>
+<tank x="-1.00" y="0.41" z="0.84" jet="true" capacity="517.4"/>
+<tank x="-1.00" y="-0.41" z="0.84" jet="true" capacity="517.4"/>
+
+<!-- Forward Group -->
+<tank x="1.94" y="0.84" z="0.63" jet="true" capacity="967.7"/>
+<tank x="1.94" y="-0.84" z="0.63" jet="true" capacity="967.7"/>
+<tank x="2.05" y="0.0" z="1.02" jet="true" capacity="1041.6"/>
+
+<!-- Aft Group - multiple tanks to simulate a float switch -->
+<tank x="-3.01" y="0.4" z="0.88" jet="true" capacity="665.3"/>
+<tank x="-3.01" y="-0.4" z="0.88" jet="true" capacity="665.3"/>
+<tank x="-3.01" y="0.4" z="0.88" jet="true" capacity="329.3"/>
+<tank x="-3.01" y="-0.4" z="0.88" jet="true" capacity="329.3"/>
+
+<!-- Wing Tanks -->
+<tank x="-0.75" y="1.78" z="0.98" jet="true" capacity="336"/>
+<tank x="-0.75" y="-1.78" z="0.98" jet="true" capacity="336"/>
+
+<!-- negative G Accumulator -->
+<tank x="2.5" y="0.0" z="0.9" jet="true" capacity="107.5"/>
+
+<!--tank x="-0.5" y="-2.096" z="0.44" jet="true" capacity="650"/>
+<tank x="-0.5" y="2.096" z="0.44" jet="true" capacity="650"/>
+<tank x="-0.632" y="0.0" z="0.029" jet="true" capacity="1650"/-->
 <ballast x="9" y="0.0" z="0.1" mass="1400"/>
 <weight x="4" y="0" z="0.8" mass-prop="/yasim/weights/pilot-lb"/>
 <!--
 
 	<ballast x="0.128" y="0.0" z="1.382" mass="1454"/>
-	
+
 -->
 </airplane>

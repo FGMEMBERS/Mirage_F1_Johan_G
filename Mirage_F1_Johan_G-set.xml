@@ -33,7 +33,7 @@
   <panel>
    <visibility archive="y">false</visibility>
   </panel>
-  
+
   <hud> <!-- Tinkered with by Johan G Sun 18 Dec 2011 -->
    <path n="1">Aircraft/Mirage_F1_Johan_G/Hud/Mirage_F1-hud.xml</path>
    <visibility n="1" type="bool">true</visibility>
@@ -180,15 +180,113 @@
   <fuel>
 
    <tank n="0">
-    <level-gal_us>290</level-gal_us>
+    <name>Feeder.1-L</name>
+    <level-gal_us>4</level-gal_us>
    </tank>
 
    <tank n="1">
-    <level-gal_us>290</level-gal_us>
+    <name>Feeder.1-R</name>
+    <level-gal_us>4</level-gal_us>
    </tank>
 
    <tank n="2">
-    <level-gal_us>1650</level-gal_us> <!-- Added by Johan G Tue 10 Jun 2013, hopefully fixes fuel guage -->
+    <name>Feeder.2-L</name>
+    <level-gal_us>8</level-gal_us>
+   </tank>
+
+   <tank n="3">
+    <name>Feeder.2-R</name>
+    <level-gal_us>8</level-gal_us>
+   </tank>
+
+   <tank n="4">
+    <name>Feeder.3-L</name>
+    <level-gal_us>26</level-gal_us>
+   </tank>
+
+   <tank n="5">
+    <name>Feeder.3-R</name>
+    <level-gal_us>26</level-gal_us>
+   </tank>
+
+   <tank n="6">
+    <name>Feeder.4-L</name>
+    <level-gal_us>13</level-gal_us>
+   </tank>
+
+   <tank n="7">
+    <name>Feeder.4-R</name>
+    <level-gal_us>13</level-gal_us>
+   </tank>
+
+   <tank n="8">
+    <name>Feeder.5-L</name>
+    <level-gal_us>13</level-gal_us>
+   </tank>
+
+   <tank n="9">
+    <name>Feeder.5-R</name>
+    <level-gal_us>13</level-gal_us>
+   </tank>
+
+   <tank n="10">
+    <name>Feeder.6-L</name>
+    <level-gal_us>77</level-gal_us>
+   </tank>
+
+   <tank n="11">
+    <name>Feeder.6-R</name>
+    <level-gal_us>77</level-gal_us>
+   </tank>
+
+   <tank n="12">
+    <name>Forward-L</name>
+    <level-gal_us>144</level-gal_us>
+   </tank>
+
+   <tank n="13">
+    <name>Forward-R</name>
+    <level-gal_us>144</level-gal_us>
+   </tank>
+
+   <tank n="14">
+    <name>Forward-C</name>
+    <level-gal_us>155</level-gal_us>
+   </tank>
+
+   <tank n="15">
+    <name>Aft.1-L</name>
+    <level-gal_us>99</level-gal_us>
+   </tank>
+
+   <tank n="16">
+    <name>Aft.1-R</name>
+    <level-gal_us>99</level-gal_us>
+   </tank>
+
+   <tank n="17">
+    <name>Aft.2-L</name>
+    <level-gal_us>49</level-gal_us>
+   </tank>
+
+   <tank n="18">
+    <name>Aft.2-R</name>
+    <level-gal_us>49</level-gal_us>
+   </tank>
+
+   <tank n="19">
+    <name>Wing-L</name>
+    <level-gal_us>50</level-gal_us>
+   </tank>
+
+   <tank n="20">
+    <name>Wing-R</name>
+    <level-gal_us>50</level-gal_us>
+   </tank>
+
+   <tank n="21">
+    <name>Accumulator</name>
+    <level-gal_us>16</level-gal_us>
    </tank>
 
   </fuel>
@@ -205,7 +303,7 @@
  </engines>
 
  <!-- Non-functioning radar hidde by Johan G Thu 11 Apr 2013
- <instrumentation> 
+ <instrumentation>
   <radar>
    <enabled type="bool">true</enabled>
    <az-field type="double">120</az-field>
@@ -233,11 +331,14 @@
    <on-off type="bool">true</on-off>
   </ecm>
  </instrumentation> -->
- 
+
  <nasal>
   <aar>
    <file>Aircraft/Mirage_F1_Johan_G/Nasal/aar.nas</file>
   </aar>
+  <fuelsystem>
+   <file>Aircraft/Mirage_F1_Johan_G/Nasal/FuelSystem.nas</file>
+  </fuelsystem>
   <!-- Hidden by Johan G Thu 11 Apr 2013
   <f16>
    <file>Aircraft/f16/Nasal/liveries.nas</file>
@@ -277,20 +378,20 @@
  </input>
 
  <instrumentation>
- 
+
   <!-- See also instrumentation.xml -->
- 
+
   <master-failure-warning>
    <warning type="bool">false</warning>
    <caution type="bool">false</caution>
   </master-failure-warning>
- 
+
   <!-- Added for in flight refuelling trials by Johan G Sat 14 June 2014 -->
   <radar>
    <range type="int" archive="y">20</range>
    <minimized type="bool" archive="y">false</minimized>
   </radar>
- 
+
   <!-- Warning horn properties added by Johan G, Sun 23 Nov 2014 -->
   <warning-horn>
    <oxygen-regulator type="bool">false</oxygen-regulator>
@@ -314,7 +415,7 @@
 
   <!--
     Left pitot-static system airspeed devices
-    
+
     Source to:
       - Airspeed indicator
       - Airspeed switches for the flap and slat interlocks
@@ -329,7 +430,7 @@
 
   <!--
     Right pitot-static system airspeed devices
-    
+
     Source to:
       - Air data computer (ADC)
       - Airspeed switch for the flap and slat interlocks
@@ -347,7 +448,7 @@
 
   <!--
     S1 static port driven altimeter
-    
+
     Standby altimeter
   -->
   <altimeter n="0">
@@ -357,7 +458,7 @@
 
   <!--
     S2 static port altimeter
-    
+
     Source to:
       - Air data computer (ADC)
         (In reality driven by the ADC, should therefore fail with the ADC)
@@ -370,7 +471,7 @@
 
   <!--
     S3 static port altimeter
-    
+
     Source to the cabin regulator
   -->
   <altimeter n="2">
