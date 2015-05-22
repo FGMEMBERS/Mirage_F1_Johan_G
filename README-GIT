@@ -1,0 +1,53 @@
+GIT README
+==========
+
+
+Branching model
+---------------
+
+My plan is to have two permanent branches, one branch that should be stable,
+master, and one development branch that might not be stable, develop.
+
+When I migrate to a new version of FlightGear I will branch from master to
+a support branch, master-<my previous FlightGear version>, to give me a
+chance to fix things for the older version.  They will never be merged
+with the main branch.
+
+In addition to these branches I will have temporary feature and bug fix
+branches, <feature> and fix-<bug>, that will be deleted after they have been
+merged with develop.
+
+If I in the future would be running bleeding edge FlightGear from Git, I would
+probably shift to primarily trying to make the aircraft ready for the next
+release of FlightGear instead of the current and would probably have a
+prerelease branch, rc-<upcoming FlightGear version>.
+
+
+Earlier failures with Git
+-------------------------
+
+When setting up the repository the first times I more or less had to delete
+it and begin from scratch adding old changes.
+
+In earlier development of the aircraft I more or less had directories for
+each FlightGear version I was using, with subdirectories for each year and
+files being numbered with a version number.  All changes to the aircraft
+directory was done by removing the version number and replacing the file in
+the FlightGear aircraft directory with the new one.  It works, but it takes
+up a lot of space, and can at times be cumbersome.
+
+My first two attempts at assembling this Git repository from older changes
+failed.  My big error was renaming the aircraft directory, which of course
+caused problems when putting the aircraft in FlightGear.  For example the
+models was invisible.
+
+The third attempt I did not rename the aircraft directory but failed at
+branching.  I messed up the branching completely and did not even get close
+to what I wanted to achieve.  I did not know that branching was tied to
+commits.
+
+
+By the way I am new to Git, but I guess it shows...
+
+
+Johan Gustafsson
